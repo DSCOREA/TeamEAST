@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025년도 설치일 기준 6개월 경과 장비 내역</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background-color: #e5e7eb; /* Border color for grid */
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        .calendar-day, .calendar-header {
+            background-color: #ffffff;
+            padding: 0.75rem;
+            text-align: center;
+            border-radius: 0.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Align content to the top */
+            min-height: 100px; /* Ensure consistent height for days, increased for content */
+            overflow: hidden; /* Hide overflowing text */
+        }
+        .calendar-header {
+            font-weight: 600;
+            background-color: #e0e7ff; /* Light blue for headers */
+        }
+        .calendar-day.current-month {
+            color: #374151; /* Darker text for current month */
+        }
+        .calendar-day.other-month {
+            color: #9ca3af; /* Lighter text for other months */
+        }
+        .calendar-day.has-event {
+            background-color: #bfdbfe; /* Light blue for days with events */
+            cursor: pointer;
+            position: relative;
+        }
+        .calendar-day.has-event:hover {
+            background-color: #93c5fd; /* Darker blue on hover */
+        }
+        .event-summary {
+            font-size: 0.75rem; /* Smaller font for event details */
+            line-height: 1.2;
+            text-align: center; /* Center text in summary */
+            width: 100%;
+            margin-top: 0.5rem;
+            color: #3b82f6; /* Blue text for event summary */
+        }
+        .event-summary p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 100; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border-radius: 0.5rem;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            position: relative;
+        }
+        .close-button {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .filter-button {
+            @apply px-3 py-1 rounded-md text-sm font-medium;
+            @apply bg-gray-200 text-gray-700 hover:bg-gray-300;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .filter-button.active {
+            @apply bg-blue-500 text-white hover:bg-blue-600;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8">
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-xl">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">2025년도 설치일 기준 6개월 경과 장비 내역</h1>
+
+        <!-- Calendar Navigation -->
+        <div class="flex justify-between items-center mb-6">
+            <button id="prevMonth" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-200 ease-in-out">이전 달</button>
+            <h2 id="currentMonthYear" class="text-2xl font-semibold text-gray-700"></h2>
+            <button id="nextMonth" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-200 ease-in-out">다음 달</button>
+        </div>
+
+        <!-- Assignee Filters -->
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-gray-700 mb-2">담당자 필터:</h3>
+            <div id="assigneeFilters" class="flex flex-wrap gap-2">
+                <button class="filter-button active" data-filter-type="assignee" data-filter-value="all">전체</button>
+                <!-- Assignee buttons will be populated here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Calendar Grid -->
+        <div id="calendar" class="calendar-grid">
+            <!-- Weekday headers -->
+            <div class="calendar-header">일</div>
+            <div class="calendar-header">월</div>
+            <div class="calendar-header">화</div>
+            <div class="calendar-header">수</div>
+            <div class="calendar-header">목</div>
+            <div class="calendar-header">금</div>
+            <div class="calendar-header">토</div>
+            <!-- Days will be populated by JavaScript -->
+        </div>
+
+        <!-- Event List Section -->
+        <div class="mt-8">
+            <h3 id="eventListTitle" class="text-2xl font-bold text-gray-800 mb-4">전체 유지보수 일정 목록</h3>
+            <div id="eventList" class="space-y-4">
+                <!-- Events will be populated by JavaScript -->
+                <p class="text-gray-500" id="noEventsMessage">유지보수 일정을 불러오는 중입니다...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for daily events -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modalDate" class="text-xl font-bold mb-4 text-gray-800"></h3>
+            <div id="modalEvents" class="space-y-2">
+                <!-- Events for selected day will be populated here -->
+            </div>
+            <p id="noModalEventsMessage" class="text-gray-500 hidden">이 날짜에는 유지보수 일정이 없습니다.</p>
+        </div>
+    </div>
+
+    <script>
+        // CSV data from the previous turn, embedded directly for self-containment
+        const csvData = `After Sales Name,고객명: 고객 이름,완료일,업무시작일시,업무종료일시,Product Category (Text),S/N,설치일,제품구분,제품명: 제품 이름,Team,담당자: 전체 이름
+AS-0000150590,고운치과의원,2025-03-10,2025-02-26 10:00,2025-02-26 20:10,Imaging,1700519,2025-02-26,3D,Orthophos S 3D 11x10,EAST,Lee Jay
+AS-0000150590,고운치과의원,2025-03-10,2025-02-26 10:00,2025-02-26 20:10,Imaging,1700519,2025-02-26,3D,Orthophos S 3D 11x10,EAST,Yang Moon
+AS-0000156773,서울센트럴치과의원_경기도 용인,2025-06-26,2025-06-26 13:00,2025-06-26 17:00,CAD/CAM,P466700061,2025-06-26,Compressor,Duo Tandem Compressor with Membrane Drying Unit,EAST,Choi John
+AS-0000156773,서울센트럴치과의원_경기도 용인,2025-06-26,2025-06-26 11:00,2025-06-26 17:00,CAD/CAM,P466700061,2025-06-26,Compressor,Duo Tandem Compressor with Membrane Drying Unit,EAST,Lee Jay
+AS-0000151411,서울좋은치과의원,2025-03-17,2025-03-17 10:00,2025-03-17 12:00,CAD/CAM,M6482512S510305,2025-03-17,Furnace,CEREC SpeedFire,EAST,Choi John
+AS-0000150161,서울본치과_서울 송파구,2025-02-18,2025-02-18 12:00,2025-02-18 14:00,CAD/CAM,M6482512S510304,2025-02-18,Furnace,CEREC SpeedFire,EAST,Yang Moon
+AS-0000151411,서울좋은치과의원,2025-03-17,2025-03-17 10:00,2025-03-17 12:00,CAD/CAM,M6482512S510305,2025-03-17,Furnace,CEREC SpeedFire,EAST,Yang Moon
+AS-0000149544,보떼치과기공소,2025-02-05,2025-02-05 15:00,2025-02-05 17:00,Lab,44310963,2025-02-05,Furnace,Multimat Cube 230V,EAST,Kang Alex
+AS-0000155068,한빛치과기공소_서울 중랑구,2025-05-21,2025-05-21 9:30,2025-05-21 12:30,Lab,44310896,2025-05-21,Furnace,Multimat Cube 230V,EAST,Yang Moon
+AS-0000154143,에스얼굴치과,2025-05-08,2025-05-08 14:00,2025-05-08 17:00,Lab,44310931,2025-05-08,Furnace,Multimat Cube 230V,EAST,Yang Moon
+AS-0000155626,송치과기공소,2025-06-05,2025-06-05 9:30,2025-06-05 12:30,Lab,44310933,2025-06-05,Furnace,Multimat Cube 230V,EAST,Yang Moon
+AS-0000149140,노원 강북예치과병원,2025-02-04,2025-02-04 9:30,2025-02-04 12:30,Lab,44130701,2025-02-04,Furnace,Multimat Cube press 230 V,EAST,Yang Moon
+AS-0000150112,서울매일치과병원,2025-02-17,2025-02-19 15:00,2025-02-19 18:30,Lab,44130713,,Furnace,Multimat Cube press 230 V,EAST,Yang Moon
+AS-0000150127,트리움 치과의원,2025-02-19,2025-02-19 10:00,2025-02-19 12:17,CAD/CAM,114832,2025-02-19,Intra Oral Scanner,Primescan AC,EAST,Choi John
+AS-0000152067,태장치과의원,2025-03-28,2025-03-28 10:30,2025-03-28 13:25,CAD/CAM,115351,2025-03-28,Intra Oral Scanner,Primescan AC,EAST,Choi John
+AS-0000153474,서울수려한치과,2025-04-16,2025-04-16 10:40,2025-04-16 12:36,CAD/CAM,115348,2025-04-16,Intra Oral Scanner,Primescan AC,EAST,Choi John
+AS-0000156772,"강.임,강.정 서울치과",2025-06-26,2025-06-26 10:00,2025-06-26 11:16,CAD/CAM,M6656230S115268,2025-06-26,Intra Oral Scanner,Primescan AC,EAST,Choi John
+AS-0000149074,코끼리치과의원,2025-01-24,2025-01-24 10:00,2025-01-24 12:45,CAD/CAM,M6656230S115237,2025-01-24,Intra Oral Scanner,Primescan AC,EAST,Hong Plack
+AS-0000150424,하이치과_경북 칠곡,2025-02-25,2025-02-25 10:00,2025-02-25 12:01,CAD/CAM,114636,2025-02-25,Intra Oral Scanner,Primescan AC,EAST,Hong Plack
+AS-0000154990,정평탑치과,2025-05-22,2025-05-22 10:00,2025-05-22 11:45,CAD/CAM,M6656230S115248,2025-05-22,Intra Oral Scanner,Primescan AC,EAST,Hong Plack
+AS-0000155440,라온치과병원_경북 구미시,2025-05-29,2025-05-29 11:00,2025-05-29 12:31,CAD/CAM,115045,2025-05-29,Intra Oral Scanner,Primescan AC,EAST,Hong Plack
+AS-0000156843,동산치과,2025-06-27,2025-06-27 10:30,2025-06-27 11:04,CAD/CAM,M6656230S115394,2025-06-27,Intra Oral Scanner,Primescan AC,EAST,Hong Plack
+AS-0000154694,레브치과(REVE DENTAL CLINIC),2025-05-15,2025-05-15 9:30,2025-05-15 12:30,CAD/CAM,115347,2025-05-15,Intra Oral Scanner,Primescan AC,EAST,Jung Hoon
+AS-0000152044,잠실서울치과의원,2025-03-27,2025-03-27 10:00,2025-03-27 12:00,CAD/CAM,115350,2025-03-27,Intra Oral Scanner,Primescan AC,EAST,Lee Jay
+AS-0000155933,연세온아치과병원,2025-06-11,2025-06-11 14:00,2025-06-11 16:00,CAD/CAM,115354,2025-06-11,Intra Oral Scanner,Primescan AC,EAST,Lee Jay
+AS-0000156354,연세유라인치과의원,2025-06-19,2025-06-19 10:00,2025-06-19 13:00,CAD/CAM,M6656230S115267,2025-06-19,Intra Oral Scanner,Primescan AC,EAST,Lee Jay
+AS-0000149442,서울힘찬플란트치과의원,2025-02-07,2025-02-07 10:30,2025-02-07 12:46,CAD/CAM,M6785344S808444/С8ОВВ54,2025-02-07,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000149476,서울오라클치과병원,2025-02-07,2025-02-07 15:00,2025-02-07 18:45,CAD/CAM,M6785344S808463/6J5BB54,2025-02-07,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000149476,서울오라클치과병원,2025-02-07,2025-02-07 15:00,2025-02-07 18:45,CAD/CAM,M6785344S808467/50CBB54,2025-02-07,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000149879,참조은병원,2025-02-13,2025-02-13 10:30,2025-02-13 13:02,CAD/CAM,M6785344S808462/B5WCB54,2025-02-13,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000149949,코아부부치과의원,2025-02-14,2025-02-14 14:00,2025-02-14 17:41,CAD/CAM,M6785344S808977/1G4CC54,2025-02-14,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000149991,유디치과의원,2025-02-17,2025-02-17 9:42,2025-02-17 12:11,CAD/CAM,M6785344S809011/79J6C54,2025-02-17,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000150496,리볼리치과의원,2025-02-25,2025-02-25 12:40,2025-02-25 15:08,CAD/CAM,M6785344S808910/ЗТС6С54,2025-02-25,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000150492,이끌림치과,2025-02-26,2025-02-26 8:44,2025-02-26 14:33,CAD/CAM,M6785344S808455/H7THB54,2025-02-26,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000150816,다담웃음치과의원,2025-03-04,2025-03-04 9:43,2025-03-04 11:27,CAD/CAM,M6785344S809016/H5L5C54,2025-03-04,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000150817,샤인치과의원,2025-03-04,2025-03-04 11:50,2025-03-04 14:00,CAD/CAM,M6785344S809017/BXC6C54,2025-03-04,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000150978,서울진정치과의원,2025-03-05,2025-03-05 9:30,2025-03-05 12:58,CAD/CAM,M6785344S807073/FPZ1C54,2025-03-05,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000151652,뿌리플란트치과의원,2025-03-21,2025-03-21 10:30,2025-03-21 14:29,CAD/CAM,M6785344S808921/BG4CC54,2025-03-21,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000151790,서울명문치과,2025-03-24,2025-03-24 14:40,2025-03-24 17:16,CAD/CAM,M6785344S809033/3D0HC54,2025-03-24,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000152348,서울더플랜치과의원,2025-04-02,2025-04-02 11:00,2025-04-02 14:34,CAD/CAM,M6785344S809006/JKVV044,2025-04-02,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000153606,더블유(W)서울화이트치과의원,2025-04-18,2025-04-18 13:43,2025-04-18 16:01,CAD/CAM,M6785344S809308/78SF164,2025-04-18,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000154044,올바른홍치과의원,2025-04-30,2025-04-30 10:00,2025-04-30 12:09,CAD/CAM,M6785344S809003/7C8F164,2025-04-30,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000154312,석계고운이치과,2025-05-09,2025-05-09 10:00,2025-05-09 11:49,CAD/CAM,M6785344S809334/7Y17C54,2025-05-09,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000154605,행복한치과의원,2025-05-15,2025-05-15 10:00,2025-05-15 11:42,CAD/CAM,M6785344S809157/C30W044,2025-05-15,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000155376,새맑은치과의원,2025-05-29,2025-05-29 10:00,2025-05-29 12:03,CAD/CAM,M6785344S802792/PF42JXAJ,2025-05-29,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000155639,연세스탠다드치과,2025-06-05,2025-06-05 9:40,2025-06-05 12:34,CAD/CAM,M6785344S809142/OPYF164,2025-06-05,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000155668,송산치과의원,2025-06-09,2025-06-09 10:00,2025-06-09 12:32,CAD/CAM,M6785344S809621/1GW4Y84,2025-06-09,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000155936,강릉사과나무치과의원,2025-06-12,2025-06-12 10:30,2025-06-12 12:23,CAD/CAM,M6785344S809159/4HVVO44,2025-06-12,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000156026,심스치과의원,2025-06-13,2025-06-13 9:30,2025-06-13 11:38,CAD/CAM,M6785344S809728/5KW4Y84,2025-06-13,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000156205,연세미래엔미소치과병원,2025-06-13,2025-06-13 14:00,2025-06-13 16:18,CAD/CAM,M6785344S809732/4H1HY84,2025-06-13,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000156602,이튼 플러스 치과,2025-06-24,2025-06-24 10:00,2025-06-24 12:28,CAD/CAM,M6785344S809918/7483T34,2025-06-24,Intra Oral Scanner,Primescan Connect,EAST,Choi John
+AS-0000147480,에덴치과_경북 구미,2025-01-03,2025-01-03 10:00,2025-01-03 12:10,CAD/CAM,M6785344S808400 / BDBKB54,2025-01-03,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000148781,정성치과의원,2025-01-16,2025-01-16 10:00,2025-01-16 12:09,CAD/CAM,M6785344S808396 / 7YZDB54,2025-01-16,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000148674,스마일치과의원,2025-01-17,2025-01-17 10:00,2025-01-17 12:15,CAD/CAM,M6785344S808300 / 9VNKB54,2025-01-17,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000148820,이레불꽃치과의원,2025-01-21,2025-01-21 14:00,2025-01-21 15:47,CAD/CAM,M6785344S808515 / HD0BB54,2025-01-21,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000149299,범어5층치과의원,2025-02-05,2025-02-05 10:00,2025-02-05 11:53,CAD/CAM,M6785344S808446 / GX6DB54,2025-02-05,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000149749,서울현치과의원_경남 진주,2025-02-12,2025-02-12 10:00,2025-02-12 12:30,CAD/CAM,M6785344S808898 / G6F3C54,2025-02-12,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000150126,송현치과의원,2025-02-19,2025-02-19 11:00,2025-02-19 12:58,CAD/CAM,M6785344S809012 / D5J6C54,2025-02-19,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000150213,에이엠치과,2025-02-20,2025-02-20 16:00,2025-02-20 17:54,CAD/CAM,M6785344S809013,2025-02-20,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000150300,라온치과의원,2025-02-24,2025-02-24 10:50,2025-02-24 12:59,CAD/CAM,M6785344S808452/73PDB54,2025-02-24,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000150300,라온치과의원,2025-02-24,2025-02-24 10:50,2025-02-24 12:59,CAD/CAM,M6785344S808445/J0V9B54,2025-02-24,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000150658,디지털온치과의원,2025-02-28,2025-02-28 11:00,2025-02-28 13:19,CAD/CAM,M6785344S808934,2025-02-28,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000150864,화이트듀(WHITE DEW),2025-03-05,2025-03-05 10:00,2025-03-05 12:20,CAD/CAM,M6785344S808916/2N5CC54,2025-03-05,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000151036,바른손치과,2025-03-07,2025-03-07 12:00,2025-03-07 14:33,CAD/CAM,M6785344S808927 / DQF3C54,2025-03-07,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000150993,가이드치과병원,2025-03-07,2025-03-07 10:00,2025-03-07 11:30,CAD/CAM,M6785344S808924 /CXD3C54,2025-03-07,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000151263,마카온치과,2025-03-14,2025-03-14 10:00,2025-03-14 11:55,CAD/CAM,M6785344S808480,2025-03-14,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000151479,북비산치과,2025-03-19,2025-03-19 10:00,2025-03-19 11:30,CAD/CAM,M6785344S808918,2025-03-19,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000151760,예미담치과의원,2025-03-24,2025-03-24 10:00,2025-03-24 12:00,CAD/CAM,M6785344S809066,2025-03-24,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000152039,연세영치과의원,2025-03-26,2025-03-26 10:00,2025-03-26 12:33,CAD/CAM,M6785344S808318,2025-03-26,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000152053,토마토치과의원,2025-03-28,2025-03-28 10:00,2025-03-28 11:55,CAD/CAM,M6785344S809090 / 5ZVS044,2025-03-28,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000152117,구미이튼365치과의원,2025-03-31,2025-03-31 11:00,2025-03-31 12:54,CAD/CAM,M6785344S809212 / 2VS6C54,2025-03-31,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000153237,에스프라임치과 광장점,2025-04-11,2025-04-11 10:00,2025-04-11 11:46,CAD/CAM,M6785344S808896 / cv7zb54,2025-04-11,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000153384,연세영치과의원,2025-04-15,2025-04-15 11:00,2025-04-15 12:27,CAD/CAM,M6785344S808900,2025-04-15,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000153863,승원치과의원,2025-04-25,2025-04-25 10:00,2025-04-25 11:30,CAD/CAM,M6785344S809312 /2FJ6C54,2025-04-25,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000154530,킴스치과의원,2025-05-15,2025-05-15 11:00,2025-05-15 12:43,CAD/CAM,M6785344S809333,2025-05-15,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000154690,죽전탑치과의원,2025-05-15,2025-05-15 15:00,2025-05-15 16:46,CAD/CAM,M6785344S809250,2025-05-15,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000154691,의료법인 금강의료재단_(구.고치과.고운치과)_경남 창원,2025-05-16,2025-05-16 10:00,2025-05-16 11:55,CAD/CAM,M6785344S809104,2025-05-16,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000155020,플랜트치과의원_대구 동구,2025-05-23,2025-05-23 10:00,2025-05-23 11:58,CAD/CAM,M6785344S809724,2025-05-23,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000156442,대구예스타치과의원,2025-06-20,2025-06-20 10:00,2025-06-20 11:37,CAD/CAM,M6785344S807070,2025-06-20,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000156753,서울정치과의원,2025-06-26,2025-06-26 10:00,2025-06-26 11:50,CAD/CAM,M6785344S808481,2025-06-26,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000156932,엔젤치과의원,2025-06-30,2025-06-30 11:00,2025-06-30 12:44,CAD/CAM,M6785344S806677,2025-06-30,Intra Oral Scanner,Primescan Connect,EAST,Hong Plack
+AS-0000152168,공릉온치과의원,2025-04-01,2025-04-01 10:00,2025-04-01 11:30,CAD/CAM,M6785344S808314/92XCC54,2025-04-01,Intra Oral Scanner,Primescan Connect,EAST,Jung Hoon
+AS-0000152457,암사중앙치과의원,2025-04-07,2025-04-07 14:00,2025-04-07 15:50,CAD/CAM,M6785344S809313/GD8F164,2025-04-07,Intra Oral Scanner,Primescan Connect,EAST,Jung Hoon
+AS-0000152591,365플러스 치과의원,2025-04-10,2025-04-10 9:30,2025-04-10 11:34,CAD/CAM,M6785344S809077/4GPV044,2025-04-10,Intra Oral Scanner,Primescan Connect,EAST,Jung Hoon
+AS-0000153235,리온치과의원,2025-04-10,2025-04-10 16:30,2025-04-10 17:07,CAD/CAM,M6785344S808906/5MC6C54,2025-04-10,Intra Oral Scanner,Primescan Connect,EAST,Jung Hoon
+AS-0000153877,연세웰치과의원,2025-04-25,2025-04-25 9:45,2025-04-25 11:45,CAD/CAM,M6785344S808895/2NHKB54,2025-04-25,Intra Oral Scanner,Primescan Connect,EAST,Jung Hoon
+AS-0000155087,서울정성치과의원,2025-05-26,2025-05-26 9:31,2025-05-26 11:30,CAD/CAM,M6785344S809164,2025-05-26,Intra Oral Scanner,Primescan Connect,EAST,Jung Hoon
+AS-0000155303,광주본플란트치과의원,2025-05-28,2025-05-28 13:45,2025-05-28 16:30,CAD/CAM,M6785344S809727,2025-05-28,Intra Oral Scanner,Primescan Connect,EAST,Jung Hoon
+AS-0000155303,광주본플란트치과의원,2025-05-28,2025-05-28 13:45,2025-05-28 16:30,CAD/CAM,M6785344S809722,2025-05-28,Intra Oral Scanner,Primescan Connect,EAST,Jung Hoon
+AS-0000155375,온 스타일 치과 기공소,2025-05-29,2025-05-29 14:20,2025-05-29 16:56,CAD/CAM,M6785344S809660,2025-05-29,Intra Oral Scanner,Primescan Connect,EAST,Jung Hoon
+AS-0000147392,강서하늘치과의원,2025-01-03,2025-01-03 10:00,2025-01-03 12:00,CAD/CAM,M6785344S807452/13N1C54,2025-01-03,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000147483,김앤박치과의원_부산 금정,2025-01-06,2025-01-06 10:00,2025-01-06 12:00,CAD/CAM,M6785344S807458/DBF3C54,2025-01-06,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000147577,동래로덴치과병원,2025-01-08,2025-01-08 10:00,2025-01-08 11:55,CAD/CAM,M6785344S805490/PF42WCFZ,2025-01-08,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000147641,센트럴치과의원_울산 남구,2025-01-09,2025-01-09 10:00,2025-01-09 12:00,CAD/CAM,M6785344S807139/FNZ1C54,2025-01-09,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000148730,어울림치과의원_경남 창원,2025-01-16,2025-01-16 11:00,2025-01-16 13:00,CAD/CAM,M6785344S808967/ 8P3CC54,2025-01-16,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000148821,온플란트치과의원_부산 동구,2025-01-21,2025-01-21 10:00,2025-01-21 12:00,CAD/CAM,M6785344S808295/JKF3C54,2025-01-21,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000148876,미르치과병원_경남 거제시,2025-01-22,2025-01-22 10:00,2025-01-22 12:05,CAD/CAM,M6785344S808441/B3P9B54,2025-01-22,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000149072,한상욱치과의원,2025-01-24,2025-01-24 10:00,2025-01-24 11:55,CAD/CAM,M6785344S808465/4D0BB54,2025-01-24,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000149956,서울오라클치과,2025-02-17,2025-02-17 10:00,2025-02-17 11:55,CAD/CAM,M6785344S808461/F7PDB54,2025-02-17,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000150075,참사랑 주치과,2025-02-18,2025-02-18 10:30,2025-02-18 12:30,CAD/CAM,M6785344S808447/92PDB54,2025-02-18,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000150214,뉴욕치과_경남 거제,2025-02-26,2025-02-21 10:30,2025-02-21 12:30,CAD/CAM,M6785344S808297/584CC54,2025-02-21,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000150497,미소부부치과의원,2025-02-26,2025-02-26 13:00,2025-02-26 15:00,CAD/CAM,M6785344S808937/C66HC54,2025-02-26,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000151478,고운이치과의원,2025-03-19,2025-03-19 10:00,2025-03-19 11:50,CAD/CAM,M6785344S808907/1H57C54,2025-03-19,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000151545,하얀수치과의원,2025-03-20,2025-03-20 10:00,2025-03-20 11:55,CAD/CAM,M6785344S808316/J7F3C54,2025-03-20,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000151881,중앙치과_경북 경주시,2025-03-26,2025-03-26 11:00,2025-03-26 13:00,CAD/CAM,M6785344S809068,2025-03-26,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000152111,미소사랑치과의원,2025-03-28,2025-03-28 11:00,2025-03-28 12:50,CAD/CAM,M6785344S809211,2025-03-28,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000153236,용호큰치과의원,2025-04-11,2025-04-11 10:00,2025-04-11 11:55,CAD/CAM,M6785344S808302/G6JHC54,2025-04-11,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000153540,이튼플러스치과,2025-04-18,2025-04-18 10:00,2025-04-18 11:55,CAD/CAM,M6785344S809156/5JYF164,2025-04-18,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000153541,동래센트럴치과,2025-04-18,2025-04-18 14:00,2025-04-18 16:00,CAD/CAM,M6785344S809154/9D8F164,2025-04-18,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000153809,드베스트치과의원,2025-04-24,2025-04-24 10:00,2025-04-24 11:55,CAD/CAM,M6785344S809067/8CVV044,2025-04-24,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000153807,미소드림치과,2025-04-24,2025-04-24 14:00,2025-04-24 15:55,CAD/CAM,M6785344S809169/HLPV044,2025-04-24,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000153984,사람인치과의원,2025-04-29,2025-04-29 10:00,2025-04-29 11:55,CAD/CAM,M6785344S809114/7Y1T044,2025-04-29,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000154230,모짜르트치과의원,2025-05-09,2025-05-09 10:00,2025-05-09 11:55,CAD/CAM,M6785344S809118/812T044,2025-05-09,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000154355,더화이트치과의원,2025-05-12,2025-05-12 10:30,2025-05-12 12:20,CAD/CAM,M6785344S809079/9GVV044,2025-05-12,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000154529,서울하이안치과의원_부산 해운대구,2025-05-15,2025-05-15 10:00,2025-05-15 11:55,CAD/CAM,M6785344S809330/6W17C54,2025-05-15,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000154692,이사랑치과의원_경남 통영시,2025-05-16,2025-05-16 11:00,2025-05-16 13:00,CAD/CAM,M6785344S809331/BRS6C54,2025-05-16,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000155305,부민치과의원,2025-05-29,2025-05-29 14:00,2025-05-29 16:00,CAD/CAM,M6785344S808909/590BB54,2025-05-29,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000156145,서울온뉴치과의원,2025-06-16,2025-06-16 10:00,2025-06-16 11:55,CAD/CAM,M6785344S809605/BW05Y84,2025-06-16,Intra Oral Scanner,Primescan Connect,EAST,Kang Alex
+AS-0000147414,새서울치과의원,2025-01-02,2025-01-02 10:00,2025-01-02 12:30,CAD/CAM,M6785344S808359 / BH5BB54,2025-01-02,Intra Oral Scanner,Primescan Connect,EAST,Lee Jay
+AS-0000147750,세이프플란트치과의원,2025-01-09,2025-01-09 10:00,2025-01-09 13:00,CAD/CAM,M6785344S808405 / DG1DB54,2025-01-09,Intra Oral Scanner,Primescan Connect,EAST,Lee Jay
+AS-0000149297,서울아산오케이(OK) 치과의원,2025-02-03,2025-02-03 13:30,2025-02-03 15:30,CAD/CAM,M6785344S808968 / 11F3C54,2025-02-03,Intra Oral Scanner,Primescan Connect,EAST,Lee Jay
+AS-0000149284,연세꿈꾸는치과교정과의원,2025-02-04,2025-02-04 10:30,2025-02-04 13:00,CAD/CAM,M6785344S808486 / J10FB54,2025-02-04,Intra Oral Scanner,Primescan Connect,EAST,Lee Jay
+AS-0000149395,우리치과의원,2025-02-07,2025-02-07 10:00,2025-02-07 12:20,CAD/CAM,M6785344S808449 /4COBB54,2025-02-07,Intra Oral Scanner,Primescan Connect,EAST,Lee Jay
+AS-0000149717,탑석센트럴치과의원,2025-02-12,2025-02-12 10:00,2025-02-12 12:00,CAD/CAM,M6785344S808479 / J5F3C54,2025-02-12,Intra Oral Scanner,Primescan Connect,EAST,Lee Jay
+AS-0000150589,고운치과의원,2025-03-10,2025-02-26 12:00,2025-02-26 14:00,CAD/CAM,M6785344S808986 / 798F164,2025-02-26,Intra Oral Scanner,Primescan Connect,EAST,Lee Jay
+AS-0000150748,서울선치과의원,2025-02-28,2025-02-28 13:00,2025-02-28 14:30,CAD/CAM,M6785344S808391 / FS5BB54,2025-02-28,Intra Oral Scanner,Primescan Connect,EAST,Lee Jay
+AS-0000150818,세이프플란트치과의원,2025-03-05,2025-03-04 12:00,2025-03-04 13:30,CAD/CAM,M6785344S809029 / 4PC6C54,2025-03-05,Intra Oral Scanner,Primescan Connect,EAST,Lee Jay
+AS-0000150818,세이프플란트치과의원,2025-03-05,2025-03-05 12:30,2025-03-05 14:00,CAD/CAM,M6785344S809029 / 4PC6C54,2025-03-05,Intra Oral Scanner,Primescan Connect,EAST,Lee Jay
+AS-0000151177,조세종치과의원,2025-03-12,2025-03-12 10:00,2025-03-12 12:00,CAD/CAM,M6785344S808925,2025-03-12,Intra Oral Scanner,Primescan Connect,EAST,Lee Jay
+AS-0000151651,연세맑음치과의원,2025-03-21,2025-03-21 10:00,2025-03-21 12:00,CAD/CAM,M6785344S808926 / B7PVB54,2025-03-21,Intra Oral Scanner,Primescan Connect,EAST,Lee Jay
+AS-0000156025,서울본치과의원,2025-06-12,2025-06-12 16:00,2025-06-12 19:30,CAD/CAM,M6785344S809891/ HXTC194,2025-06-12,Intra Oral Scanner,Primescan Connect,EAST,Lee Jay
+AS-0000156123,바노바기일레븐치과의원,2025-06-16,2025-06-16 10:00,2025-06-16 12:00,CAD/CAM,M6785344S809165 / DBVV044,2025-06-16,Intra Oral Scanner,Primescan Connect,EAST,Lee Jay
+AS-0000156188,서울에스치과의원,2025-06-17,2025-06-17 14:30,2025-06-17 16:30,CAD/CAM,M6785344S809658 / J4T6Y84,2025-06-17,Intra Oral Scanner,Primescan Connect,EAST,Lee Jay
+AS-0000156882,현미경치과,2025-06-30,2025-06-30 10:00,2025-06-30 12:00,CAD/CAM,M6785344S806806 / 41КВЗЗ4,2025-06-30,Intra Oral Scanner,Primescan Connect,EAST,Lee Jay
+AS-0000157017,연세그리다치과의원 강동둔촌,2025-07-01,2025-07-01 9:30,2025-07-01 11:30,CAD/CAM,M6785344S808899 / JCOBB54,2025-07-01,Intra Oral Scanner,Primescan Connect,EAST,Lee Jay
+AS-0000147596,천사치과의원,2025-01-06,2025-01-06 9:30,2025-01-06 12:00,CAD/CAM,M6785344S807132/51N1C54,2025-01-06,Intra Oral Scanner,Primescan Connect,EAST,Yang Moon
+AS-0000147642,연세365치과_경기 양주,2025-01-09,2025-01-09 10:00,2025-01-09 12:00,CAD/CAM,M6785344S808366/33CBB54,2025-01-09,Intra Oral Scanner,Primescan Connect,EAST,Yang Moon
+AS-0000149111,강북백상치과의원,2025-01-24,2025-01-24 10:00,2025-01-24 12:00,CAD/CAM,M6785344S808296/9VC6C54,2025-01-24,Intra Oral Scanner,Primescan Connect,EAST,Yang Moon
+AS-0000149813,서울엘치과,2025-02-12,2025-02-12 10:00,2025-02-12 12:00,CAD/CAM,M6785344S808955/DYPB334,2025-02-12,Intra Oral Scanner,Primescan Connect,EAST,Yang Moon
+AS-0000150589,고운치과의원,2025-03-10,2025-02-26 12:00,2025-02-26 14:00,CAD/CAM,M6785344S808986 / 798F164,2025-02-26,Intra Oral Scanner,Primescan Connect,EAST,Yang Moon
+AS-0000150992,로덴송치과의원,2025-03-06,2025-03-06 10:00,2025-03-06 12:00,CAD/CAM,M6785344S806750/CLC6C54,2025-03-06,Intra Oral Scanner,Primescan Connect,EAST,Yang Moon
+AS-0000154229,지안치과,2025-05-08,2025-05-08 10:00,2025-05-08 12:00,CAD/CAM,M6785344S809120/28SF164,2025-05-08,Intra Oral Scanner,Primescan Connect,EAST,Yang Moon
+AS-0000154606,서울정성치과,2025-05-15,2025-05-15 10:00,2025-05-15 12:00,CAD/CAM,M6785344S809161/87SF164,2025-05-15,Intra Oral Scanner,Primescan Connect,EAST,Yang Moon
+AS-0000155304,루체치과의원,2025-05-28,2025-05-28 14:00,2025-05-28 18:00,CAD/CAM,M6785344S809089/7TS6C54,2025-05-28,Intra Oral Scanner,Primescan Connect,EAST,Yang Moon
+AS-0000156305,서울 덴티크 치과,2025-06-18,2025-06-18 13:00,2025-06-18 15:00,CAD/CAM,M67863448809121/4CVV044,2025-06-18,Intra Oral Scanner,Primescan Connect,EAST,Yang Moon
+AS-0000151140,연세자연애치과,2025-03-07,2025-03-07 10:00,2025-03-07 11:30,Imaging,834(2023877/72016732),2025-03-07,Intraoral sensor,XIOS XG Kit Supreme USB Size 2,EAST,Yang Moon
+AS-0000154943,화이트치과_강원 강릉시,2025-05-21,2025-05-21 9:00,2025-05-21 16:42,Imaging,S-72019845/M-2029877,2025-05-21,Intraoral sensor,"Xios XG Supreme AE USB S2 Sensor, 270cm",EAST,Choi John
+AS-0000154943,화이트치과_강원 강릉시,2025-05-21,2025-05-21 9:00,2025-05-21 16:42,Imaging,S-72019897/M-2030132,2025-05-21,Intraoral sensor,"Xios XG Supreme AE USB S2 Sensor, 270cm",EAST,Choi John
+AS-0000151646,코끼리치과의원,2025-03-20,2025-03-20 14:30,2025-03-20 16:55,CAD/CAM,244424,2025-03-20,Milling unit,CEREC MC X,EAST,Hong Plack
+AS-0000151646,코끼리치과의원,2025-03-20,2025-03-20 14:30,2025-03-20 16:55,CAD/CAM,244425,2025-03-20,Milling unit,CEREC MC X,EAST,Hong Plack
+AS-0000154043,율하위치과,2025-04-29,2025-04-29 11:00,2025-04-29 13:23,CAD/CAM,244074,2025-04-29,Milling unit,CEREC MC X,EAST,Hong Plack
+AS-0000155519,365효플란트치과의원,2025-05-30,2025-05-30 10:00,2025-05-30 12:00,CAD/CAM,244428,2025-05-30,Milling unit,CEREC MC X,EAST,Kang Alex
+AS-0000149268,오랄디자인 서울,2025-02-03,2025-01-31 12:30,2025-01-31 14:30,CAD/CAM,244344,2025-01-31,Milling unit,CEREC MC X,EAST,Yang Moon
+AS-0000150632,아이디병원,2025-02-27,2025-02-27 10:00,2025-02-27 12:00,CAD/CAM,244346,2025-02-27,Milling unit,CEREC MC X,EAST,Yang Moon
+AS-0000151411,서울좋은치과의원,2025-03-17,2025-03-17 10:00,2025-03-17 12:00,CAD/CAM,607482,2025-03-17,Milling unit,CEREC Primemill,EAST,Choi John
+AS-0000154034,레브치과(REVE DENTAL CLINIC),2025-05-15,2025-04-29 14:00,2025-04-29 14:40,CAD/CAM,M6617620S608031,2025-04-29,Milling unit,CEREC Primemill,EAST,Jung Hoon
+AS-0000150726,수영센텀치과의원,2025-02-27,2025-02-27 10:30,2025-02-27 13:10,CAD/CAM,606391,2025-02-27,Milling unit,CEREC Primemill,EAST,Kang Alex
+AS-0000148910,석촌호수치과의원,2025-01-22,2025-01-22 9:30,2025-01-22 11:30,CAD/CAM,607481,2025-01-22,Milling unit,CEREC Primemill,EAST,Lee Jay
+AS-0000157070,플란치과의원 서울점,2025-06-30,2025-06-30 12:40,2025-06-30 14:00,CAD/CAM,M6617620S608046,2025-06-30,Milling unit,CEREC Primemill,EAST,Lee Jay
+AS-0000157070,플란치과의원 서울점,2025-06-30,2025-06-30 12:40,2025-06-30 14:00,CAD/CAM,M6617620S608063,2025-06-30,Milling unit,CEREC Primemill,EAST,Lee Jay
+AS-0000148910,석촌호수치과의원,2025-01-22,2025-01-22 9:30,2025-01-22 12:30,CAD/CAM,607481,2025-01-22,Milling unit,CEREC Primemill,EAST,Yang Moon
+AS-0000151411,서울좋은치과의원,2025-03-17,2025-03-17 10:00,2025-03-17 12:00,CAD/CAM,607482,2025-03-17,Milling unit,CEREC Primemill,EAST,Yang Moon
+AS-0000155300,연세유라인치과의원_서울 송파구,2025-05-29,2025-05-29 9:30,2025-05-29 11:40,CAD/CAM,M6748151S606357,2025-05-29,Milling unit,"CEREC Primemill, B-stock",EAST,Jung Hoon
+AS-0000148739,하루에치과의원,2025-01-17,2025-01-17 14:30,2025-01-17 16:00,CAD/CAM,M6748151S654707,2025-01-17,Milling unit,"CEREC Primemill, B-stock",EAST,Lee Jay
+AS-0000148739,하루에치과의원,2025-01-17,2025-01-17 14:30,2025-01-17 16:00,CAD/CAM,M6748151S654707,2025-01-17,Milling unit,"CEREC Primemill, B-stock",EAST,Yang Moon
+AS-0000155300,연세유라인치과의원_서울 송파구,2025-05-29,2025-05-29 9:30,2025-05-29 11:40,CAD/CAM,M6748151S606357,2025-05-29,Milling unit,"CEREC Primemill, B-stock",EAST,Yang Moon
+AS-0000156773,서울센트럴치과의원_경기도 용인,2025-06-26,2025-06-26 13:00,2025-06-26 17:00,CAD/CAM,107443,2025-06-26,Milling unit,inLab MC X5,EAST,Choi John
+AS-0000156773,서울센트럴치과의원_경기도 용인,2025-06-26,2025-06-26 11:00,2025-06-26 17:00,CAD/CAM,107443,2025-06-26,Milling unit,inLab MC X5,EAST,Lee Jay
+AS-0000151654,분당서울대학교병원,2025-03-20,2025-03-20 14:30,2025-03-20 20:10,Treatment Centers,378106,2025-03-20,Treatment Center,Treatment center Intego,EAST,Choi John
+AS-0000151882,양지바른치과,2025-03-26,2025-03-26 11:00,2025-03-26 16:30,Treatment Centers,378021,2025-03-26,Treatment Center,Treatment center Intego,EAST,Choi John
+AS-0000153874,예인치과의원_경남 창원,2025-04-26,2025-04-26 9:00,2025-04-26 13:50,Treatment Centers,378363,2025-04-26,Treatment Center,Treatment center Intego,EAST,Choi John
+AS-0000153874,예인치과의원_경남 창원,2025-04-26,2025-04-26 9:00,2025-04-26 13:50,Treatment Centers,378363,2025-04-26,Treatment Center,Treatment center Intego,EAST,Hong Plack
+AS-0000153874,예인치과의원_경남 창원,2025-04-26,2025-04-26 9:00,2025-04-26 13:50,Treatment Centers,378363,2025-04-26,Treatment Center,Treatment center Intego,EAST,Kang Alex
+AS-0000151654,분당서울대학교병원,2025-03-20,2025-03-20 14:30,2025-03-20 20:10,Treatment Centers,378106,2025-03-20,Treatment Center,Treatment center Intego,EAST,Lee Jay
+AS-0000151882,양지바른치과,2025-03-26,2025-03-26 11:00,2025-03-26 16:30,Treatment Centers,378021,2025-03-26,Treatment Center,Treatment center Intego,EAST,Lee Jay
+`;
+
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
+        let allEvents = []; // Stores all parsed events
+        let filteredEvents = []; // Stores events after applying filters (assignee)
+
+        // Removed activeTimeFilter and filteredInstallMonthInfo as per user request
+        let activeAssigneeFilter = 'all'; // 'all' or specific assignee name
+
+        const calendarEl = document.getElementById('calendar');
+        const currentMonthYearEl = document.getElementById('currentMonthYear');
+        const prevMonthBtn = document.getElementById('prevMonth');
+        const nextMonthBtn = document.getElementById('nextMonth');
+        const eventListEl = document.getElementById('eventList');
+        const noEventsMessageEl = document.getElementById('noEventsMessage');
+        // Removed timeFiltersEl as per user request
+        const assigneeFiltersEl = document.getElementById('assigneeFilters');
+        const eventListTitleEl = document.getElementById('eventListTitle'); // Get the new title element
+
+        const eventModal = document.getElementById('eventModal');
+        const modalDateEl = document.getElementById('modalDate');
+        const modalEventsEl = document.getElementById('modalEvents');
+        const noModalEventsMessageEl = document.getElementById('noModalEventsMessage');
+        const closeButton = document.querySelector('.close-button');
+
+        // Helper function to truncate text (not used in final version, but kept for reference)
+        function truncateText(text, maxLength) {
+            if (text.length > maxLength) {
+                return text.substring(0, maxLength) + '...';
+            }
+            return text;
+        }
+
+        // Function to parse CSV data
+        function parseCSV(csv) {
+            const lines = csv.trim().split('\n').filter(line => line.trim() !== '');
+            if (lines.length < 2) return []; // No header or data
+
+            const headers = lines[0].split(',').map(h => h.trim());
+            const dataRows = lines.slice(1);
+
+            const installationDateIndex = headers.indexOf('설치일');
+            const productNameIndex = headers.indexOf('제품명: 제품 이름');
+            const customerNameIndex = headers.indexOf('고객명: 고객 이름');
+            const 담당자Index = headers.indexOf('담당자: 전체 이름');
+
+            if (installationDateIndex === -1 || productNameIndex === -1 || customerNameIndex === -1 || 담당자Index === -1) {
+                console.error("필수 컬럼(설치일, 제품명: 제품 이름, 고객명: 고객 이름, 담당자: 전체 이름)을 찾을 수 없습니다.");
+                return [];
+            }
+
+            const parsedEvents = [];
+            dataRows.forEach(row => {
+                // Use a more robust regex to split by comma outside of double quotes
+                const values = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/); 
+
+                const installationDateStr = values[installationDateIndex]?.trim();
+                const productName = values[productNameIndex]?.trim().replace(/^"|"$/g, ''); // Remove quotes
+                const customerName = values[customerNameIndex]?.trim().replace(/^"|"$/g, '');
+                const 담당자 = values[담당자Index]?.trim();
+
+                if (installationDateStr && productName && customerName && 담당자) {
+                    const installDate = new Date(installationDateStr);
+                    if (!isNaN(installDate.getTime())) { // Check if date is valid
+                        const maintenanceDate = new Date(installDate);
+                        maintenanceDate.setMonth(maintenanceDate.getMonth() + 6);
+
+                        parsedEvents.push({
+                            installDate: installationDateStr,
+                            maintenanceDate: maintenanceDate.toISOString().split('T')[0], // YYYY-MM-DD format
+                            productName: productName,
+                            customerName: customerName,
+                            담당자: 담당자
+                        });
+                    }
+                }
+            });
+            return parsedEvents;
+        }
+
+        // Function to apply filters (only assignee filter remains)
+        function applyFilters() {
+            let tempEvents = [...allEvents]; // Start with all events
+
+            // Removed time filter logic as per user request
+
+            // Apply assignee filter
+            if (activeAssigneeFilter !== 'all') {
+                tempEvents = tempEvents.filter(event => event.담당자 === activeAssigneeFilter);
+            }
+
+            filteredEvents = tempEvents; // Update the globally filtered events
+            renderCalendar(); // Re-render calendar with new filters
+            displayEventList(); // Update the event list based on the current calendar month and filters
+        }
+
+        // Function to render the calendar
+        function renderCalendar() {
+            calendarEl.innerHTML = `
+                <div class="calendar-header">일</div>
+                <div class="calendar-header">월</div>
+                <div class="calendar-header">화</div>
+                <div class="calendar-header">수</div>
+                <div class="calendar-header">목</div>
+                <div class="calendar-header">금</div>
+                <div class="calendar-header">토</div>
+            `; // Clear previous days and re-add headers
+
+            currentMonthYearEl.textContent = `${currentYear}년 ${currentMonth + 1}월`;
+
+            const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay(); // 0 for Sunday, 1 for Monday, etc.
+            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+            // Add empty days for the beginning of the month
+            for (let i = 0; i < firstDayOfMonth; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.classList.add('calendar-day', 'other-month', 'opacity-50');
+                calendarEl.appendChild(emptyDay);
+            }
+
+            // Add days of the current month
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayEl = document.createElement('div');
+                dayEl.classList.add('calendar-day', 'current-month', 'rounded-md', 'relative');
+                dayEl.textContent = day; // Set day number
+                dayEl.dataset.date = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+
+                // Filter events specific to this day from the already `filteredEvents`
+                const eventsOnThisDay = filteredEvents.filter(event => event.maintenanceDate === dayEl.dataset.date);
+                
+                if (eventsOnThisDay.length > 0) {
+                    dayEl.classList.add('has-event');
+                    
+                    const eventSummaryDiv = document.createElement('div');
+                    eventSummaryDiv.classList.add('event-summary');
+
+                    // Display only the total count of events for the day, removed '총'
+                    eventSummaryDiv.innerHTML += `<p>${eventsOnThisDay.length}건</p>`;
+                    
+                    dayEl.appendChild(eventSummaryDiv);
+
+                    // Make the day clickable to open the modal with all events for that day
+                    dayEl.addEventListener('click', () => openModal(dayEl.dataset.date, eventsOnThisDay));
+                }
+                calendarEl.appendChild(dayEl);
+            }
+        }
+
+        // Function to display all events in a list
+        function displayEventList() {
+            eventListEl.innerHTML = ''; // Clear previous list items
+            
+            // Filter events to only show those for the currently displayed calendar month
+            const eventsForCurrentMonth = filteredEvents.filter(event => {
+                const maintenanceDate = new Date(event.maintenanceDate);
+                return maintenanceDate.getFullYear() === currentYear && maintenanceDate.getMonth() === currentMonth;
+            });
+
+            let headerText = `${currentYear}년 ${currentMonth + 1}월 유지보수 일정 목록`;
+            // Removed time filter related header text logic
+            if (activeAssigneeFilter !== 'all') {
+                headerText = `${currentYear}년 ${currentMonth + 1}월 유지보수 일정 (${activeAssigneeFilter})`; // Removed '담당자' suffix
+            }
+            eventListTitleEl.textContent = headerText; // Update the title element
+
+            if (eventsForCurrentMonth.length === 0) {
+                noEventsMessageEl.classList.remove('hidden');
+                noEventsMessageEl.textContent = "현재 달에 필터링된 유지보수 일정이 없습니다.";
+                return;
+            }
+            noEventsMessageEl.classList.add('hidden');
+
+            // Sort events by maintenance date
+            const sortedEvents = [...eventsForCurrentMonth].sort((a, b) => {
+                return new Date(a.maintenanceDate) - new Date(b.maintenanceDate);
+            });
+
+            const groupedEvents = sortedEvents.reduce((acc, event) => {
+                if (!acc[event.담당자]) {
+                    acc[event.담당자] = [];
+                }
+                acc[event.담당자].push(event);
+                return acc;
+            }, {});
+
+            for (const 담당자 in groupedEvents) {
+                const 담당자Div = document.createElement('div');
+                담당자Div.classList.add('bg-blue-50', 'p-4', 'rounded-md', 'shadow-sm');
+                담당자Div.innerHTML = `<h4 class="text-lg font-semibold text-blue-800 mb-2">${담당자}</h4>`; // Removed '담당자' suffix
+
+                const ul = document.createElement('ul');
+                ul.classList.add('list-disc', 'list-inside', 'text-gray-700');
+
+                groupedEvents[담당자].forEach(event => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <span class="font-medium">${event.maintenanceDate}</span>:
+                        ${event.customerName} - ${event.productName} (설치일: ${event.installDate})
+                    `;
+                    ul.appendChild(li);
+                });
+                담당자Div.appendChild(ul);
+                eventListEl.appendChild(담당자Div);
+            }
+        }
+
+        // Modal functions
+        function openModal(date, dailyEvents) {
+            modalDateEl.textContent = `${date} 유지보수 일정`;
+            modalEventsEl.innerHTML = '';
+            if (dailyEvents.length > 0) {
+                noModalEventsMessageEl.classList.add('hidden');
+                dailyEvents.forEach(event => {
+                    const eventDiv = document.createElement('div');
+                    eventDiv.classList.add('bg-gray-100', 'p-3', 'rounded-md');
+                    eventDiv.innerHTML = `
+                        <p><span class="font-semibold">고객명:</span> ${event.customerName}</p>
+                        <p><span class="font-semibold">제품명:</span> ${event.productName}</p>
+                        <p><span class="font-semibold">담당자:</span> ${event.담당자}</p>
+                        <p><span class="font-semibold">설치일:</span> ${event.installDate}</p>
+                    `;
+                    modalEventsEl.appendChild(eventDiv);
+                });
+            } else {
+                noModalEventsMessageEl.classList.remove('hidden');
+            }
+            eventModal.style.display = 'flex'; // Show modal
+        }
+
+        function closeModal() {
+            eventModal.style.display = 'none'; // Hide modal
+        }
+
+        // Populate assignee filters dynamically
+        function populateAssigneeFilters() {
+            const uniqueAssignees = [...new Set(allEvents.map(event => event.담당자))].sort();
+            uniqueAssignees.forEach(assignee => {
+                const button = document.createElement('button');
+                button.classList.add('filter-button');
+                button.dataset.filterType = 'assignee';
+                button.dataset.filterValue = assignee;
+                button.textContent = assignee;
+                assigneeFiltersEl.appendChild(button);
+            });
+        }
+
+        // Event Listeners for navigation
+        prevMonthBtn.addEventListener('click', () => {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            applyFilters(); // Re-apply filters and re-render calendar/list
+        });
+
+        nextMonthBtn.addEventListener('click', () => {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            applyFilters(); // Re-apply filters and re-render calendar/list
+        });
+
+        // Filter button click handler
+        function handleFilterClick(event) {
+            const button = event.target;
+            const filterType = button.dataset.filterType;
+            const filterValue = button.dataset.filterValue;
+
+            // Remove active class from all buttons of the same type
+            document.querySelectorAll(`.filter-button[data-filter-type="${filterType}"]`).forEach(btn => {
+                btn.classList.remove('active');
+            });
+            // Add active class to the clicked button
+            button.classList.add('active');
+
+            // Removed time filter logic
+            if (filterType === 'assignee') {
+                activeAssigneeFilter = filterValue;
+            }
+            applyFilters(); // Re-apply filters
+        }
+
+        // Attach event listeners to filter containers
+        // Removed timeFiltersEl event listener
+        assigneeFiltersEl.addEventListener('click', handleFilterClick);
+
+        closeButton.addEventListener('click', closeModal);
+        window.addEventListener('click', (event) => {
+            if (event.target === eventModal) {
+                closeModal();
+            }
+        });
+
+        // Initialize the application
+        window.onload = function() {
+            allEvents = parseCSV(csvData);
+            populateAssigneeFilters(); // Populate assignee buttons first
+            applyFilters(); // Initial render with default filters
+        };
+    </script>
+</body>
+</html>
+
