@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamEAST 고객만족도 보고서</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+        .satisfaction-bar-container {
+            background-color: #e5e7eb; /* Lighter gray for the background of the bar */
+            border-radius: 9999px; /* Fully rounded corners */
+            height: 1rem; /* Height of the bar */
+            overflow: hidden; /* Ensure content stays within rounded corners */
+        }
+        .satisfaction-bar {
+            height: 100%;
+            border-radius: 9999px; /* Fully rounded corners */
+            transition: width 0.5s ease-in-out; /* Smooth transition for width changes */
+        }
+        /* Modal styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease-in-out;
+        }
+        .modal-overlay.open .modal-content {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8">
+    <div class="max-w-4xl mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+        <h1 class="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-4">TeamEAST 상반기 고객만족도 응답 보고서</h1>
+        <p id="total-responses" class="text-lg text-center text-gray-600 mb-2"></p>
+        <p id="overall-satisfaction-score" class="text-xl font-bold text-center text-blue-600 mb-8"></p>
+
+        <div id="employee-satisfaction-data" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Employee satisfaction data will be rendered here by JavaScript -->
+        </div>
+    </div>
+
+    <!-- VOC Detail Modal -->
+    <div id="voc-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-gray-200">
+                <h2 id="modal-employee-name" class="text-2xl font-bold text-gray-800"></h2>
+                <button id="close-modal" class="text-gray-500 hover:text-gray-700 text-3xl leading-none">&times;</button>
+            </div>
+            <div id="voc-details-content" class="text-gray-700">
+                <!-- VOC details will be loaded here -->
+            </div>
+            <!-- Gemini API features removed from here -->
+        </div>
+    </div>
+
+    <script>
+        // CSV 데이터
+        const csvData = `Customer Survey: Customer Survey,Survey Date,서비스접수번호,Customer info,신속하게 처리되었나요?,문제가 잘 해결되었나요?,담당직원의 응대태도는 친절했나요?,담당직원이 이해하기 쉽게 설명했나요?,전반적으로 만족하셨나요?,어떤 문제가 해결되지 않았나요?,얼마나 신속한 방문이 적정할지?,응대직원의 어떤 점이 불편했는지?,설명에서 어떤 점이 부족했는지?,전반적 서비스에서 개선되어야 할 부분은?,General Satisfaction Rate,서비스 담당자,Technical Service
+CS-000951,2025. 05. 23 10:18:07,AS-0000154677,닥터리치과의원,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,,100,Choi John,Technical Service
+CS-000933,2025. 03. 25 15:03:24,AS-0000151444,우리치과의원,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,,100,Choi John,Technical Service
+CS-000929,2025. 03. 20 08:34:48,AS-0000151060,오희영치과,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,,100,Choi John,Technical Service
+CS-000928,2025. 03. 19 11:24:19,AS-0000151149,서울정플란트치과의원,만족,매우만족,매우만족,매우만족,매우만족,,,,,없습니다,100,Choi John,Technical Service
+CS-000914,2025. 02. 23 02:04:14,AS-0000149704,드림팩토리치과,만족,매우만족,매우만족,매우만족,매우만족,,,,,수리비가 조금 비싸용~~*^^*,100,Choi John,Technical Service
+CS-000989,2025. 06. 23 01:50:27,AS-0000156135,진주미르치과병원,매우 만족,매우 만족,매우 만족,매우 만족,매우 만족,,,,,,100,Hong Plack,Technical Service
+CS-000954,2025. 05. 21 10:11:17,AS-0000154570,진주미르치과병원,매우만족,매우불만족,매우만족,만족,매우불만족,,,,,,60,Hong Plack,Technical Service
+CS-000947,2025. 05. 06 10:32:14,AS-0000154085,진주미르치과병원,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,,100,Hong Plack,Technical Service
+CS-000916,2025. 02. 25 11:51:04,AS-0000149932,이인창치과의원_경남 창원시,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,교체부품의 원활한 공급이 필요로 함,100,Hong Plack,Technical Service
+CS-000895,2025. 01. 17 18:51:24,AS-0000147179,손치과기공소,만족,만족,만족,만족,만족,,,,,없음,100,Hong Plack,Technical Service
+CS-000892,2025. 01. 13 10:29:33,AS-0000147351,로하스치과의원_대구달서구,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,,100,Hong Plack,Technical Service
+CS-000949,2025. 05. 07 05:30:22,AS-0000152519,정운호치과의원,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,문제 접수시의 반응,100,Jung Hoon,Technical Service
+CS-000931,2025. 03. 23 18:23:13,AS-0000151707,엘에이이플란트치과의원,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,,100,Jung Hoon,Technical Service
+CS-000927,2025. 03. 18 18:33:33,AS-0000150715,서울우이치과의원,매우 불만족,불만족,불만족,다소 불만족,불만족,배송이 너무 늦었어요,익일,회사에 재고가 없는건 회사 잘못이겠죠?,너무 짧은 설명,전혀 fast 하지 않습니다,0,Jung Hoon,Technical Service
+CS-000925,2025. 03. 17 10:10:17,AS-0000150474,국군수도병원,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,,100,Jung Hoon,Technical Service
+CS-000953,2025. 05. 21 13:12:14,AS-0000154475,굿모닝치과기공소-부산,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,지금처럼 하시면 되겠습니다.,100,Kang Alex,Technical Service
+CS-000945,2025. 04. 30 12:27:59,AS-0000153864,힐스치과_부산 해운대구,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,,100,Kang Alex,Technical Service
+CS-000944,2025. 04. 28 10:03:24,AS-0000153722,휘치과의원,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,,100,Kang Alex,Technical Service
+CS-000940,2025. 04. 14 10:30:17,AS-0000150727,라온아트센터,만족,만족,매우만족,매우만족,만족,,,,,비싸요,100,Kang Alex,Technical Service
+CS-000932,2025. 03. 25 10:02:31,AS-0000151550,한성치과기공소,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,,100,Kang Alex,Technical Service
+CS-000930,2025. 03. 21 10:56:26,AS-0000151593,율하위치과,다소 불만족,매우만족,매우만족,매우만족,만족,,익일,,,,80,Kang Alex,Technical Service
+CS-000922,2025. 03. 06 12:31:47,AS-0000150889,율하위치과,만족,매우만족,매우만족,매우만족,매우만족,,,,,,100,Kang Alex,Technical Service
+CS-000898,2025. 01. 23 13:17:26,AS-0000148933,힐스치과_부산 해운대구,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,,100,Kang Alex,Technical Service
+CS-000946,2025. 04. 30 15:51:32,AS-0000153827,512(오일이)치과기공소,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,,100,Lee Jay,Technical Service
+CS-000941,2025. 04. 16 10:01:18,AS-0000152609,512(오일이)치과기공소,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,,100,Lee Jay,Technical Service
+CS-000934,2025. 03. 27 17:10:27,AS-0000152104,유펜아이비치과의원,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,,100,Lee Jay,Technical Service
+CS-000912,2025. 02. 19 17:40:57,AS-0000149891,우리치과의원,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,타사 경쟁 제품 대비 더 높은 내구도가 필요합니다 그러면 수리나 보수 필요가 확 줄 것이기 때문이죠,100,Lee Jay,Technical Service
+CS-000955,2025. 05. 20 11:27:35,AS-0000154952,연세하이디치과의원,만족,만족,만족,매우만족,만족,,,,,,100,Yang Moon,Technical Service
+CS-000919,2025. 02. 26 17:25:52,AS-0000150215,김앤이치과의원,매우만족,매우만족,매우만족,매우만족,매우만족,,,,,잘 모르겠어요^^,100,Yang Moon,Technical Service
+CS-000899,2025. 01. 23 20:02:09,AS-0000149068,연세유라인치과의원_서울 송파구,만족,만족,매우만족,매우만족,매우만족,,,,,,100,Yang Moon,Technical Service
+`;
+
+        let allSurveyResponses = []; // 모든 설문 응답을 저장할 배열
+
+        /**
+         * CSV 데이터를 파싱하고 직원별 만족도 데이터 및 전체 응답을 계산합니다.
+         * @param {string} csvString - 원본 CSV 데이터 문자열.
+         * @returns {{employeeStats: Object.<string, {averageSatisfaction: number, count: number}>, allResponses: Array<Object>, totalResponsesCount: number, overallTeamSatisfaction: number}}
+         * 직원별 평균 만족도, 모든 응답 데이터, 전체 응답 수, 팀 전체 만족도 점수를 포함하는 객체.
+         */
+        function parseCsvData(csvString) {
+            const lines = csvString.trim().split('\n');
+            if (lines.length < 2) {
+                console.error("CSV 데이터가 헤더 또는 데이터 행을 포함하지 않습니다.");
+                return { employeeStats: {}, allResponses: [], totalResponsesCount: 0, overallTeamSatisfaction: 0 };
+            }
+
+            const headers = lines[0].split(',');
+            const employeeNameColIndex = headers.indexOf('서비스 담당자');
+            const satisfactionRateColIndex = headers.indexOf('General Satisfaction Rate');
+
+            if (employeeNameColIndex === -1 || satisfactionRateColIndex === -1) {
+                console.error("필수 열('서비스 담당자' 또는 'General Satisfaction Rate')을 찾을 수 없습니다.");
+                return { employeeStats: {}, allResponses: [], totalResponsesCount: 0, overallTeamSatisfaction: 0 };
+            }
+
+            const employeeData = {};
+            const responses = [];
+            let validResponseCount = 0;
+            let totalTeamSatisfactionSum = 0; // 팀 전체 만족도 합계를 위한 변수
+
+            for (let i = 1; i < lines.length; i++) {
+                const row = lines[i].split(',');
+                // 빈 행이거나 컬럼 수가 부족한 행은 건너뜁니다.
+                if (row.length < headers.length || row.every(cell => cell.trim() === '')) {
+                    continue;
+                }
+
+                const employeeName = row[employeeNameColIndex]?.trim();
+                const satisfactionRateStr = row[satisfactionRateColIndex]?.trim();
+                const satisfactionRate = parseFloat(satisfactionRateStr);
+
+                const rowObject = {};
+                headers.forEach((header, index) => {
+                    rowObject[header.trim()] = row[index]?.trim() || '';
+                });
+                responses.push(rowObject);
+
+                // 유효한 응답만 집계에 포함합니다.
+                if (employeeName && satisfactionRateStr && !isNaN(satisfactionRate)) {
+                    if (!employeeData[employeeName]) {
+                        employeeData[employeeName] = { totalSatisfaction: 0, count: 0 };
+                    }
+                    employeeData[employeeName].totalSatisfaction += satisfactionRate;
+                    employeeData[employeeName].count += 1;
+                    totalTeamSatisfactionSum += satisfactionRate; // 팀 전체 합계에 추가
+                    validResponseCount++;
+                } else {
+                    // 어떤 행이 왜 건너뛰어졌는지 콘솔에 경고 메시지를 출력합니다.
+                    let reason = [];
+                    if (!employeeName) reason.push('서비스 담당자 누락');
+                    if (!satisfactionRateStr) reason.push('General Satisfaction Rate 문자열 누락');
+                    if (isNaN(satisfactionRate)) reason.push('General Satisfaction Rate 유효하지 않은 숫자');
+                    console.warn(`행 ${i+1} 건너김 (사유: ${reason.join(', ')}): "${lines[i]}"`);
+                }
+            }
+
+            const resultStats = {};
+            for (const name in employeeData) {
+                if (employeeData[name].count > 0) {
+                    resultStats[name] = {
+                        averageSatisfaction: (employeeData[name].totalSatisfaction / employeeData[name].count).toFixed(2),
+                        count: employeeData[name].count
+                    };
+                }
+            }
+
+            // 팀 전체 고객만족도 점수 계산
+            const overallTeamSatisfaction = validResponseCount > 0 ? (totalTeamSatisfactionSum / validResponseCount).toFixed(2) : 0;
+
+            return {
+                employeeStats: resultStats,
+                allResponses: responses,
+                totalResponsesCount: validResponseCount,
+                overallTeamSatisfaction: parseFloat(overallTeamSatisfaction) // 숫자로 변환하여 반환
+            };
+        }
+
+        /**
+         * 계산된 직원별 만족도 데이터를 웹페이지에 렌더링하고 전체 응답 수 및 팀 전체 만족도 점수를 표시합니다.
+         * 각 직원 카드에 클릭 이벤트 리스너를 추가하여 상세 VOC를 볼 수 있도록 합니다.
+         * @param {Object.<string, {averageSatisfaction: number, count: number}>} data - 직원별 평균 만족도 데이터.
+         * @param {number} totalCount - 전체 설문 응답 수.
+         * @param {number} overallScore - 팀 전체 고객 만족도 점수.
+         */
+        function renderSatisfactionData(data, totalCount, overallScore) {
+            const container = document.getElementById('employee-satisfaction-data');
+            const totalResponsesElement = document.getElementById('total-responses');
+            const overallSatisfactionElement = document.getElementById('overall-satisfaction-score');
+            container.innerHTML = ''; // 기존 내용 지우기
+
+            totalResponsesElement.textContent = `팀 전체 응답 수: ${totalCount}건`;
+            overallSatisfactionElement.textContent = `팀 전체 고객 만족도 점수: ${overallScore}%`;
+
+            if (Object.keys(data).length === 0) {
+                container.innerHTML = '<p class="text-center text-gray-600 col-span-full">표시할 데이터가 없습니다.</p>';
+                return;
+            }
+
+            // 만족도 점수를 기준으로 내림차순 정렬
+            const sortedEmployees = Object.entries(data).sort(([, a], [, b]) => b.averageSatisfaction - a.averageSatisfaction);
+
+            sortedEmployees.forEach(([employeeName, employeeStats]) => {
+                const average = parseFloat(employeeStats.averageSatisfaction);
+                const count = employeeStats.count;
+
+                // 만족도 바 색상 결정
+                let barColorClass = 'bg-gray-400'; // 기본값
+                if (average >= 90) {
+                    barColorClass = 'bg-green-500';
+                } else if (average >= 70) {
+                    barColorClass = 'bg-yellow-500';
+                } else {
+                    barColorClass = 'bg-red-500';
+                }
+
+                const cardHtml = `
+                    <div class="bg-white rounded-lg shadow-md p-5 border border-gray-200 cursor-pointer hover:shadow-xl transition-shadow duration-200" data-employee-name="${employeeName}">
+                        <h2 class="text-xl font-semibold text-gray-700 mb-2">${employeeName}</h2>
+                        <p class="text-gray-600 mb-4">총 응답 수: ${count}건</p>
+                        <div class="mb-4">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm font-medium text-gray-700">평균 만족도:</span>
+                                <span class="text-lg font-bold text-gray-800">${average}%</span>
+                            </div>
+                            <div class="satisfaction-bar-container">
+                                <div class="satisfaction-bar ${barColorClass}" style="width: ${average}%;"></div>
+                            </div>
+                        </div>
+                        <button class="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors duration-200 text-sm" onclick="showVocDetails('${employeeName}')">VOC 상세 보기</button>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', cardHtml);
+            });
+        }
+
+        /**
+         * 특정 직원의 VOC 상세 내역을 모달로 표시합니다.
+         * '응답 1, 2' 대신 'Customer info' 필드의 값을 사용합니다.
+         * @param {string} employeeName - VOC를 표시할 직원의 이름.
+         */
+        function showVocDetails(employeeName) {
+            const modal = document.getElementById('voc-modal');
+            const modalEmployeeName = document.getElementById('modal-employee-name');
+            const vocDetailsContent = document.getElementById('voc-details-content');
+
+            modalEmployeeName.textContent = `${employeeName} 고객 VOC 상세 내역`;
+            vocDetailsContent.innerHTML = ''; // 이전 내용 지우기
+
+            const employeeVoc = allSurveyResponses.filter(response => response['서비스 담당자'] === employeeName);
+
+            if (employeeVoc.length === 0) {
+                vocDetailsContent.innerHTML = '<p class="text-gray-600">해당 직원에 대한 VOC가 없습니다.</p>';
+            } else {
+                employeeVoc.forEach((voc) => {
+                    const customerInfo = voc['Customer info'] || '고객 정보 없음'; // Customer info 사용
+                    const vocItem = `
+                        <div class="border-b border-gray-100 py-3 last:border-b-0">
+                            <p class="text-sm text-gray-500 mb-1"><strong>고객 정보:</strong> ${customerInfo}</p>
+                            ${voc['어떤 문제가 해결되지 않았나요?'] ? `<p><strong>해결되지 않은 문제:</strong> ${voc['어떤 문제가 해결되지 않았나요?']}</p>` : ''}
+                            ${voc['얼마나 신속한 방문이 적정할지?'] ? `<p><strong>적정 방문 신속성:</strong> ${voc['얼마나 신속한 방문이 적정할지?']}</p>` : ''}
+                            ${voc['응대직원의 어떤 점이 불편했는지?'] ? `<p><strong>응대 불편 사항:</strong> ${voc['응대직원의 어떤 점이 불편했는지?']}</p>` : ''}
+                            ${voc['설명에서 어떤 점이 부족했는지?'] ? `<p><strong>설명 부족 사항:</strong> ${voc['설명에서 어떤 점이 부족했는지?']}</p>` : ''}
+                            ${voc['전반적 서비스에서 개선되어야 할 부분은?'] ? `<p><strong>개선 필요 사항:</strong> ${voc['전반적 서비스에서 개선되어야 할 부분은?']}</p>` : ''}
+                            ${voc['General Satisfaction Rate'] !== undefined && voc['General Satisfaction Rate'] !== '' ? `<p><strong>전반적 만족도:</strong> ${voc['General Satisfaction Rate']}%</p>` : ''}
+                        </div>
+                    `;
+                    vocDetailsContent.insertAdjacentHTML('beforeend', vocItem);
+                });
+            }
+
+            modal.classList.add('open'); // 모달 열기
+        }
+
+        // 모달 닫기 기능
+        document.getElementById('close-modal').addEventListener('click', () => {
+            document.getElementById('voc-modal').classList.remove('open');
+        });
+
+        // 모달 외부 클릭 시 닫기
+        document.getElementById('voc-modal').addEventListener('click', (event) => {
+            if (event.target === event.currentTarget) {
+                document.getElementById('voc-modal').classList.remove('open');
+            }
+        });
+
+        // 페이지 로드 시 데이터 처리 및 렌더링
+        window.onload = function() {
+            const { employeeStats, allResponses, totalResponsesCount, overallTeamSatisfaction } = parseCsvData(csvData);
+            allSurveyResponses = allResponses; // 전역 변수에 모든 응답 저장
+            renderSatisfactionData(employeeStats, totalResponsesCount, overallTeamSatisfaction);
+        };
+    </script>
+</body>
+</html>
