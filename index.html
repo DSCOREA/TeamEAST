@@ -157,12 +157,34 @@
             border-color: rgba(255, 159, 10, 0.3);
         }
 
+        /* 모바일 반응형 추가 */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.8rem; }
-            .hero .subtitle { font-size: 1.2rem; }
-            .hero-content { padding: 2.5rem 2rem; margin: 1rem;}
-            .tools-grid { grid-template-columns: 1fr; }
+            .container {
+                max-width: 90vw;
+            }
+            .hero {
+                padding: 1.5rem;
+            }
+            .hero h1 {
+                font-size: clamp(1.5rem, 6vw, 3rem);
+            }
+            .hero .subtitle {
+                font-size: clamp(0.85rem, 4vw, 1.4rem);
+                line-height: 1.4;
+            }
+            .hero-content {
+                padding: 1.5rem;
+            }
+            .tools-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                margin: 2rem 0;
+            }
+            .tool-card {
+                padding: 1.5rem 1rem;
+            }
         }
+
         .floating-elements {
             position: fixed;
             top: 0; left: 0;
@@ -184,7 +206,7 @@
             25% { transform: translate(40px, -40px) rotate(90deg);}
             50% { transform: translate(-30px, 30px) rotate(180deg);}
             75% { transform: translate(-40px, -20px) rotate(270deg);}
-        }        
+        }
     </style>
 </head>
 <body>
@@ -206,19 +228,19 @@
                         <p>설치 후 관리부터 지속적인 고객 케어까지 체계적으로 관리할 수 있는 월별 필터링 시스템</p>
                         <span class="tool-status">사용가능</span>
                     </div>
-                    <div class="tool-card" onclick="window.open('Primescan Configration Suite v1.3 Manual.html', '_blank')">
+                     <div class="tool-card" onclick="window.open('Primescan Configration Suite v1.3 Manual.html', '_blank')">
                         <div class="tool-icon">📊</div>
                         <h3>Primescan Configration Suite v1.3 Manual</h3>
                         <p>DSGO GUI 간단 안내 설명서</p>
                         <span class="tool-status">사용가능</span>
                     </div>
-                    <div class="tool-card" onclick="window.open('inventory.html', '_blank')">
+                    <div class="tool-card" onclick="window.open('resource-library.html', '_blank')">
                         <div class="tool-icon">📚</div>
                         <h3>자료실</h3>
                         <p>팀 내 공유 자료, 매뉴얼, 템플릿 등을 체계적으로 관리하고 쉽게 접근할 수 있는 라이브러리</p>
                         <span class="tool-status coming-soon">준비중</span>
                     </div>
-                 </div>
+                   </div>
             </div>
         </div>
     </div>
