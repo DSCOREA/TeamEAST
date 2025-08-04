@@ -62,7 +62,7 @@
     <div class="container mx-auto p-4 md:p-8">
         <header class="text-center mb-4">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800">거래처 장비 위치 현황</h1>
-            <p class="text-gray-600 mt-2">필터를 선택하여 거래처 목록을 확인하세요.<br>상세정보 확장 후 주소를 선택하면 복사가 됩니다.</p>
+            <p class="text-gray-600 mt-2">필터를 선택하여 거래처 목록을 확인하세요.<br>상세 정보를 확장한 뒤 주소를 선택하면, 주소가 복사됩니다.<br>세부 주소에 따라 지도가 표시되지 않을 수 있습니다.</p>
         </header>
 
         <!-- 필터 그룹 -->
@@ -74,7 +74,7 @@
                 <option value="">-- 시/도 --</option>
             </select>
             <select id="sigungu-filter" class="block w-full sm:w-auto bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 rounded-lg shadow-md focus:outline-none focus:shadow-outline" disabled>
-                <option value="">-- 시/군/구 --</option>
+                <option value="">-- 군/구 --</option>
             </select>
              <select id="product-filter" class="block w-full sm:w-auto bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 rounded-lg shadow-md focus:outline-none focus:shadow-outline" disabled>
                 <option value="">-- 제품 --</option>
@@ -113,7 +113,7 @@
         let activeMap = null;
 
         // --- 2. CSV 데이터 ---
-        const csvData = `고객 이름,AX 코드,시도,시군구,상세주소(도로명주소),전화,제품,ref,제조번호,설치일자,구매유형,S.Territory
+        const csvData = `고객 이름,AX 코드,시도,군구,상세주소(도로명주소),전화,제품,ref,제조번호,설치일자,구매유형,S.Territory
 2D치과,112384,서울특별시,강남구,강남대로 470,02-512-2295,CEREC Primemill,6617570,602861,2021-11-30,New,EAST
 이노스치과의원,108196,경기도,평택시,경기대로 1188,031-667-2802,CEREC Primemill,6617570,601668(639),2021-12-07,Showroom,WEST
 당신의 라이프 치과의원,112223,경기도,수원시,영통구 덕영대로 1478,031-205-8008,CEREC Primemill,6617570,603185,2021-12-23,New,WEST
@@ -2537,7 +2537,7 @@ KUNSAN AB,111387,전북특별자치도,군산시,8MDG 8MDSS SGSM BLDG 421 E 9TH 
             // Reset and disable subsequent filters
             sidoFilter.innerHTML = '<option value="">-- 시/도 --</option>';
             sidoFilter.disabled = true;
-            sigunguFilter.innerHTML = '<option value="">-- 시/군/구 --</option>';
+            sigunguFilter.innerHTML = '<option value="">-- 군/구 --</option>';
             sigunguFilter.disabled = true;
             productFilter.innerHTML = '<option value="">-- 제품 --</option>';
             productFilter.disabled = true;
@@ -2562,7 +2562,7 @@ KUNSAN AB,111387,전북특별자치도,군산시,8MDG 8MDSS SGSM BLDG 421 E 9TH 
             const selectedTeam = teamFilter.value;
             const selectedSido = sidoFilter.value;
 
-            sigunguFilter.innerHTML = '<option value="">-- 시/군/구 --</option>';
+            sigunguFilter.innerHTML = '<option value="">-- 군/구 --</option>';
             sigunguFilter.disabled = true;
             productFilter.innerHTML = '<option value="">-- 제품 --</option>';
             productFilter.disabled = true;
