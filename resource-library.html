@@ -2,8 +2,8 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>벽돌깨기 게임 (레벨 & 라이프 추가)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0" />
+  <title>벽돌깨기 모바일 대응</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
   <style>
     body {
@@ -15,11 +15,14 @@
       background: #000;
       overflow: hidden;
       user-select: none;
+      -webkit-user-select: none;
+      touch-action: none;
     }
     canvas {
       display: block;
       border: 2px solid #fff;
       background: #111;
+      touch-action: none;
     }
     #restartButton {
       position: absolute;
@@ -54,7 +57,7 @@ const brickColumnCount = 8;
 const brickWidth = 75;
 const brickHeight = 20;
 const brickPadding = 10;
-const brickOffsetTop = 30;
+const brickOffsetTop = 80;   // 블럭 시작점 더 아래로 조정(점수판 공간 확보)
 const brickOffsetLeft = 30;
 
 let score = 0;
@@ -63,6 +66,7 @@ let lives = 3;
 let level = 1;
 let isLevelCleared = false;
 let levelClearTimer = 0;
+let dragging = false;      // 패들을 드래그/터치로 조작할 때 사용하는 변수
 
 function setup() {
   createCanvas(800, 600);
@@ -78,7 +82,7 @@ function setup() {
 function resetGame() {
   paddle = createVector(width / 2 - paddleWidth / 2, height - 20);
   ball = createVector(width / 2, height - 30);
-  ballSpeedX = 4 + (level - 1) * 0.8; // 레벨당 속도 증가
+  ballSpeedX = 4 + (level - 1) * 0.8;
   ballSpeedY = -4 - (level - 1) * 0.8;
   score = 0;
   lives = 3;
@@ -104,7 +108,6 @@ function generateBricks() {
   }
 }
 
-// 다음 레벨 초기화
 function nextLevel() {
   level++;
   ball = createVector(width / 2, height - 30);
@@ -120,16 +123,16 @@ function nextLevel() {
 function draw() {
   background(0);
 
+  drawScoreLivesLevel();
+  drawBricks();
   drawPaddle();
   drawBall();
-  drawBricks();
-  drawScoreLivesLevel();
 
   if (gameOver) {
     fill(255, 50, 50);
     textSize(48);
     textAlign(CENTER, CENTER);
-    text("게임 오버!\n최종 점수: " + score + "\nR키 또는 버튼으로 재시작", width / 2, height / 2);
+    text("게임 오버!\n최종 점수: " + score + "\nR키 또는 버튼으로 재시작", width / 2, height / 2 + 30);
     restartButton.show();
     noLoop();
     return;
@@ -147,7 +150,7 @@ function draw() {
     if (levelClearTimer > 1000) {
       nextLevel();
     }
-    return; // 다음 레벨 전까지 게임 진행 일시 중지
+    return;
   }
 
   handleInput();
@@ -174,7 +177,6 @@ function drawBricks() {
         bricks[c][r].x = brickX;
         bricks[c][r].y = brickY;
 
-        // 벽돌 색상: 레벨별, 행별로 다르게
         let baseHue = (level * 50 + r * 40) % 360;
         colorMode(HSL, 360, 100, 50);
         fill(baseHue, 80, 55);
@@ -186,33 +188,53 @@ function drawBricks() {
 }
 
 function drawScoreLivesLevel() {
-  fill(255);
-  textSize(18);
+  fill(255,255,255);
+  textSize(20);
   textAlign(LEFT, TOP);
-  text(`점수: ${score}`, 10, 10);
-  text(`라이프: ${lives}`, 10, 35);
-  text(`레벨: ${level}`, 10, 60);
+  // 상단에 고정(좌측에서 brickOffsetTop=80보다 위에)
+  text(`점수: ${score}   라이프: ${lives}   레벨: ${level}`, 16, 20);
 }
 
 function handleInput() {
-  if (keyIsDown(LEFT_ARROW)) {
-    paddle.x -= 7;
+  // 좌우 화살표 지원
+  if (keyIsDown(LEFT_ARROW)) paddle.x -= 7;
+  if (keyIsDown(RIGHT_ARROW)) paddle.x += 7;
+
+  // 드래그/터치, 마우스 이동으로 패들 따라가기
+  if (dragging && (mouseIsPressed || touches.length > 0)) {
+    // 터치, 클릭 모두 지원
+    let pointerX = touches.length > 0 ? touches[0].x : mouseX;
+    paddle.x = pointerX - paddleWidth / 2;
   }
-  if (keyIsDown(RIGHT_ARROW)) {
-    paddle.x += 7;
-  }
-  if (touches.length > 0) {
-    let touchX = touches[0].x;
-    paddle.x = touchX - paddleWidth / 2;
-  }
+
+  // 범위 제한
   paddle.x = constrain(paddle.x, 0, width - paddleWidth);
+}
+
+// 마우스 클릭 또는 터치 시작시 드래깅
+function mousePressed() {
+  // 마우스로 패들 클릭했거나, 화면 어디든 터치하면 시작
+  dragging = true;
+  return false;
+}
+function mouseReleased() {
+  dragging = false;
+  return false;
+}
+function touchStarted() {
+  dragging = true;
+  return false;
+}
+function touchEnded() {
+  dragging = false;
+  return false;
 }
 
 function moveBall() {
   ball.x += ballSpeedX;
   ball.y += ballSpeedY;
 
-  // 좌우 벽 반사
+  // 좌우
   if (ball.x < ballSize / 2) {
     ball.x = ballSize / 2;
     ballSpeedX *= -1;
@@ -221,22 +243,20 @@ function moveBall() {
     ball.x = width - ballSize / 2;
     ballSpeedX *= -1;
   }
-  // 위 벽 반사
+  // 위
   if (ball.y < ballSize / 2) {
     ball.y = ballSize / 2;
     ballSpeedY *= -1;
   }
-  // 바닥에 닿으면 라이프 감소
+  // 바닥
   if (ball.y > height) {
     lives--;
     if (lives <= 0) {
       gameOver = true;
     } else {
-      // 라이프 남으면 공 위치 및 속도 초기화 (현재 레벨 속도 유지)
       ball = createVector(width / 2, height - 30);
       ballSpeedX = 4 + (level - 1) * 0.8;
       ballSpeedY = -4 - (level - 1) * 0.8;
-      // 패들 중앙으로 이동
       paddle = createVector(width / 2 - paddleWidth / 2, height - 20);
       noLoop();
       setTimeout(loop, 1000);
@@ -245,7 +265,7 @@ function moveBall() {
 }
 
 function checkCollisions() {
-  // 패들 충돌 처리 - 공이 패들에 닿으면 튕기는데 패들 좌우 위치에 따라 각도 조정
+  // 패들 충돌(터치 위치 포함)
   if (
     ball.y + ballSize / 2 >= paddle.y &&
     ball.y + ballSize / 2 <= paddle.y + paddleHeight &&
@@ -253,13 +273,10 @@ function checkCollisions() {
     ball.x <= paddle.x + paddleWidth &&
     ballSpeedY > 0
   ) {
-    // 반사
     ballSpeedY *= -1;
-
-    // 패들 중앙을 기준으로 공의 x 위치에 따라 X 속도 조정 (-5 ~ 5 범위)
     let hitPoint = ball.x - (paddle.x + paddleWidth / 2);
     ballSpeedX = map(hitPoint, -paddleWidth / 2, paddleWidth / 2, -7, 7);
-    ball.y = paddle.y - ballSize / 2; // 공이 패들 아래 들어가지 않도록 위치 조정
+    ball.y = paddle.y - ballSize / 2;
   }
 
   // 벽돌 충돌
@@ -275,17 +292,13 @@ function checkCollisions() {
         ) {
           ballSpeedY *= -1;
           b.status = 0;
-
-          // 벽돌 위치에 따라 점수 차등 부여 (위쪽이 더 높음)
           score += (brickRowCount - r) * 10;
 
-          // 모든 벽돌이 깨졌는지 확인
           if (isAllBricksCleared()) {
             isLevelCleared = true;
             noLoop();
           }
-
-          return; // 한 번에 여러 벽돌 충돌 방지
+          return;
         }
       }
     }
@@ -304,9 +317,7 @@ function isAllBricksCleared() {
 }
 
 function keyPressed() {
-  if (gameOver && (key === "r" || key === "R")) {
-    resetGame();
-  }
+  if (gameOver && (key === "r" || key === "R")) resetGame();
 }
 </script>
 </body>
