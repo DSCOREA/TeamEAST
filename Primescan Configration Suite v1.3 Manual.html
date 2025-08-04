@@ -78,7 +78,7 @@
         var pages = {
             'home': [
                 '<div class="content-wrapper">',
-                '    <div class="header"><h1>Primescan Configuration Suite v1.3 둘러보기</h1><p>원하는 작업을 선택하여 실행하세요.<br><br><b>DSGO GUI 메인 화면 입니다.<br>만약 백신 경고가 발생하면 Media 폴더에 있는 ExclusionPath를 관리자 권한으로 실행 후 사용하세요.</b></p></div>',
+                '    <div class="header"><h1>Primescan Configuration Suite v1.3 둘러오기</h1><p>원하는 작업을 선택하여 실행하세요.<br><br><b>DSGO GUI 메인 화면 입니다.<br>만약 백신 경고가 발생하면 Media 폴더에 있는 ExclusionPath를 관리자 권한으로 실행 후 사용하세요.</b></p></div>',
                 '    <div class="card-container">',
                 '        <div class="card" onclick="showDescriptionModal(\'기본 설정\', \'시스템 최적화 및 개인화 설정을 자동으로 적용합니다. 다음 항목이 포함됩니다.<br><br>1. 시스템 최적화 (코타나, 원드라이브 등 불필요한 서비스 비활성)<br>2. 퍼포먼스 향상 (전원 고성능 및 USB 절전 해제, 덮개 동작 설정)<br>3. 윈도우 보안 설정 (공유권한 설정, UAC, 방화벽, 정보수집 비활성)<br>4. 기타 환경 설정 (표준 시간대, 바탕화면 아이콘 등 바로가기 생성)\', () => runScriptWithProgress(\'TASK_01\', \'기본 설정을 적용하는 중입니다...\'))">',
                 '            <svg class="card-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">',
@@ -112,7 +112,7 @@
                 '    <div id="software-list"></div>',
                 '    <div class="action-grid">',
                 '        <div class="btn" onclick="showDescriptionModal(\'샘플 데이터 복사\', \'샘플 데이터(홍,길동)를 복사합니다.<br>이미 파일이 존재할 경우 덮어쓰기됩니다.\', ()=> runScriptWithProgress(\'TASK_03\', \'샘플 데이터를 복사하는 중입니다...\'))"><h2>샘플 데이터 복사</h2></div>',
-                '        <div class="btn" onclick="showDescriptionModal(\'설치프로그램 및 악세서리 복사\', \'관리에 필요한 자료를 D 드라이브에 복사합니다.<br>(DrPrimescan, 원격지원, 스냅샷, 사용자 메뉴얼 등)\', () => runScriptWithProgress(\'TASK_04\', \'설치프로그램 및 악세서리 복사하는 중입니다...\'))"><h2>설치프로그램 및 악세서리 복사</h2></div>',
+                '        <div class="btn" onclick="showDescriptionModal(\'설치프로그램 및 악세서리 복사\', \'관리에 필요한 자료를 D 드라이브에 복사합니다.<br>(DrPrimescan, 원격지원, 스냅샷, 사용자 메뉴얼 등)<br><br><b>SW-Tools</b><br>SetFile2Desktop를 실행하면<br>싱글스타터, 클린스타터, 원격지원, DI Monitor 등의 바로가기가 생성됩니다.<br><br>OneSnapBack을 실행하면<br>현재 설치된 프로그램 리스트와 바탕화면이 캡쳐되어 함께 저장됩니다.<br><br>TC는 템퍼러리 삭제 도구 입니다.<br><br>TresSize는 스캔 파일 용량 분석을 하고 고객 안내할 때 활용하시면 좋습니다.<br><br>FootSwitch는 가장 많이 사용하는 제품의 드라이버입니다.\', () => runScriptWithProgress(\'TASK_04\', \'설치프로그램 및 악세서리 복사하는 중입니다...\'))"><h2>설치프로그램 및 악세서리 복사</h2></div>',
                 '        <div class="btn" onclick="showDescriptionModal(\'업데이트 차단하기\', \'Windows 업데이트 차단 프로그램을 백그라운드에서 실행합니다.<br>이 기능은 자동으로 적용되며, 별도의 창이 나타나지 않습니다.\', () => showCustomAlert(\'업데이트 차단 기능이 실행되었습니다.\', 3))"><h2>업데이트 차단하기</h2></div>',
                 '        <div class="btn" onclick="showDescriptionModal(\'디펜더 비활성화하기\', \'Windows Defender를 비활성화하는 프로그램을 실행합니다.<br>프로그램 창이 열리면 직접 비활성화 작업을 진행할 수 있습니다.\', () => showCustomAlert(\'디펜더 비활성화 프로그램을 실행합니다.\', 3))"><h2>디펜더 비활성화하기</h2></div>',
                 '    </div>',
@@ -309,4 +309,3 @@
     </div>
 </body>
 </html>
-
