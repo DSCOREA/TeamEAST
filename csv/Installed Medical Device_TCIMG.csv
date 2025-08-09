@@ -1,0 +1,878 @@
+고객 이름,Membership Type,시도,시군구,상세주소,전화,제품,ref,제조번호,설치일자,AX 코드,S.Territory
+사람사랑치과의원_전북 전주시,6368034 year generator/sensor warranty(3D),전북특별자치도,전주시,완산구 온고을로 18 ,063-275-7578,Axeos,Axeos,1197,2025-02-27,101820,WEST
+서울매일치과병원,6368034 year generator/sensor warranty(3D),강원특별자치도,원주시,만대공원길 59,033-812-2882,Axeos,Axeos,1196,2024-08-19,114204,EAST
+이운철치과,6368034 year generator/sensor warranty(3D),경상북도,구미시,원남로 37,054-451-6060,Axeos,Axeos,1186,2024-03-27,111992,EAST
+디지털프라임치과_경기 남양주,6368034 year generator/sensor warranty(3D),경기도,남양주시,늘을1로16번길 29,031-595-5300,Axeos,Axeos,1170,2023-12-28,111152,EAST
+메이연세치과,6368034 year generator/sensor warranty(3D),서울특별시,송파구,문정로 83 문정래미안 상가 207호,02-401-0275,Axeos,Axeos,1184,2023-12-20,102424,EAST
+이음구강악안면외과치과의원,6368034 year generator/sensor warranty(3D),충청남도,예산군,예산읍 금오대로 45.2층,041-335-9595,Axeos,Axeos,1169,2023-02-25,111276,WEST
+뉴삼성치과,6368034 year generator/sensor warranty(3D),충청북도,진천군,진천읍 중앙북1길 3,043-930-2875,Axeos,Axeos,1120,2022-10-08,110710,WEST
+예인치과의원_경남 창원,6368034 year generator/sensor warranty(3D),경상남도,창원시,의창구 원이대로 581,055-273-7528,Axeos,Axeos,1121,2022-09-29,111915,EAST
+더블유화이트치과의원,6368034 year generator/sensor warranty(3D),서울특별시,강남구,테헤란로87길 17 ,02-564-0075,Axeos,Axeos,1001,2022-06-24,105522,EAST
+미소현치과의원,6368034 year generator/sensor warranty(3D),서울특별시,영등포구,여의대방로 83,02-844-2080,Axeos ceph,Axeos_C,1224,2025-04-29,111498,WEST
+백진우치과의원,6368034 year generator/sensor warranty(3D),서울특별시,양천구,목동동로8길 17 ,02-2652-2011,Axeos ceph,Axeos_C,1202,2025-01-02,112058,WEST
+형제치과의원,6368034 year generator/sensor warranty(3D),제주특별자치도,서귀포시,중정로 104,064-763-9800,Axeos ceph,Axeos_C,1200,2024-07-31,113832,WEST
+램브란트치과 (상인점),6368034 year generator/sensor warranty(3D),대구광역시,달서구,월배로 175 ,053-643-2875,Axeos ceph,Axeos_C,1199,2023-12-28,108232,EAST
+아이브 치과의원,6368034 year generator/sensor warranty(3D),전북특별자치도,전주시,덕진구 세병로 21,063-717-2882,Axeos ceph,Axeos_C,1198,2023-12-06,113638,WEST
+화이트치과의원_경기도 의정부,6368034 year generator/sensor warranty(3D),경기도,의정부시,체육로 304,031-826-2871,Axeos ceph,Axeos_C,1191,2023-11-22,113560,EAST
+다른치과 (DARN Dental Clinic),6368034 year generator/sensor warranty(3D),서울특별시,강남구,강남대로 652,02-3446-2080,Axeos ceph,Axeos_C,1190,2023-09-27,113349,EAST
+사과나무치과의원,6368034 year generator/sensor warranty(3D),경기도,부천시,역곡로 8,032-343-2871,Axeos ceph,Axeos_C,1189,2023-09-20,109093,WEST
+사과나무치과의원_충남 아산,6368034 year generator/sensor warranty(3D),충청남도,아산시,탕정면 매곡리 1218 젤존트윈시티 1동 405호,041-427-2882,Axeos ceph,Axeos_C,1172,2023-08-07,113367,WEST
+꿈을이루는수치과,6368034 year generator/sensor warranty(3D),충청남도,아산시,배방읍 고속철대로 147 우성메디피아 4층,041-556-2282,Axeos ceph,Axeos_C,1171,2023-03-25,109073,WEST
+서울리멤버치과의원,6368034 year generator/sensor warranty(3D),서울특별시,관악구,남부순환로 1830,02-884-2080,Axeos ceph,Axeos_C,1138,2022-12-05,112969,WEST
+서울더고운치과의원,6368034 year generator/sensor warranty(3D),경기도,하남시,미사강변동로 81,031-8028-0275,Axeos ceph,Axeos_C,1137,2022-11-27,114030,EAST
+본수치과의원,,강원특별자치도,춘천시,후석로 328,033-252-7525,Treatment center Sinius,6308865,115780,2018-12-18,110477,EAST
+다른치과 (DARN Dental Clinic),6336767 Extended warranty (1+2) Sinius,서울특별시,강남구,강남대로 652,02-3446-2080,Treatment center Sinius,6308865,539113,2023-09-27,113349,EAST
+BK치과의원_충북 청주시,,충청북도,청주시,흥덕구 직지대로 530,043-264-0006,Treatment center Sinius,6308865,533636,2021-10-20,110330,WEST
+예인치과의원_경남 창원,6336791 Extended warranty Intego/pro 1+4,경상남도,창원시,의창구 원이대로 581,055-273-7528,Treatment center Intego,6427285,378363,2025-04-26,111915,EAST
+최영규치과의원,,서울특별시,양천구,목동동로 379,02-2642-6250,Treatment center Intego,6427285,244921,2018-11-14,110175,WEST
+양지바른치과,6336783 Extended warranty Intego/pro (1+2),서울특별시,서초구,방배로 118,02-581-2273,Treatment center Intego,6427285,378021,2025-03-26,109182,EAST
+분당서울대학교병원,6336791 Extended warranty Intego/pro 1+4,경기도,성남시,분당구 구미로173번길 82,031-787-1356,Treatment center Intego,6427285,378106,2025-03-20,104209,EAST
+국립암센터,6336783 Extended warranty Intego/pro (1+2),경기도,고양시,일산동구 일산로 323,031-1588-8110,Treatment center Intego,6427285,377702,2025-02-24,110110,WEST
+백진우치과의원,6336791 Extended warranty Intego/pro 1+4,서울특별시,양천구,목동동로8길 17 ,02-2652-2011,Treatment center Intego,6427285,377610,2025-02-01,112058,WEST
+백진우치과의원,6336791 Extended warranty Intego/pro 1+4,서울특별시,양천구,목동동로8길 17 ,02-2652-2011,Treatment center Intego,6427285,377590,2025-02-01,112058,WEST
+백진우치과의원,6336791 Extended warranty Intego/pro 1+4,서울특별시,양천구,목동동로8길 17 ,02-2652-2011,Treatment center Intego,6427285,377531,2025-02-01,112058,WEST
+백진우치과의원,6336791 Extended warranty Intego/pro 1+4,서울특별시,양천구,목동동로8길 17 ,02-2652-2011,Treatment center Intego,6427285,377528,2025-02-01,112058,WEST
+백진우치과의원,6336791 Extended warranty Intego/pro 1+4,서울특별시,양천구,목동동로8길 17 ,02-2652-2011,Treatment center Intego,6427285,377527,2025-02-01,112058,WEST
+BK치과의원_충북 청주시,6336783 Extended warranty Intego/pro (1+2),충청북도,청주시,흥덕구 직지대로 530,043-264-0006,Treatment center Intego,6427285,373297,2024-12-23,110330,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377283,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377285,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377286,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377288,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377270,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377271,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377273,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377291,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377269,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377292,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377293,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377295,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377267,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377268,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377290,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377294,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377281,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377282,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377284,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377287,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377289,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377265,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377266,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377272,2024-12-21,111541,WEST
+선문대학교,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 선문로221번길 70,041-530-2734,Treatment center Intego,6427285,377296,2024-12-21,111541,WEST
+황재웅치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강남구,논현로175길 18,02-517-5177,Treatment center Intego,6427285,377158,2024-12-11,114098,EAST
+국립암센터,6336783 Extended warranty Intego/pro (1+2),경기도,고양시,일산동구 일산로 323,031-1588-8110,Treatment center Intego,6427285,376374,2024-10-16,110110,WEST
+예인치과의원_경남 창원,6336783 Extended warranty Intego/pro (1+2),경상남도,창원시,의창구 원이대로 581,055-273-7528,Treatment center Intego,6427285,373151,2024-09-13,111915,EAST
+삼성서울병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강남구,일원로 81,02-3410-2828,Treatment center Intego,6427285,374338,2024-06-02,104334,EAST
+삼성서울병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강남구,일원로 81,02-3410-2828,Treatment center Intego,6427285,374337,2024-06-02,104334,EAST
+연세유펜치과_전북 전주,6336783 Extended warranty Intego/pro (1+2),전북특별자치도,전주시,완산구 마전들로 55,063-224-0028,Treatment center Intego,6427285,257639,2021-03-02,111962,WEST
+연세유펜치과_전북 전주,6336783 Extended warranty Intego/pro (1+2),전북특별자치도,전주시,완산구 마전들로 55,063-224-0028,Treatment center Intego,6427285,257638,2021-03-02,111962,WEST
+양지바른치과,6336783 Extended warranty Intego/pro (1+2),서울특별시,서초구,방배로 118,02-581-2273,Treatment center Intego,6427285,260326,2021-07-22,109182,EAST
+양지바른치과,6336783 Extended warranty Intego/pro (1+2),서울특별시,서초구,방배로 118,02-581-2273,Treatment center Intego,6427285,260325,2021-07-22,109182,EAST
+양지바른치과,6336783 Extended warranty Intego/pro (1+2),서울특별시,서초구,방배로 118,02-581-2273,Treatment center Intego,6427285,260324,2021-07-22,109182,EAST
+양지바른치과,6336783 Extended warranty Intego/pro (1+2),서울특별시,서초구,방배로 118,02-581-2273,Treatment center Intego,6427285,260323,2021-07-22,109182,EAST
+양지바른치과,6336783 Extended warranty Intego/pro (1+2),서울특별시,서초구,방배로 118,02-581-2273,Treatment center Intego,6427285,260322,2021-07-22,109182,EAST
+이사랑치과_서울 마포구,6336791 Extended warranty Intego/pro 1+4,서울특별시,마포구,백범로 205 펜트라우스 105동 1층,02-701-2199,Treatment center Intego,6427285,258697,2021-05-06,111156,WEST
+형제치과의원,6336783 Extended warranty Intego/pro (1+2),제주특별자치도,서귀포시,중정로 104,064-763-9800,Treatment center Intego,6427285,251294,2021-04-15,113832,WEST
+꿈을이루는수치과,6336791 Extended warranty Intego/pro 1+4,충청남도,아산시,배방읍 고속철대로 147 우성메디피아 4층,041-556-2282,Treatment center Intego,6427285,255542,2020-12-29,109073,WEST
+본수치과의원,6336791 Extended warranty Intego/pro 1+4,강원특별자치도,춘천시,후석로 328,033-252-7525,Treatment center Intego,6427285,257094,2020-12-17,110477,EAST
+형제치과의원,6336783 Extended warranty Intego/pro (1+2),제주특별자치도,서귀포시,중정로 104,064-763-9800,Treatment center Intego,6427285,251289,2020-12-03,113832,WEST
+임프라인치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,서대문구,신촌로 189 이화인비따레오피스텔 2층,02-364-2875,Treatment center Intego,6427285,255543,2020-11-25,108321,WEST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256001,2020-11-21,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256002,2020-11-21,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256006,2020-11-21,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256007,2020-11-21,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256008,2020-11-21,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256009,2020-11-21,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256010,2020-11-21,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256011,2020-11-21,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256220,2020-11-14,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256222,2020-11-14,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256223,2020-11-14,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256224,2020-11-14,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256214,2020-11-14,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256216,2020-11-14,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256217,2020-11-14,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256218,2020-11-14,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256215,2020-11-14,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256219,2020-11-14,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256221,2020-11-14,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256213,2020-11-07,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256212,2020-11-07,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256211,2020-11-07,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256210,2020-11-07,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256062,2020-11-07,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256061,2020-11-07,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256060,2020-11-07,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256059,2020-11-07,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256003,2020-10-31,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256004,2020-10-31,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256005,2020-10-31,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256055,2020-10-31,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256056,2020-10-31,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256057,2020-10-31,104215,EAST
+연세대학교 의과대학 강남세브란스병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,언주로 211,02-2019-1340,Treatment center Intego,6427285,256058,2020-10-31,104215,EAST
+인하대학교의과대학부속병원 (인하대병원),6336783 Extended warranty Intego/pro (1+2),인천광역시,중구,인항로 27,032-890-2472032-890-2114,Treatment center Intego,6427285,255852,2020-11-12,104954,WEST
+인하대학교의과대학부속병원 (인하대병원),6336783 Extended warranty Intego/pro (1+2),인천광역시,중구,인항로 27,032-890-2472032-890-2114,Treatment center Intego,6427285,255851,2020-11-12,104954,WEST
+인하대학교의과대학부속병원 (인하대병원),6336783 Extended warranty Intego/pro (1+2),인천광역시,중구,인항로 27,032-890-2472032-890-2114,Treatment center Intego,6427285,253453,2020-11-12,104954,WEST
+인하대학교의과대학부속병원 (인하대병원),6336783 Extended warranty Intego/pro (1+2),인천광역시,중구,인항로 27,032-890-2472032-890-2114,Treatment center Intego,6427285,253452,2020-11-12,104954,WEST
+인하대학교의과대학부속병원 (인하대병원),6336783 Extended warranty Intego/pro (1+2),인천광역시,중구,인항로 27,032-890-2472032-890-2114,Treatment center Intego,6427285,253451,2020-11-12,104954,WEST
+인하대학교의과대학부속병원 (인하대병원),6336783 Extended warranty Intego/pro (1+2),인천광역시,중구,인항로 27,032-890-2472032-890-2114,Treatment center Intego,6427285,253450,2020-11-12,104954,WEST
+(의료)길의료재단,6336791 Extended warranty Intego/pro 1+4,인천광역시,남동구,남동대로 774번길 21,032-460-3582,Treatment center Intego,6427285,256143,2020-10-13,104944,WEST
+이사랑치과_서울 마포구,6336791 Extended warranty Intego/pro 1+4,서울특별시,마포구,백범로 205 펜트라우스 105동 1층,02-701-2199,Treatment center Intego,6427285,254890,2020-06-25,111156,WEST
+이사랑치과_서울 마포구,6336791 Extended warranty Intego/pro 1+4,서울특별시,마포구,백범로 205 펜트라우스 105동 1층,02-701-2199,Treatment center Intego,6427285,254893,2020-06-25,111156,WEST
+심송치과의원,6336791 Extended warranty Intego/pro 1+4,경기도,수원시,영통구 광교호수공원로 277,031-215-3038~9,Treatment center Intego,6427285,253726,2020-01-20,109971,WEST
+심송치과의원,6336791 Extended warranty Intego/pro 1+4,경기도,수원시,영통구 광교호수공원로 277,031-215-3038~9,Treatment center Intego,6427285,253725,2020-01-20,109971,WEST
+더하루치과의원,6336791 Extended warranty Intego/pro 1+4,서울특별시,중구,을지로 251,02-2265-2875,Treatment center Intego,6427285,253533,2019-12-28,111378,WEST
+더하루치과의원,6336791 Extended warranty Intego/pro 1+4,서울특별시,중구,을지로 251,02-2265-2875,Treatment center Intego,6427285,253532,2019-12-28,111378,WEST
+더하루치과의원,6336791 Extended warranty Intego/pro 1+4,서울특별시,중구,을지로 251,02-2265-2875,Treatment center Intego,6427285,253531,2019-12-28,111378,WEST
+더하루치과의원,6336791 Extended warranty Intego/pro 1+4,서울특별시,중구,을지로 251,02-2265-2875,Treatment center Intego,6427285,253530,2019-12-28,111378,WEST
+더하루치과의원,6336791 Extended warranty Intego/pro 1+4,서울특별시,중구,을지로 251,02-2265-2875,Treatment center Intego,6427285,253529,2019-12-28,111378,WEST
+하임치과의원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,논현로98길 34,02-596-2080,Treatment center Intego,6427285,251293,2019-12-30,109155,EAST
+하임치과의원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,논현로98길 34,02-596-2080,Treatment center Intego,6427285,251292,2019-12-30,109155,EAST
+하임치과의원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,논현로98길 34,02-596-2080,Treatment center Intego,6427285,247021,2019-12-30,109155,EAST
+서울토토치과의원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,도곡로 521 203호,02-539-1106,Treatment center Intego,6427285,252806,2019-12-05,107117,EAST
+서울토토치과의원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강남구,도곡로 521 203호,02-539-1106,Treatment center Intego,6427285,252805,2019-12-05,107117,EAST
+연세주니어치과,6336791 Extended warranty Intego/pro 1+4,서울특별시,양천구,신정동  323-9번지 이스타빌3차 B동 205호,02-2646-2875,Treatment center Intego,6427285,252927,2019-11-21,109951,WEST
+의료법인 금강의료재단_(구.고치과.고운치과)_경남 창원,6336791 Extended warranty Intego/pro 1+4,경상남도,창원시,의창구 용호동 73-43,055-285-0987,Treatment center Intego,6427285,231660,2019-11-20,104104,EAST
+이인창치과의원_경남 창원시,6336791 Extended warranty Intego/pro 1+4,경상남도,창원시,창원시 마산합포구 불종거리로 12,055-246-2319,Treatment center Intego,6427285,251615,2019-09-26,101807,EAST
+이인창치과의원_경남 창원시,6336791 Extended warranty Intego/pro 1+4,경상남도,창원시,창원시 마산합포구 불종거리로 12,055-246-2319,Treatment center Intego,6427285,251614,2019-09-26,101807,EAST
+이인창치과의원_경남 창원시,6336791 Extended warranty Intego/pro 1+4,경상남도,창원시,창원시 마산합포구 불종거리로 12,055-246-2319,Treatment center Intego,6427285,251613,2019-09-26,101807,EAST
+이인창치과의원_경남 창원시,6336791 Extended warranty Intego/pro 1+4,경상남도,창원시,창원시 마산합포구 불종거리로 12,055-246-2319,Treatment center Intego,6427285,251612,2019-09-26,101807,EAST
+서울해치과,6336791 Extended warranty Intego/pro 1+4,서울특별시,은평구,은평로 136,02-737-7185,Treatment center Intego,6427285,251780,2019-08-28,111221,WEST
+사과나무치과의원,6336791 Extended warranty Intego/pro 1+4,경기도,부천시,역곡로 8,032-343-2871,Treatment center Intego,6427285,251173,2019-07-26,109093,WEST
+신현수치과의원,6336791 Extended warranty Intego/pro 1+4,서울특별시,종로구,새문안로5길 37,02-725-3289,Treatment center Intego,6427285,251175,2019-07-25,111134,WEST
+덴토피아치과의원,6336791 Extended warranty Intego/pro 1+4,서울특별시,서초구,서초중앙로24길 17,02-599-2847,Treatment center Intego,6427285,251174,2019-07-22,105260,EAST
+양지바른치과,,서울특별시,서초구,방배로 118,02-581-2273,Treatment center Intego,6427285,246707,2018-12-19,109182,EAST
+이사랑연합치과의원,,대구광역시,수성구,지범로 183,053-783-1414,Treatment center Intego,6427285,246829,2018-12-18,106599,EAST
+근로복지공단 창원병원,,경상남도,창원시,성산구 창원대로 721,055-280-0300,Treatment center Intego,6427285,246290,2018-11-01,105121,EAST
+근로복지공단 창원병원,,경상남도,창원시,성산구 창원대로 721,055-280-0300,Treatment center Intego,6427285,246289,2018-11-01,105121,EAST
+삼성서울병원,,서울특별시,강남구,일원로 81,02-3410-2828,Treatment center Intego,6427285,246089,2018-10-19,104334,EAST
+삼성서울병원,,서울특별시,강남구,일원로 81,02-3410-2828,Treatment center Intego,6427285,246088,2018-10-19,104334,EAST
+삼성서울병원,,서울특별시,강남구,일원로 81,02-3410-2828,Treatment center Intego,6427285,246087,2018-10-19,104334,EAST
+삼성서울병원,,서울특별시,강남구,일원로 81,02-3410-2828,Treatment center Intego,6427285,246086,2018-10-19,104334,EAST
+삼성서울병원,,서울특별시,강남구,일원로 81,02-3410-2828,Treatment center Intego,6427285,246085,2018-10-19,104334,EAST
+삼성서울병원,,서울특별시,강남구,일원로 81,02-3410-2828,Treatment center Intego,6427285,246070,2018-10-19,104334,EAST
+삼성서울병원,,서울특별시,강남구,일원로 81,02-3410-2828,Treatment center Intego,6427285,246069,2018-10-19,104334,EAST
+콤마(COMMA)치과의원,,경기도,구리시,경춘북로 252,031-571-2880,Treatment center Intego,6427285,245241,2018-09-17,110702,EAST
+콤마(COMMA)치과의원,,경기도,구리시,경춘북로 252,031-571-2880,Treatment center Intego,6427285,245240,2018-09-17,110702,EAST
+콤마(COMMA)치과의원,,경기도,구리시,경춘북로 252,031-571-2880,Treatment center Intego,6427285,245239,2018-09-17,110702,EAST
+콤마(COMMA)치과의원,,경기도,구리시,경춘북로 252,031-571-2880,Treatment center Intego,6427285,245238,2018-09-17,110702,EAST
+양지바른치과,,서울특별시,서초구,방배로 118,02-581-2273,Treatment center Intego,6427285,244755,2018-07-25,109182,EAST
+로하스치과의원_대구 달서구,,대구광역시,달서구,도원로 29,053-633-8024,Treatment center Intego,6427285,244165,2018-05-18,110050,EAST
+서울새이치과의원,,경기도,용인시,수지구 신수로 767,031-229-1633,Treatment center Intego,6427285,247064,2019-02-08,108357,EAST
+양지바른치과,,서울특별시,서초구,방배로 118,02-581-2273,Treatment center Intego,6427285,243468,2018-03-28,109182,EAST
+양지바른치과,,서울특별시,서초구,방배로 118,02-581-2273,Treatment center Intego,6427285,243469,2018-03-28,109182,EAST
+박성철 그리고 치과,,인천광역시,연수구,신송로 153,032-834-2275,Treatment center Intego,6427285,200276,2018-01-11,110420,WEST
+분당서울대학교병원,6336791 Extended warranty Intego/pro 1+4,경기도,성남시,분당구 구미로173번길 82,031-787-1356,Treatment center Intego,6427285,373312,2024-02-22,104209,EAST
+장주혜치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,종로구,새문안로5길 31,,Treatment center Intego,6427285,372978,2024-01-13,113617,WEST
+형제치과의원,6336783 Extended warranty Intego/pro (1+2),제주특별자치도,서귀포시,중정로 104,064-763-9800,Treatment center Intego,6427285,369908,2023-12-27,113832,WEST
+이사랑치과_서울 마포구,6336783 Extended warranty Intego/pro (1+2),서울특별시,마포구,백범로 205 펜트라우스 105동 1층,02-701-2199,Treatment center Intego,6427285,371206,2023-11-30,111156,WEST
+스마일독일치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,송파구,송파대로 437,02-3432-2882,Treatment center Intego,6427285,372458,2023-11-19,113500,EAST
+스마일독일치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,송파구,송파대로 437,02-3432-2882,Treatment center Intego,6427285,372404,2023-11-19,113500,EAST
+스마일독일치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,송파구,송파대로 437,02-3432-2882,Treatment center Intego,6427285,372403,2023-11-19,113500,EAST
+스마일독일치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,송파구,송파대로 437,02-3432-2882,Treatment center Intego,6427285,372402,2023-11-19,113500,EAST
+스마일독일치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,송파구,송파대로 437,02-3432-2882,Treatment center Intego,6427285,372401,2023-11-19,113500,EAST
+스마일독일치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,송파구,송파대로 437,02-3432-2882,Treatment center Intego,6427285,372400,2023-11-19,113500,EAST
+다른치과 (DARN Dental Clinic),6336783 Extended warranty Intego/pro (1+2),서울특별시,강남구,강남대로 652,02-3446-2080,Treatment center Intego,6427285,371210,2023-09-27,113349,EAST
+다른치과 (DARN Dental Clinic),6336783 Extended warranty Intego/pro (1+2),서울특별시,강남구,강남대로 652,02-3446-2080,Treatment center Intego,6427285,371209,2023-09-27,113349,EAST
+다른치과 (DARN Dental Clinic),6336783 Extended warranty Intego/pro (1+2),서울특별시,강남구,강남대로 652,02-3446-2080,Treatment center Intego,6427285,371208,2023-09-27,113349,EAST
+다른치과 (DARN Dental Clinic),6336783 Extended warranty Intego/pro (1+2),서울특별시,강남구,강남대로 652,02-3446-2080,Treatment center Intego,6427285,371207,2023-09-27,113349,EAST
+국민건강보험공단일산병원(주식회사나유),6336783 Extended warranty Intego/pro (1+2),경기도,고양시,일산동구 일산로 100,031-900-0114,Treatment center Intego,6427285,370909,2023-08-12,109803,WEST
+국민건강보험공단일산병원(주식회사나유),6336783 Extended warranty Intego/pro (1+2),경기도,고양시,일산동구 일산로 100,031-900-0114,Treatment center Intego,6427285,370908,2023-08-12,109803,WEST
+국민건강보험공단일산병원(주식회사나유),6336783 Extended warranty Intego/pro (1+2),경기도,고양시,일산동구 일산로 100,031-900-0114,Treatment center Intego,6427285,370907,2023-08-12,109803,WEST
+국민건강보험공단일산병원(주식회사나유),6336783 Extended warranty Intego/pro (1+2),경기도,고양시,일산동구 일산로 100,031-900-0114,Treatment center Intego,6427285,370906,2023-08-12,109803,WEST
+사과나무치과의원_충남 아산,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 매곡리 1218 젤존트윈시티 1동 405호,041-427-2882,Treatment center Intego,6427285,370139,2023-08-07,113367,WEST
+사과나무치과의원_충남 아산,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 매곡리 1218 젤존트윈시티 1동 405호,041-427-2882,Treatment center Intego,6427285,370114,2023-08-07,113367,WEST
+사과나무치과의원_충남 아산,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 매곡리 1218 젤존트윈시티 1동 405호,041-427-2882,Treatment center Intego,6427285,370113,2023-08-07,113367,WEST
+사과나무치과의원_충남 아산,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 매곡리 1218 젤존트윈시티 1동 405호,041-427-2882,Treatment center Intego,6427285,370112,2023-08-07,113367,WEST
+사과나무치과의원_충남 아산,6336783 Extended warranty Intego/pro (1+2),충청남도,아산시,탕정면 매곡리 1218 젤존트윈시티 1동 405호,041-427-2882,Treatment center Intego,6427285,370111,2023-08-07,113367,WEST
+쉐르빌서울치과,6336783 Extended warranty Intego/pro (1+2),서울특별시,광진구,구의3동  199-18번지 삼성쉐르상가빌 209호,02-2201-0568,Treatment center Intego,6427285,370483,2023-06-20,107843,EAST
+금토정성치과의원,6336783 Extended warranty Intego/pro (1+2),경기도,성남시,수정구 금토로80번길,031-709-2888,Treatment center Intego,6427285,370705,2023-06-27,113259,EAST
+금토정성치과의원,6336783 Extended warranty Intego/pro (1+2),경기도,성남시,수정구 금토로80번길,031-709-2888,Treatment center Intego,6427285,370704,2023-06-27,113259,EAST
+금토정성치과의원,6336783 Extended warranty Intego/pro (1+2),경기도,성남시,수정구 금토로80번길,031-709-2888,Treatment center Intego,6427285,370660,2023-06-27,113259,EAST
+분당서울대학교병원,6336791 Extended warranty Intego/pro 1+4,경기도,성남시,분당구 구미로173번길 82,031-787-1356,Treatment center Intego,6427285,369765,2023-05-19,104209,EAST
+삼성서울병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강남구,일원로 81,02-3410-2828,Treatment center Intego,6427285,369094,2023-04-30,104334,EAST
+삼성서울병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강남구,일원로 81,02-3410-2828,Treatment center Intego,6427285,369093,2023-04-30,104334,EAST
+삼성서울병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강남구,일원로 81,02-3410-2828,Treatment center Intego,6427285,369092,2023-04-30,104334,EAST
+더앞선치과병원,6336783 Extended warranty Intego/pro (1+2),경상남도,창원시,성산구 마디미로16번길 9,055-714-1111,Treatment center Intego,6427285,263206,2023-03-31,113713,EAST
+서울라인치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강남구,도곡로 519,02-566-5129,Treatment center Intego,6427285,368065,2023-03-30,107287,EAST
+정치과의원,6336791 Extended warranty Intego/pro 1+4,충청남도,홍성군,광천읍 홍남로 670,041-641-3699,Treatment center Intego,6427285,368055,2023-02-06,108418,WEST
+반석치과보존과치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,중구,무교로 19,02-776-2080,Treatment center Intego,6427285,367055,2022-10-05,112863,WEST
+반석치과보존과치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,중구,무교로 19,02-776-2080,Treatment center Intego,6427285,366914,2022-10-05,112863,WEST
+반석치과보존과치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,중구,무교로 19,02-776-2080,Treatment center Intego,6427285,366915,2022-10-05,112863,WEST
+반석치과보존과치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,중구,무교로 19,02-776-2080,Treatment center Intego,6427285,366916,2022-10-04,112863,WEST
+국군대전병원,6336783 Extended warranty Intego/pro (1+2),대전광역시,유성구,자운동 100-1 사서함78-504호,,Treatment center Intego,6427285,366828,2022-09-02,104633,WEST
+국민건강보험공단일산병원(주식회사나유),6336783 Extended warranty Intego/pro (1+2),경기도,고양시,일산동구 일산로 100,031-900-0114,Treatment center Intego,6427285,266375,2022-07-16,109803,WEST
+국민건강보험공단일산병원(주식회사나유),6336783 Extended warranty Intego/pro (1+2),경기도,고양시,일산동구 일산로 100,031-900-0114,Treatment center Intego,6427285,266376,2022-07-16,109803,WEST
+국민건강보험공단일산병원(주식회사나유),6336783 Extended warranty Intego/pro (1+2),경기도,고양시,일산동구 일산로 100,031-900-0114,Treatment center Intego,6427285,266377,2022-07-16,109803,WEST
+국민건강보험공단일산병원(주식회사나유),6336783 Extended warranty Intego/pro (1+2),경기도,고양시,일산동구 일산로 100,031-900-0114,Treatment center Intego,6427285,266378,2022-07-16,109803,WEST
+국민건강보험공단일산병원(주식회사나유),6336783 Extended warranty Intego/pro (1+2),경기도,고양시,일산동구 일산로 100,031-900-0114,Treatment center Intego,6427285,266379,2022-07-16,109803,WEST
+국민건강보험공단일산병원(주식회사나유),6336783 Extended warranty Intego/pro (1+2),경기도,고양시,일산동구 일산로 100,031-900-0114,Treatment center Intego,6427285,266380,2022-07-16,109803,WEST
+닥터앰버치과의원,6336783 Extended warranty Intego/pro (1+2),부산광역시,해운대구,달맞이길117번가길 153,051-951-0075,Treatment center Intego,6427285,261217,2022-07-15,112785,EAST
+국군서울지구병원(주식회사 나유),,서울특별시,종로구,삼청동 10길 13,02-397-3943,Treatment center Intego,6427285,254663,2020-05-25,109668,WEST
+분당서울대학교병원,6336791 Extended warranty Intego/pro 1+4,경기도,성남시,분당구 구미로173번길 82,031-787-1356,Treatment center Intego,6427285,367421,2022-10-20,104209,EAST
+닥터앰버치과의원,6336783 Extended warranty Intego/pro (1+2),부산광역시,해운대구,달맞이길117번가길 153,051-951-0075,Treatment center Intego,6427285,367856,2022-12-22,112785,EAST
+국군수도병원,6336783 Extended warranty Intego/pro (1+2),경기도,성남시,분당구 새마을로177번길 81,031-725-5114,Treatment center Intego,6427285,367629,2022-12-10,106155,EAST
+국군수도병원,6336783 Extended warranty Intego/pro (1+2),경기도,성남시,분당구 새마을로177번길 81,031-725-5114,Treatment center Intego,6427285,367628,2022-12-10,106155,EAST
+국군수도병원,6336783 Extended warranty Intego/pro (1+2),경기도,성남시,분당구 새마을로177번길 81,031-725-5114,Treatment center Intego,6427285,367627,2022-12-10,106155,EAST
+국군수도병원,6336783 Extended warranty Intego/pro (1+2),경기도,성남시,분당구 새마을로177번길 81,031-725-5114,Treatment center Intego,6427285,367626,2022-12-10,106155,EAST
+BK치과의원_충북 청주시,6336783 Extended warranty Intego/pro (1+2),충청북도,청주시,흥덕구 직지대로 530,043-264-0006,Treatment center Intego,6427285,257983,2022-12-01,110330,WEST
+해동경제연구원(주식회사 나유),6336783 Extended warranty Intego/pro (1+2),서울특별시,서초구,내곡동 1-3080,,Treatment center Intego,6427285,367630,2022-11-30,,EAST
+해동경제연구원(주식회사 나유),6336783 Extended warranty Intego/pro (1+2),서울특별시,서초구,내곡동 1-3080,,Treatment center Intego,6427285,367631,2022-11-30,,EAST
+삼성서울병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강남구,일원로 81,02-3410-2828,Treatment center Intego,6427285,367615,2022-11-20,104334,EAST
+행복나눔부부치과의원,6336791 Extended warranty Intego/pro 1+4,경상북도,영천시,시장로 62-1,054-333-2275,Treatment center Intego,6427285,255581,2022-05-27,111183,EAST
+서울S치과의원(연천),6336791 Extended warranty Intego/pro 1+4,경기도,연천군,전곡읍 전곡로 137,031-835-2804,Treatment center Intego,6427285,266516,2022-07-21,105821,EAST
+연세이로운치과보존과치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,마포구,월드컵로 98,010-4768-2143,Treatment center Intego,6427285,265195,2022-04-20,112529,WEST
+연세이로운치과보존과치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,마포구,월드컵로 98,010-4768-2143,Treatment center Intego,6427285,265196,2022-04-20,112529,WEST
+연세이로운치과보존과치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,마포구,월드컵로 98,010-4768-2143,Treatment center Intego,6427285,265197,2022-04-20,112529,WEST
+연세이로운치과보존과치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,마포구,월드컵로 98,010-4768-2143,Treatment center Intego,6427285,265220,2022-04-20,112529,WEST
+하늘리더스치과,6336783 Extended warranty Intego/pro (1+2),인천광역시,중구,하늘중앙로 193,032-751-2840,Treatment center Intego,6427285,266253,2022-06-27,111002,WEST
+형제치과의원,6336783 Extended warranty Intego/pro (1+2),제주특별자치도,서귀포시,중정로 104,064-763-9800,Treatment center Intego,6427285,263401,2022-01-12,113832,WEST
+바노바기일레븐치과의원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강남구,논현로 521-3,02-562-2522,Treatment center Intego,6427285,263274,2021-12-15,107986,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262424,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262423,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262422,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262421,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262401,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262400,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262399,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262398,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262397,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262396,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262395,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262394,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262376,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262375,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262374,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262373,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262372,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262371,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262370,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262369,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262368,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262367,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262366,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262365,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262364,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262363,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262362,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262361,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262360,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262351,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262350,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262349,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262348,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262347,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262328,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262327,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262326,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262325,2021-12-04,103412,EAST
+강동경희대학교병원,6336783 Extended warranty Intego/pro (1+2),서울특별시,강동구,동남로 892,02-440-6526,Treatment center Intego,6427285,262290,2021-12-04,103412,EAST
+국군대전병원,6336783 Extended warranty Intego/pro (1+2),대전광역시,유성구,자운동 100-1 사서함78-504호,,Treatment center Intego,6427285,263040,2021-11-25,104633,WEST
+U.N.I치과,6336783 Extended warranty Intego/pro (1+2),대전광역시,서구,탄방동 599 5층,042-486-2875,Treatment center Intego,6427285,262802,2021-11-11,103568,WEST
+22세기서울치과병원,6336783 Extended warranty Intego/pro (1+2),인천광역시,연수구,컨벤시아대로 69,032-858-2080,Treatment center Intego,6427285,262633,2021-11-01,107908,WEST
+명학하나치과,,경기도,안양시,덕천로 52,031-444-7528,HD Plus Wall version,6483734,90307,2025-05-14,107450,WEST
+경희의료원,Local Warranty Extension (1+2),서울특별시,동대문구,경희대로 23,02-958-9915-6,HD Plus Wall version,6483734,90355,2024-12-18,104181,EAST
+더스마트치과의원,,대전광역시,유성구,도룡동 3-1 대전신세계엑스포점 타워 4층,010-2671-3670,HD Plus Wall version,6483734,71763,2021-08-11,112201,WEST
+경희의료원,Local Warranty Extension (1+2),서울특별시,동대문구,경희대로 23,02-958-9915-6,HD Plus Wall version,6483734,69748,2021-01-27,104181,EAST
+경희의료원,Local Warranty Extension (1+2),서울특별시,동대문구,경희대로 23,02-958-9915-6,HD Plus Wall version,6483734,69713,2021-01-27,104181,EAST
+서울다루치과,,서울특별시,송파구,석촌호수로 94,02-6285-2275,HD Plus Wall version,6483734,69689,2021-01-21,111864,EAST
+2사단의무근무대(주식회사 나유),Local Warranty Extension (1+2),경기도,김포시,사우동 ,010-3870-8978,HD Plus Wall version,6483734,74664,2021-09-07,,WEST
+연세주니어치과,,서울특별시,양천구,신정동  323-9번지 이스타빌3차 B동 205호,02-2646-2875,HD Plus Wall version,6483734,74753,2021-09-02,109951,WEST
+해양의료원,Local Warranty Extension (1+2),경상남도,창원시,진해구 자은동 417-3 ,,HD Plus Wall version,6483734,71906,2021-09-03,,EAST
+53사단 의무대(주식회사 나유),Local Warranty Extension (1+2),부산광역시,해운대구,장산로 427,,HD Plus Wall version,6483734,74652,2021-09-02,,EAST
+육군부사관학교의무대(주식회사 나유),Local Warranty Extension (1+2),전북특별자치도,익산시,여산면 두여리 1192-11,010-5083-0398,HD Plus Wall version,6483734,74624,2021-09-01,,WEST
+17사단의무대(주식회사 나유),Local Warranty Extension (1+2),인천광역시,부평구,무네미로 447번길,,HD Plus Wall version,6483734,74569,2021-08-31,,WEST
+30기갑여단의무대(주식회사 나유),Local Warranty Extension (1+2),경기도,고양시,덕양구 원당동,010-8964-5708,HD Plus Wall version,6483734,71914,2021-08-26,,WEST
+군사안보지원령부(주식회사 나유),Local Warranty Extension (1+2),경기도,과천시,과천우체국 사서함 80호,010-9523-2419,HD Plus Wall version,6483734,74660,2021-08-25,,WEST
+102기갑 의무실(주식회사 나유),Local Warranty Extension (1+2),강원특별자치도,양양군,강현면 진미로 29-48,010-6810-9788,HD Plus Wall version,6483734,71766,2021-08-24,,EAST
+학교법인가톨릭학원 가톨릭대학교 인천성모병원,Local Warranty Extension (1+1),인천광역시,부평구,동수로 56,032-280-5128(1544-9004),HD Plus Wall version,6483734,69390,2020-10-29,104949,WEST
+백석문화대학교,Local Warranty Extension (1+2),충청남도,천안시,동남구 문암로 58,,HD Plus Wall version,6483734,69381,2020-08-19,111464,WEST
+백석문화대학교,Local Warranty Extension (1+2),충청남도,천안시,동남구 문암로 58,,HD Plus Wall version,6483734,69324,2020-08-19,111464,WEST
+백석문화대학교,Local Warranty Extension (1+2),충청남도,천안시,동남구 문암로 58,,HD Plus Wall version,6483734,69323,2020-08-19,111464,WEST
+백석문화대학교,Local Warranty Extension (1+2),충청남도,천안시,동남구 문암로 58,,HD Plus Wall version,6483734,69322,2020-08-19,111464,WEST
+분당서울대학교병원,,경기도,성남시,분당구 구미로173번길 82,031-787-1356,HD Plus Wall version,6483734,69270,2020-08-13,104209,EAST
+해군3함대(주식회사 나유),,전라남도,영암군,삼호읍 용당리,,HD Plus Wall version,6483734,69266,2020-07-29,,WEST
+해군인방사(주식회사 나유),,인천광역시,중구,북성동,,HD Plus Wall version,6483734,69262,2020-07-28,,WEST
+육군훈련소지구병원(주식회사 나유),,충청남도,논산시,연무읍 주평리 366-4,041-740-8534,HD Plus Wall version,6483734,69178,2020-07-24,,WEST
+국군서울지구병원(주식회사 나유),,서울특별시,종로구,삼청동 10길 13,02-397-3943,HD Plus Wall version,6483734,68663,2020-07-23,109668,WEST
+해병6여단(주식회사 나유),,인천광역시,옹진군,백령면,,HD Plus Wall version,6483734,69217,2020-08-04,,WEST
+육군사관학교병원(주식회사 나유),,서울특별시,노원구,화랑로 574,,HD Plus Wall version,6483734,68662,2020-07-23,,EAST
+55사단의무대(주식회 나유),,경기도,용인시,처인구 포곡읍 포곡로170,,HD Plus Wall version,6483734,68659,2020-07-22,,EAST
+해군2함대(주식회사 나유),,경기도,평택시,포승읍 원정리,,HD Plus Wall version,6483734,68658,2020-07-21,,WEST
+7군단의무실(주식회사 나유),,경기도,이천시,장호원읍 이황3리  7276부대,,HD Plus Wall version,6483734,68656,2020-07-21,,EAST
+36사단의무대(주식회사 나유),,강원특별자치도,원주시,소초면 흥양리 1673,,HD Plus Wall version,6483734,68655,2020-07-20,,EAST
+특수전교육단(주식회사 나유),,경기도,광주시,오포읍 양벌로 353번길 30,,HD Plus Wall version,6483734,68654,2020-07-20,,EAST
+2기갑여단(주식회사 나유),,경기도,파주시,아동동 평일로 사서함 22-3호,,HD Plus Wall version,6483734,68648,2020-07-16,,WEST
+72사단의무대(주식회사 나유),,경기도,양주시,장흥면 북한산로 966-8,,HD Plus Wall version,6483734,68647,2020-07-15,,EAST
+해군1함대(주식회사나유),,강원특별자치도,동해시,하평로 11,,HD Plus Wall version,6483734,68646,2020-07-17,,EAST
+22사단의무대(주식회사 나유),,강원특별자치도,고성군,광포호길15,,HD Plus Wall version,6483734,68644,2020-07-16,,EAST
+21사단의무대(주식회사 나유),,강원특별자치도,양구군,양구읍 금강산로 510,,HD Plus Wall version,6483734,67643(M6175744S68643),2020-07-15,,EAST
+28사단의무대(주식회사 나유),,경기도,양주시,은현면 364로 431-54,,HD Plus Wall version,6483734,68642,2020-07-14,,EAST
+27사단의무대(주식회사 나유),,강원특별자치도,화천군,사내면 수피령로 163,,HD Plus Wall version,6483734,68639,2020-07-14,,EAST
+8사단의무대(주식회사 나유),,경기도,양주시,백석읍 방성리,,HD Plus Wall version,6483734,68638,2020-07-14,,EAST
+3사단의무대(주식회나 나유),,강원특별자치도,철원군,서면 자등리 1,,HD Plus Wall version,6483734,68636,2020-07-13,,EAST
+1기갑여단(주식회사나유),,경기도,포천시,영북면 운천로 10-5 3739부대,,HD Plus Wall version,6483734,68635,2020-07-13,,EAST
+5사단(주식회사 나유)_경기 연천,,경기도,연천군,전곡읍 평화로 874,,HD Plus Wall version,6483734,68626,2020-07-13,,EAST
+20여단의무대(주식회사 나유),,강원특별자치도,홍천군,화촌면 송정3길 16,,HD Plus Wall version,6483734,68617,2020-07-10,,EAST
+11사단의무대(주식회사 나유),,강원특별자치도,홍천군,홍천로 132,,HD Plus Wall version,6483734,68622,2020-07-10,,EAST
+32사단의무대(주식회사 나유),,세종특별자치시,,금남면 채나무길21 ,,HD Plus Wall version,6483734,68621,2020-07-08,,WEST
+항작사의무실(주식회사 나유),,경기도,이천시,모가면,,HD Plus Wall version,6483734,68625,2020-07-09,,EAST
+계룡대지구병원(주식회사 나유),,충청남도,계룡시,신도안면 정장리,,HD Plus Wall version,6483734,68614,2020-07-09,,WEST
+39사단의무대(주식회사 나유),,경상남도,함안군,군북면 소포리 470-21 ,010-7708-8007,HD Plus Wall version,6483734,68634,2020-07-07,,EAST
+37사단의무대(주식회사나유),,충청북도,증평군,증평읍 사서함 82-10호,,HD Plus Wall version,6483734,68613,2020-07-07,,WEST
+해군부산기지전대(주식회사 나유),,부산광역시,남구,용호동,,HD Plus Wall version,6483734,67492,2020-07-08,,EAST
+학생군사학교(주식회사 나유),,충청북도,괴산군,괴산읍 문무로 177,,HD Plus Wall version,6483734,67491,2020-07-07,,WEST
+9사단의무대(주식회사 나유),,경기도,고양시,일산동구 풍동 208-11,,HD Plus Wall version,6483734,67228,2020-07-06,,WEST
+3사교병원(주식회사 나유),,경상북도,영천시,고경면 호국로 사서함 135-1호,,HD Plus Wall version,6483734,67490(M6175744S67490),2020-07-06,,EAST
+사과나무치과의원,,경기도,부천시,역곡로 8,032-343-2871,HD Plus Wall version,6483734,68241,2020-06-17,109093,WEST
+대풍치과의원(경남 창원),,경상남도,창원시,성산구 대암로 101,055-715-2875,HD Plus Wall version,6483734,67184,2019-12-30,111341,EAST
+국군대전병원,,대전광역시,유성구,자운동 100-1 사서함78-504호,,HD Plus Wall version,6483734,67236,2019-11-28,104633,WEST
+정치과의원,,충청남도,홍성군,광천읍 홍남로 670,041-641-3699,HD Plus Wall version,6483734,64737,2019-11-05,108418,WEST
+덴토피아치과의원,,서울특별시,서초구,서초중앙로24길 17,02-599-2847,HD Plus Wall version,6483734,60919,2019-06-24,105260,EAST
+원우치과,,경기도,수원시,장안구 대평로 80,031-257-7528,HD Plus Wall version,6483734,61457,2019-04-29,110585,WEST
+휘치과의원,,부산광역시,연제구,월드컵대로 54,,HD Plus Wall version,6483734,39237,2019-04-01,111031,EAST
+이찬호치과,,경상남도,창원시,신포동2가  18번지,055-223-1233,HD Plus Wall version,6483734,60918,2018-09-28,110758,EAST
+콤마(COMMA)치과의원,,경기도,구리시,경춘북로 252,031-571-2880,HD Plus Wall version,6483734,49484,2018-09-17,110702,EAST
+조은플러스치과의원,,대전광역시,대덕구,송촌동  460-5  6층,042-632-2875,HD Plus Wall version,6483734,49241,2018-06-04,101506,WEST
+그린서울치과,,서울특별시,구로구,고척동 203,02-2688-2875,HD Plus Wall version,6483734,49197,2018-05-14,110558,WEST
+나노치과,,경기도,화성시,동탄순환대로 18길 16,031-373-2870,HD Plus Wall version,6483734,49145,2019-01-29,110866,WEST
+미금치과_경기 남양주시,,경기도,남양주시,도농동 117 이화빌딩  3층,031-569-2875,HD Plus Wall version,6483734,49175,2018-03-28,100481,EAST
+소중치과의원,,서울특별시,송파구,법원로 128,02-527-8877,HD Plus Wall version,6483734,49138,2018-02-27,114869,EAST
+연세자연애치과,,서울특별시,서초구,헌릉로 176,02-576-2275,HD Plus Wall version,6483734,49020,2018-01-19,110408,EAST
+본수치과의원,,강원특별자치도,춘천시,후석로 328,033-252-7525,HD Plus Wall version,6483734,46980,2017-11-21,110477,EAST
+전북대학교병원,,전북특별자치도,전주시,덕진구 건지로 20,063-250-2127,HD Plus Wall version,6483734,46278,2017-11-14,103405,WEST
+경기도의료원 수원병원_본부,,경기도,수원시,장안구 수성로 245번길 69,031-888-0160,HD Plus Wall version,6483734,47020,2017-10-24,107122,WEST
+더블유화이트치과의원,,서울특별시,강남구,테헤란로87길 17 ,02-564-0075,HD Plus Wall version,6483734,45041,2017-08-22,105522,EAST
+연세미치과의원_충남 홍성군,,충청남도,홍성군,광천읍  광천로 295,041-641-2872,HD Plus Wall version,6483734,44581,2017-06-27,112074,WEST
+프라우드치과의원,,경기도,부천시,소사로 750,032-678-7528,HD Plus Wall version,6483734,44173,2017-04-24,108110,WEST
+하늘치과의원,,서울특별시,종로구,자하문로 58,02-737-2804,HD Plus Wall version,6483734,43898,2017-02-21,108185,WEST
+포레스트치과의원,,서울특별시,강서구,마곡중앙6로 10 마곡역센트럴푸르지오시티 2층 210호,02-6952-5501,HD Plus Wall version,6483734,43886,2017-02-02,108238,WEST
+전북대학교병원,,전북특별자치도,전주시,덕진구 건지로 20,063-250-2127,HD Plus Wall version,6483734,40832,2017-01-18,103405,WEST
+수원선치과의원,,경기도,수원시,팔달구 팔달로3가 26-7번지 남경빌딩 3층,031-257-7520,HD Plus Wall version,6483734,40820,2016-11-28,108338,WEST
+아이피앤아이치과의원,,서울특별시,종로구,수송동  85번지,02-735-1135,HD Plus Wall version,6483734,39663,2016-11-23,104201,WEST
+연세우일치과병원,,충청남도,천안시,서북구 서부대로 350,041-579-8787,HD Plus Wall version,6483734,39287,2016-09-12,103684,WEST
+이가온치과,,서울특별시,구로구,경인로59길 305,02-2675-6525,HD Plus Wall version,6483734,39644,2016-10-27,108291,WEST
+심미치과,,경기도,의정부시,신곡동 334-2 지상3층,031-844-7522,HD Plus Wall version,6483734,37867,2016-07-29,109972,EAST
+경희의료원,,서울특별시,동대문구,경희대로 23,02-958-9915-6,HD Plus Wall version,6483734,37891,2016-05-31,104181,EAST
+경희의료원,,서울특별시,동대문구,경희대로 23,02-958-9915-6,HD Plus Wall version,6483734,37987,2016-05-31,104181,EAST
+국군의무사령부 (국군강릉병원),Local Warranty Extension (1+4),강원특별자치도,강릉시,주문진읍 동해대로 4371-34,033-662-7802,HD Plus Wall version,6483734,87008,2024-04-30,,EAST
+국군포천병원,Local Warranty Extension (1+4),경기도,포천시,화현면 화동로 564,1688-9164,HD Plus Wall version,6483734,87006,2024-04-29,113925,EAST
+경희의료원,Local Warranty Extension (1+2),서울특별시,동대문구,경희대로 23,02-958-9915-6,HD Plus Wall version,6483734,87002,2024-02-06,104181,EAST
+31사단(주식회사 나유),Local Warranty Extension (1+2),광주광역시,북구,우치로 339 나동 1층,,HD Plus Wall version,6483734,86349,2023-09-22,,WEST
+상무대근지단(주식회사 나유),Local Warranty Extension (1+2),전라남도,장성군,삼서면 태청로 248,,HD Plus Wall version,6483734,86351,2023-09-22,,WEST
+35사단 신병교육대(주식회나 나유),Local Warranty Extension (1+2),전북특별자치도,임실군,임실읍 감천로 55-77,,HD Plus Wall version,6483734,86350,2023-09-21,,WEST
+특전사의무대(주식회사 나유),Local Warranty Extension (1+2),경기도,이천시,마장면 억만리로130,,HD Plus Wall version,6483734,81761,2023-09-18,,EAST
+50사단(주식회사 나유),Local Warranty Extension (1+2),대구광역시,북구,호국로 780 남문위병소,,HD Plus Wall version,6483734,86348,2023-09-15,,EAST
+2작사의무대(주식회사 나유),Local Warranty Extension (1+2),대구광역시,수성구,무열로 56,,HD Plus Wall version,6483734,86347,2023-09-15,,EAST
+3군단통합의무실(주식회사나유),Local Warranty Extension (1+2),강원특별자치도,인제군,기린면 내린천로 3990,,HD Plus Wall version,6483734,81762,2023-09-13,,EAST
+75사단(주식회사나유),Local Warranty Extension (1+2),경기도,남양주시,진접읍 진벌로 179,,HD Plus Wall version,6483734,81760,2023-09-12,,EAST
+56사단(주식회사나유),Local Warranty Extension (1+2),경기도,고양시,덕양구 백운길 27-41 ,,HD Plus Wall version,6483734,87001,2023-09-08,,WEST
+66사단(주식회사 나유),Local Warranty Extension (1+2),경기도,가평군,가평읍 각담말길 39,,HD Plus Wall version,6483734,81759,2023-09-11,,EAST
+수기사의무대(주식회사 나유),Local Warranty Extension (1+2),경기도,가평군,조종면 현창로 31,,HD Plus Wall version,6483734,81750,2023-09-11,,EAST
+25사단(주식회사 나유)_경기 양주,Local Warranty Extension (1+2),경기도,양주시,남면 구암리 35-2번지 구암마트,,HD Plus Wall version,6483734,87000,2023-09-08,,EAST
+사과나무치과의원_충남 아산,,충청남도,아산시,탕정면 매곡리 1218 젤존트윈시티 1동 405호,041-427-2882,HD Plus Wall version,6483734,79904,2023-08-07,113367,WEST
+해동경제연구원(주식회사 나유),Local Warranty Extension (1+2),서울특별시,서초구,내곡동 1-3080,,HD Plus Wall version,6483734,79864,2022-11-30,,EAST
+수도군단(주식회사 나유),Local Warranty Extension (1+2),경기도,안양시,동안구 평촌대로476번길 83,,HD Plus Wall version,6483734,79770,2022-06-22,,WEST
+지작사_육군지상작전사령부(주식회사 나유),Local Warranty Extension (1+2),경기도,용인시,처인구 역북동 205-17,,HD Plus Wall version,6483734,79726,2022-06-21,,EAST
+73사단(주식회사 나유),Local Warranty Extension (1+2),경기도,남양주시,홍유릉로 55 양정동주민센터,,HD Plus Wall version,6483734,79710,2022-06-21,,EAST
+60사단(주식회사 나유),Local Warranty Extension (1+2),경기도,고양시,서오릉로 500번길 ,,HD Plus Wall version,6483734,79581,2022-06-20,,WEST
+51사단(주식회사 나유),Local Warranty Extension (1+2),경기도,화성시,화성시 매송면 어천리 208 전승신병교육대,,HD Plus Wall version,6483734,79706,2022-06-20,,WEST
+5기갑여단(주식회사나유),Local Warranty Extension (1+2),경기도,양주시,칠봉산로 186 철풍회관,,HD Plus Wall version,6483734,79578,2022-06-17,,EAST
+12사단 의무대대(주식회사 나유)_강원 인제,Local Warranty Extension (1+2),강원특별자치도,인제군,북면 원통로 299 의무대대,,HD Plus Wall version,6483734,M6175744S79573,2022-06-16,,EAST
+52사단(주식회사나유),Local Warranty Extension (1+2),경기도,광명시,성채로78번길 29,,HD Plus Wall version,6483734,79569,2022-06-17,,WEST
+7사단의무대(주식회사 나유),Local Warranty Extension (1+2),강원특별자치도,화천군,하남면 논미로 347-11 의무근무대,,HD Plus Wall version,6483734,79566,2022-06-16,,EAST
+1사단의무대(주식회사 나유),Local Warranty Extension (1+2),경기도,파주시,사임당로 273 의무대대 보급과 ,,HD Plus Wall version,6483734,79561,2022-06-15,,WEST
+6사단의무대(주식회사 나유),Local Warranty Extension (1+2),경기도,포천시,관인면 북원로 404번길 78-5호 의무대대 ,,HD Plus Wall version,6483734,79565,2022-06-15,,EAST
+항공학교(주식회사 나유),Local Warranty Extension (1+2),충청남도,논산시,노성면 노성로 430 ,,HD Plus Wall version,6483734,79509,2022-06-09,,WEST
+해병대1사단1의무대(주식회사 나유),Local Warranty Extension (1+2),경상북도,포항시,남구 일월동 포항 해군기지,,HD Plus Wall version,6483734,79480,2022-06-08,,EAST
+육군종합행정학교(주식회사 나유),Local Warranty Extension (1+2),충청북도,영동군,양강면 양정죽촌로 70,,HD Plus Wall version,6483734,79476,2022-06-07,,WEST
+씨디씨어린이치과병원_서울  강남구,,서울특별시,강남구,학동로 97길 11,02-515-0926,HD Plus Wall version,6483734,79863,2022-08-12,109970,EAST
+연세이로운치과보존과치과의원,,서울특별시,마포구,월드컵로 98,010-4768-2143,HD Plus Wall version,6483734,68618,2022-04-20,112529,WEST
+구대회치과의원,,경기도,성남시,분당 서현동 269-5 서원프라자 401,031-704-7528,HD Plus Wall version,6483734,75563,2022-01-17,108268,EAST
+마이스터치과의원,,서울특별시,영등포구,여의도동  44-1 대영빌딩 지하1층 104호,02-783-6625,HD Plus Wall version,6483734,75567,2021-10-24,105312,WEST
+화이트치과_강원 강릉시,,강원특별자치도,강릉시,교동광장로 129 2층,033-641-8275,XIOS XG Kit Supreme WiFi Size 1+2 S4,6534353,2004414.71009452.72007229,2018-08-28,100495,EAST
+행복치과,6368034 year generator/sensor warranty(3D),경기도,이천시,부발읍 무촌로 125,031-631-2726,Orthophos SL 3D 11x10 DCS,OPSL3D11x10,701074,2021-01-20,111022,EAST
+인하대학교의과대학부속병원 (인하대병원),Local Warranty Extension (1+2),인천광역시,중구,인항로 27,032-890-2472032-890-2114,Orthophos SL 3D 11x10 DCS,OPSL3D11x10,700346,2020-11-21,104954,WEST
+더하루치과의원,6368034 year generator/sensor warranty(3D),서울특별시,중구,을지로 251,02-2265-2875,Orthophos SL 3D 11x10 DCS,OPSL3D11x10,501615,2019-12-28,111378,WEST
+하임치과의원,6368034 year generator/sensor warranty(3D),서울특별시,강남구,논현로98길 34,02-596-2080,Orthophos SL 3D 11x10 DCS,OPSL3D11x10,700326(501616),2019-12-30,109155,EAST
+우리치과의원,6368034 year generator/sensor warranty(3D),강원특별자치도,홍천군,홍천로 356,033-434-2879,Orthophos SL 3D 11x10 DCS,OPSL3D11x10,700378,2019-10-23,110431,EAST
+휘치과의원,,부산광역시,연제구,월드컵대로 54,,Orthophos SL 3D 11x10 DCS,OPSL3D11x10,700309,2019-04-01,111031,EAST
+하루에치과의원,,서울특별시,강남구,강남대로 162길 41-11,1544-0208,Orthophos SL 3D 11x10 DCS,OPSL3D11x10,700345,2019-01-08,104205,EAST
+김동윤부부치과의원,,경기도,수원시,팔달구 화서동 71-98,031-253-2743,Orthophos SL 3D 11x10 DCS,OPSL3D11x10,501614.7003,2018-01-31,109478,WEST
+명학하나치과,,경기도,안양시,덕천로 52,031-444-7528,Orthophos SL 3D 11x10 DCS,OPSL3D11x10,700308(500975),2017-05-30,107450,WEST
+서울원픽치과의원,,서울특별시,서초구,동작대로 50,02-2160-8484,Orthophos SL 3D 11x10 DCS,OPSL3D11x10,700311,2017-05-30,114088,EAST
+의료법인 금강의료재단_(구.고치과.고운치과)_경남 창원,,경상남도,창원시,의창구 용호동 73-43,055-285-0987,Orthophos SL 3D 11x10 DCS,OPSL3D11x10,700310(500976),2017-05-27,104104,EAST
+미래로치과의원,,서울특별시,강북구,한천로 1035,02-999-2228,Orthophos SL 3D 11x10 DCS,OPSL3D11x10,700299,2017-05-10,104004,EAST
+스카이치과,,강원특별자치도,원주시,원일로 57,033-761-2842,Orthophos SL 3D 11x10 DCS,OPSL3D11x10,700300,2017-04-28,108986,EAST
+중동21세기치과의원,6368034 year generator/sensor warranty(3D),경기도,부천시,길주로 281,032-324-2875,Orthophos SL 3D 11x10 DCS,OPSL3D11x10,701075,2022-01-23,108087,WEST
+연세비전치과의원,6368034 year generator/sensor warranty(3D),인천광역시,부평구,부평대로167번길 54,032-521-2278,Orthophos SL 3D 11x10 DCS,OPSL3D11x10,700997,2021-11-08,109111,WEST
+서울다루치과,6368034 year generator/sensor warranty(3D),서울특별시,송파구,석촌호수로 94,02-6285-2275,Orthophos SL 3D 11x10 DCS Ceph Left,OPSL3D11x10C,701088(5202552),2021-01-21,111864,EAST
+스마트하루치과의원,6368034 year generator/sensor warranty(3D),경기도,안양시,동안구 시민대로 175,031-342-2275,Orthophos SL 3D 11x10 DCS Ceph Left,OPSL3D11x10C,700923(5201959),2020-05-19,111557,WEST
+리치치과의원_부산 해운대구,6368034 year generator/sensor warranty(3D),부산광역시,해운대구,구남로 27,051-741-8833,Orthophos SL 3D 11x10 DCS Ceph Left,OPSL3D11x10C,700711,2019-06-13,107185,EAST
+진영이사랑치과의원,,경상남도,김해시,진영읍 김해대로365번길 6-10 센텀메디컬 4층,055-343-7944,Orthophos SL 3D 11x10 DCS Ceph Left,OPSL3D11x10C,700686,2019-04-19,107579,EAST
+시흥사과나무치과의원,6368034 year generator/sensor warranty(3D),경기도,시흥시,은행동 532-1 에메랄드빌딩 4F,031-315-2845,Orthophos SL 3D 11x10 DCS Ceph Left,OPSL3D11x10C,700922(5201960),2019-08-28,106550,WEST
+콤마(COMMA)치과의원,,경기도,구리시,경춘북로 252,031-571-2880,Orthophos SL 3D 11x10 DCS Ceph Left,OPSL3D11x10C,5200948(700677),2018-09-17,110702,EAST
+비욘드 치과병원,,경기도,과천시,별양상가1로 13,02-3678-2875,Orthophos SL 3D 11x10 DCS Ceph Left,OPSL3D11x10C,700401,2018-06-23,108366,WEST
+당산원치과의원,,서울특별시,영등포구,당산로 231,02-6264-7575,Orthophos SL 3D 11x10 DCS Ceph Left,OPSL3D11x10C,700347,2019-02-14,110927,WEST
+논현수치과,,서울특별시,서초구,신반포로 332,02-514-7528,Orthophos SL 3D 11x10 DCS Ceph Left,OPSL3D11x10C,700264,2018-03-30,109570,EAST
+소중치과의원,,서울특별시,송파구,법원로 128,02-527-8877,Orthophos SL 3D 11x10 DCS Ceph Left,OPSL3D11x10C,501628.700328.70943,2018-02-27,114869,EAST
+365디지털치과,,대전광역시,서구,대덕대로 175번길 16,042-476-2875,Orthophos SL 3D 11x10 DCS Ceph Left,OPSL3D11x10C,70031242832,2017-09-26,110493,WEST
+늘푸른치과의원,,경상남도,창원시,성산구 상남동  2-8번지 2층,055-266-2000,Orthophos SL 3D 11x10 DCS Ceph Left,OPSL3D11x10C,700313,2017-05-25,103857,EAST
+프라우드치과의원,,경기도,부천시,소사로 750,032-678-7528,Orthophos SL 3D 11x10 DCS Ceph Left,OPSL3D11x10C,700298,2017-04-28,108110,WEST
+김대섭치과,,경기도,화성시,정남면 서봉로 1006-4,031-359-8280,XIOS XG Language-specific set internat.,6411479,,2019-08-23,108662,WEST
+365디지털치과,,대전광역시,서구,대덕대로 175번길 16,042-476-2875,XIOS XG Language-specific set internat.,6411479,,2021-11-19,110493,WEST
+사람사랑치과의원_전북 전주시,,전북특별자치도,전주시,완산구 온고을로 18 ,063-275-7578,XIOS XG Kit Select USB Size 1,6410844,35(61010046 10020315),2019-09-23,101820,WEST
+인하대학교의과대학부속병원 (인하대병원),,인천광역시,중구,인항로 27,032-890-2472032-890-2114,XIOS XG Kit Select USB Size 1+2,6409572,6,2019-08-22,104954,WEST
+신세계치과의원,,서울특별시,송파구,새말로8길 27,02-406-2828,XIOS XG Kit Supreme USB Gr.1,6410869,118 (Module:10025069/Sensor:54033193),2020-08-24,112972,EAST
+대구예스타치과의원,,대구광역시,중구,중앙대로 366,053-719-3346,XIOS XG Kit Supreme USB Gr.1,6410869,71011345/10022397,2020-01-31,110584,EAST
+분당어린이치과의원,,경기도,성남시,분당구 장안로 27,031-716-5275,XIOS XG Kit Supreme USB Gr.1,6410869,157 (10030275/54043981),2023-03-02,109070,EAST
+랜더스치과의원,,인천광역시,연수구,컨벤시아대로230번길 54,032-859-0028,XIOS XG Kit Supreme USB Size 1+2,6409598,71011570,2022-06-14,106493,WEST
+좋은솜씨죽전치과,,경기도,용인시,기흥구 죽전로 57,031-889-2877,XIOS XG Kit Select USB Size 2,6410885,256(모듈/센서),2021-10-01,112493,EAST
+완도치과의원,,전라남도,완도군,완도읍 장보고대로 170,061-555-0028,XIOS XG Kit Select USB Size 2,6410885,254,2021-06-28,109577,WEST
+우리치과의원,,강원특별자치도,홍천군,홍천로 356,033-434-2879,XIOS XG Kit Select USB Size 2,6410885,253(10021473/62005225),2019-10-28,110431,EAST
+우리치과의원,,강원특별자치도,홍천군,홍천로 356,033-434-2879,XIOS XG Kit Select USB Size 2,6410885,180(실제시리얼기재),2019-10-23,110431,EAST
+바른부부치과의원,,경기도,평택시,비전동  829-4,031-655-7528,XIOS XG Kit Select USB Size 2,6410885,54023193/10020092,2019-06-26,110032,WEST
+바른부부치과의원,,경기도,평택시,비전동  829-4,031-655-7528,XIOS XG Kit Select USB Size 2,6410885,32(54023291/10020090),2019-06-26,110032,WEST
+박민호치과의원_인천 계양구,,인천광역시,계양구,인천 계양 작전 596,032-546-7817,XIOS XG Kit Select USB Size 2,6410885,179(54028319/10021219),2019-08-30,110447,WEST
+김대섭치과,,경기도,화성시,정남면 서봉로 1006-4,031-359-8280,XIOS XG Kit Select USB Size 2,6410885,35(54024642/10020096),2019-08-23,108662,WEST
+사람사랑치과의원_전북 전주시,,전북특별자치도,전주시,완산구 온고을로 18 ,063-275-7578,XIOS XG Kit Select USB Size 2,6410885,34(62004456100004796),2019-08-17,101820,WEST
+서현치과_서울  송파구,,서울특별시,송파구,신천동  7-19 한라시그마타워 307호,02-421-2810,XIOS XG Kit Select USB Size 2,6410885,31(sensor 54024403 10020089),2019-04-10,104631,EAST
+365디지털치과,,대전광역시,서구,대덕대로 175번길 16,042-476-2875,XIOS XG Kit Select USB Size 2,6410885,257(10021472/62005266),2021-11-19,110493,WEST
+키즈앤쥬니어치과의원,6369289 year generator/sensor warranty(2D),서울특별시,용산구,이촌로84길 9-18,02-793-2801,Orthophos E,6707488,1360001,2025-05-27,107005,WEST
+장원치과_서울  금천구,6369289 year generator/sensor warranty(2D),서울특별시,금천구,시흥동 909-8 2층,02-808-2570,Orthophos E,OPE,M6707470S1360197,2025-03-24,108591,WEST
+이튼치과_부산 동래,6369289 year generator/sensor warranty(2D),부산광역시,동래구,안락동 151-11 2층,051-531-2275,Orthophos E,OPE,1360194,2024-12-27,109323,EAST
+에덴치과_경북 구미,6369289 year generator/sensor warranty(2D),경상북도,구미시,봉곡남로 85,054-442-0028,Orthophos E,OPE,1360193,2024-08-28,109814,EAST
+조은플러스치과의원,6369289 year generator/sensor warranty(2D),대전광역시,대덕구,송촌동  460-5  6층,042-632-2875,Orthophos E,OPE,1360192,2024-05-27,101506,WEST
+한국보훈복지의료공단중앙병원,Local Warranty Extension (1+2),서울특별시,강동구,진황도로 61길53,02-2225-1114,Orthophos E,OPE,1360191,2023-10-18,103881,EAST
+한국보훈복지의료공단중앙병원,Local Warranty Extension (1+2),서울특별시,강동구,진황도로 61길53,02-2225-1114,Orthophos E,OPE,1360189,2023-10-18,103881,EAST
+이편한치과의원_전북 전주시,6369289 year generator/sensor warranty(2D),전북특별자치도,전주시,덕진구 솔내로 190 ,063-251-2275,Orthophos E,OPE,1360187,2023-07-19,103581,WEST
+미소가있는보스톤치과의원,6369289 year generator/sensor warranty(2D),경상남도,김해시,삼정동  196-14번지,055-323-7528,Orthophos E,OPE,1360180,2022-12-08,108916,EAST
+미사랑치과의원_광주  광산구,6369289 year generator/sensor warranty(2D),광주광역시,광산구,소촌동  752-6,062-941-7522,Orthophos E,OPE,1360178,2022-01-26,112473,WEST
+바노바기일레븐치과의원,,서울특별시,강남구,논현로 521-3,02-562-2522,XIOS XG Kit Select USB Size2 refurbished,6410885_R_178,178,2020-12-13,107986,EAST
+이영준치과,,서울특별시,강서구,등촌로 25,02-2643-4507,Treatment center Intego refurbished,6427285_R_251176,251177,2020-12-20,100330,WEST
+이호영치과,,서울특별시,양천구,목동동로 401,02-2654-2875,Treatment center Intego refurbished,6427285_R_251177,251178,2021-01-07,104204,WEST
+이호영치과,,서울특별시,양천구,목동동로 401,02-2654-2875,Treatment center Intego refurbished,6427285_R_251178,251179,2021-01-07,104204,WEST
+서울 바로나 치과병원,6336791 Extended warranty Intego/pro 1+4,서울특별시,강서구,화곡로 176-4,02-2693-2827,Treatment center Intego refurbished,6427285_R_251179,251176,2020-12-21,111607,WEST
+이영준치과,,서울특별시,강서구,등촌로 25,02-2643-4507,Treatment Centre SINIUS refurbished,6308865_R_535308,535308,2020-12-20,100330,WEST
+바노바기일레븐치과의원,,서울특별시,강남구,논현로 521-3,02-562-2522,HD Plus Wall version refurbished,6483734_R_64733,64733,2020-12-13,107986,EAST
+바노바기일레븐치과의원,6368034 year generator/sensor warranty(3D),서울특별시,강남구,논현로 521-3,02-562-2522,Orthophos SL 3D 11x10 DCS Ceph Left refurbished,OPSL3D11x10C_R_70092,700921(5201958),2020-12-13,107986,EAST
+고운치과의원,6368034 year generator/sensor warranty(3D),서울특별시,서초구,효령로 132,055-266-2828,Orthophos 3D 11x10,OPS3D11x10,1700519,2025-02-26,114570,EAST
+빈스치과의원,6368034 year generator/sensor warranty(3D),대전광역시,서구,둔산동 1407 엠시티타워 3층 일부,010-9803-1586,Orthophos 3D 11x10,OPS3D11x10,1700030,2021-09-15,112124,WEST
+국군서울지구병원(주식회사 나유),Local Warranty Extension (1+4),서울특별시,종로구,삼청동 10길 13,02-397-3943,Orthophos 3D 11x10,OPS3D11x10,1700492,2023-11-22,109668,WEST
+제니스플러스치과,6368034 year generator/sensor warranty(3D),경상북도,포항시,북구 새천년대로 1210 ,054-256-2882,Orthophos 3D 11x10,OPS3D11x10,1700422,2023-10-30,108914,EAST
+2기갑여단(주식회사 나유),Local Warranty Extension (1+2),경기도,파주시,아동동 평일로 사서함 22-3호,,Orthophos 3D 11x10,OPS3D11x10,1700420,2023-09-27,,WEST
+50사단(주식회사 나유),Local Warranty Extension (1+2),대구광역시,북구,호국로 780 남문위병소,,Orthophos 3D 11x10,OPS3D11x10,1700421,2023-09-27,,EAST
+39사단의무대(주식회사 나유),Local Warranty Extension (1+2),경상남도,함안군,군북면 소포리 470-21 ,010-7708-8007,Orthophos 3D 11x10,OPS3D11x10,1700419,2023-09-26,,EAST
+37사단의무대(주식회사나유),Local Warranty Extension (1+2),충청북도,증평군,증평읍 사서함 82-10호,,Orthophos 3D 11x10,OPS3D11x10,1700418,2023-09-25,,WEST
+수도군단(주식회사 나유),6336783 Extended warranty Intego/pro (1+2),경기도,안양시,동안구 평촌대로476번길 83,,Orthophos 3D 11x10,OPS3D11x10,1700326,2023-09-25,,WEST
+파머스치과의원,6368034 year generator/sensor warranty(3D),전라남도,순천시,백연길 111 ,061-722-2875,Orthophos 3D 11x10,OPS3D11x10,1700325,2023-03-28,108355,WEST
+국군양주병원,Local Warranty Extension (1+4),경기도,양주시,은현면 화합로 1133,1688-9163,Orthophos 3D 11x10,OPS3D11x10,1700066,2022-09-28,110853,EAST
+51사단(주식회사 나유),Local Warranty Extension (1+2),경기도,화성시,화성시 매송면 어천리 208 전승신병교육대,,Orthophos 3D 11x10,OPS3D11x10,1700050,2022-07-19,,WEST
+55사단의무대(주식회 나유),Local Warranty Extension (1+2),경기도,용인시,처인구 포곡읍 포곡로170,,Orthophos 3D 11x10,OPS3D11x10,1700049,2022-07-19,,EAST
+육군부사관학교의무대(주식회사 나유),Local Warranty Extension (1+2),전북특별자치도,익산시,여산면 두여리 1192-11,010-5083-0398,Orthophos 3D 11x10,OPS3D11x10,1700048,2022-07-18,,WEST
+66사단(주식회사 나유),Local Warranty Extension (1+2),경기도,가평군,가평읍 각담말길 39,,Orthophos 3D 11x10,OPS3D11x10,1700047,2022-07-18,,EAST
+56사단(주식회사나유),Local Warranty Extension (1+2),경기도,고양시,덕양구 백운길 27-41 ,,Orthophos 3D 11x10,OPS3D11x10,1700046,2022-07-15,,WEST
+73사단(주식회사 나유),Local Warranty Extension (1+2),경기도,남양주시,홍유릉로 55 양정동주민센터,,Orthophos 3D 11x10,OPS3D11x10,1700045,2022-07-14,,EAST
+52사단(주식회사나유),Local Warranty Extension (1+2),경기도,광명시,성채로78번길 29,,Orthophos 3D 11x10,OPS3D11x10,1700044,2022-07-14,,WEST
+3기갑여단(주식회사 나유),Local Warranty Extension (1+2),강원특별자치도,홍천군,남면 시동안로321번길 34-2,,Orthophos 3D 11x10,OPS3D11x10,1700041,2022-07-13,,EAST
+60사단(주식회사 나유),Local Warranty Extension (1+2),경기도,고양시,서오릉로 500번길 ,,Orthophos 3D 11x10,OPS3D11x10,1700039,2022-07-13,,WEST
+하얀치과_충남 예산군,6368034 year generator/sensor warranty(3D),충청남도,예산군,예산읍 발연리 85-4 GM빌딩4층,041-334-2727,Orthophos 3D 11x10,OPS3D11x10,1700078,2023-01-19,112153,WEST
+인천세종병원,Local Warranty Extension (1+2),인천광역시,계양구,계양문화로 20,032-240-8000,Orthophos 3D 11x10,OPS3D11x10,1700067,2022-12-19,113018,WEST
+기쁨이샘솟는치과의원,6368034 year generator/sensor warranty(3D),서울특별시,은평구,진관동 20 은평뉴타운상림마을 2층 상가 821동 201호~202호,02-737-7522,Orthophos 3D 11x10,OPS3D11x10,1700038,2022-06-20,112695,WEST
+랜더스치과의원,6368034 year generator/sensor warranty(3D),인천광역시,연수구,컨벤시아대로230번길 54,032-859-0028,Orthophos 3D 11x10,OPS3D11x10,1700037,2022-06-14,106493,WEST
+육군종합행정학교(주식회사 나유),Local Warranty Extension (1+2),충청북도,영동군,양강면 양정죽촌로 70,,Orthophos 3D 11x10,OPS3D11x10,1700042,2022-06-29,,WEST
+항작사의무실(주식회사 나유),Local Warranty Extension (1+2),경기도,이천시,모가면,,Orthophos 3D 11x10,OPS3D11x10,1700040,2022-06-29,,EAST
+5기갑여단(주식회사나유),Local Warranty Extension (1+2),경기도,양주시,칠봉산로 186 철풍회관,,Orthophos 3D 11x10,OPS3D11x10,1700043,2022-06-27,,EAST
+학교법인가톨릭학원 가톨릭대학교 인천성모병원,Local Warranty Extension (1+2),인천광역시,부평구,동수로 56,032-280-5128(1544-9004),Orthophos 3D 11x10,OPS3D11x10,1700036,2022-02-19,104949,WEST
+닥터조치과의원,6368034 year generator/sensor warranty(3D),경기도,고양시,덕양구 호국로790번길 6,031-811-2828,Orthophos 3D 11x10,OPS3D11x10,1700032,2021-12-20,111993,WEST
+국군함평병원,Local Warranty Extension (1+4),전라남도,함평군,해보면 신해로 1027,010-9105-1006,Orthophos 3D 11x10,OPS3D11x10,1700031,2021-11-04,,WEST
+서울웅천치과,6368034 year generator/sensor warranty(3D),전라남도,여수시,웅천로 108,061-810-3031,Orthophos 3D 11x10 Ceph (Arm),OPS3D11x10C,1700053,2025-06-19,107512,WEST
+더스마트치과의원,6368034 year generator/sensor warranty(3D),대전광역시,유성구,도룡동 3-1 대전신세계엑스포점 타워 4층,010-2671-3670,Orthophos 3D 11x10 Ceph (Arm),OPS3D11x10C,1700033,2021-08-11,112201,WEST
+원데이수치과의원,6368034 year generator/sensor warranty(3D),충청남도,아산시,번영로 118,041-584-7582,Orthophos 3D 11x10 Ceph (Arm),OPS3D11x10C,1700022,2021-06-14,111488,WEST
+서울명문치과,6368034 year generator/sensor warranty(3D),강원특별자치도,홍천군,홍천읍 홍천로3길 16 ,033-436-2804,Orthophos 3D 11x10 Ceph (Arm),OPS3D11x10C,1700021,2021-04-26,105972,EAST
+자인치과의원,6368034 year generator/sensor warranty(3D),충청북도,청주시,흥덕구 서현로 32,043-237-7575,Orthophos 3D 11x10 Ceph (Arm),OPS3D11x10C,1700020(M6679612S1700020),2021-04-22,111990,WEST
+금토정성치과의원,6368034 year generator/sensor warranty(3D),경기도,성남시,수정구 금토로80번길,031-709-2888,Orthophos 3D 11x10 Ceph (Arm),OPS3D11x10C,1700034,2023-06-27,113259,EAST
+의료법인명지의료재단,Local Warranty Extension (1+2),경기도,고양시,덕양구 화수로 14번길 55 ,031-810-5114,Orthophos 3D 11x10 Ceph (Arm),OPS3D11x10C,1700052,2022-10-10,105714,WEST
+강서탑치과,6368034 year generator/sensor warranty(3D),서울특별시,강서구,강서로 392-11,02-3662-2870,Orthophos 3D 11x10 Ceph (Arm),OPS3D11x10C,1700001,2021-10-21,106483,WEST
+고신대학교복음병원,,부산광역시,서구,감천로 262 ,051-990-6900,Galileos Comfort Hardware,6052935,9149,2017-08-31,108140,EAST
+연세우리치과,,경기도,성남시,분당구 황새울로 325,031-707-2852,RCU,NOT IN USE-001RCN7AAO,,2016-03-28,108480,EAST
+(학)가톨릭학원가톨릭대학교대전성모병원,,대전광역시,중구,대흥로 64,042-220-9030,HD Plus Wall version (Helident Plus),6256171,34502,2015-12-10,110134,WEST
+신성치과의원,,서울특별시,성동구,성수2가  314-6번지,02-464-1574,HD Plus Wall version (Helident Plus),6256171,31156,2015-08-26,108641,EAST
+뉴욕치과의원,,서울특별시,중구,퇴계로 436,02-2238-2875,HD Plus Wall version (Helident Plus),6256171,31064,2015-08-19,108644,WEST
+맨하탄치과_서울  성동구,,서울특별시,성동구,행당1동  267번지 나래타워 702호,02-2281-0028,HD Plus Wall version (Helident Plus),6256171,18462,2015-09-30,103876,EAST
+좋은솜씨죽전치과,,경기도,용인시,기흥구 죽전로 57,031-889-2877,HD Plus Wall version (Helident Plus),6256171,31060,2015-08-03,112493,EAST
+서울그루치과의원,,경기도,용인시,수지구 수지로 74,031-264-2275,HD Plus Wall version (Helident Plus),6256171,31039,2015-06-10,108724,EAST
+다니치과의원,,경기도,수원시,장안구 덕영대로535번길 38,031-207-7528,HD Plus Wall version (Helident Plus),6256171,28121,2015-03-30,109751,WEST
+한림치과의원_대구  중구,,대구광역시,중구,동성로2가  140-1번지,053-426-7575,HD Plus Wall version (Helident Plus),6256171,28117,2015-02-11,108786,EAST
+국군함평병원,,전라남도,함평군,해보면 신해로 1027,010-9105-1006,HD Plus Wall version (Helident Plus),6256171,49470,2018-08-10,,WEST
+아름미소치과의원,,서울특별시,중랑구,망우로 192,02-6212-7575,HD Plus Wall version (Helident Plus),6256171,31212,2017-12-07,110440,EAST
+미소를만드는치과교정과치과의원,,부산광역시,부산진구,중앙대로 708,051-817-8228,HD Plus Wall version (Helident Plus),6256171,18716,2016-07-29,114183,EAST
+연세화이트치과,,경기도,용인시,기흥구 구갈동 352번지 메가타운빌딩 303호,031-274-9955,HD Plus Wall version (Helident Plus),6256171,36954,2016-03-23,108969,EAST
+골드치과의원,,서울특별시,중랑구,동일로 812,02-3422-2875,HD Plus Wall version (Helident Plus),6256171,36986,2016-03-21,108460,EAST
+비오케이(BOK)김봉옥치과,,서울특별시,강남구,압구정로 208,02-515-2828,HD Plus Wall version (Helident Plus),6256171,35592,2016-02-23,107731,EAST
+오늘안치과의원,,서울특별시,중구,장충단로13길 20,02-2283-2136,HD Plus Wall version (Helident Plus),6256171,35564,2016-03-07,108490,WEST
+연세우리치과,,경기도,성남시,분당구 황새울로 325,031-707-2852,HD Plus Wall version (Helident Plus),6256171,36952,2016-03-28,108480,EAST
+경희의료원,,서울특별시,동대문구,경희대로 23,02-958-9915-6,HD Plus Wall version (Helident Plus),6256171,37768,2016-02-17,104181,EAST
+경희의료원,,서울특별시,동대문구,경희대로 23,02-958-9915-6,HD Plus Wall version (Helident Plus),6256171,6483734/37780,2016-03-28,104181,EAST
+강동경희대학교병원,,서울특별시,강동구,동남로 892,02-440-6526,HD Plus Wall version (Helident Plus),6256171,37764,2016-06-01,103412,EAST
+라임치과의원_충남 아산시,,충청남도,아산시,배방읍 배방로 53 황금프라자,041-541-2879,HD Plus Wall version (Helident Plus),6256171,34514,2016-01-15,107376,WEST
+탑플란트치과의원,,충청남도,천안시,청당동 396-12 4층,041-622-2875,HD Plus Wall version (Helident Plus),6256171,34486,2016-02-15,108489,WEST
+호계치과,,울산광역시,북구,호계동  833-6번지,052-295-1682,HD Plus Wall version (Helident Plus),6256171,34471,2015-12-22,108586,EAST
+에이스치과의원,,서울특별시,강북구,미아동 60-16 2층 211,02-945-0015,ORTHOPHOS XG 3,6005586,112046,2015-11-30,109395,EAST
+호계치과,,울산광역시,북구,호계동  833-6번지,052-295-1682,ORTHOPHOS XG 3,6005586,111986,2015-11-12,108586,EAST
+다나치과의원,,인천광역시,미추홀구,한나루로389,032-867-7575,ORTHOPHOS XG 3,6005586,111954,2015-11-10,108997,WEST
+미라인치과의원,,서울특별시,중구,퇴계로 457,02-2254-2877,ORTHOPHOS XG 3,6005586,111953,2015-10-28,113633,WEST
+나온치과,,서울특별시,종로구,종로5가 36-1 2층 201호,02-747-7522,ORTHOPHOS XG 3,6005586,111804,2015-08-31,109108,WEST
+신성치과의원,,서울특별시,성동구,성수2가  314-6번지,02-464-1574,ORTHOPHOS XG 3,6005586,111759,2015-08-26,108641,EAST
+문치과,,경기도,수원시,영통구 하동 광교택지 A26BL휴먼시아아파트단지상가 201,031-262-2875,ORTHOPHOS XG 3,6005586,111931,2015-09-30,109191,WEST
+팜스치과의원,,서울특별시,은평구,대조동  240 팜스퀘어 15층 A007,02-350-7974,ORTHOPHOS XG 3,6005586,111912,2015-09-24,108633,WEST
+맨하탄치과_서울  성동구,,서울특별시,성동구,행당1동  267번지 나래타워 702호,02-2281-0028,ORTHOPHOS XG 3,6005586,111930,2015-09-30,103876,EAST
+한마음치과의원,,강원특별자치도,속초시,조양동  1498-6번지 A동2층,033-638-8228,ORTHOPHOS XG 3,6005586,111758,2015-08-13,101861,EAST
+열린수치과의원,,서울특별시,관악구,관악로40길 47 A-402,02-874-3100,ORTHOPHOS XG 3,6005586,111557,2015-06-17,109373,WEST
+이튼치과_강원도 춘천시,,강원특별자치도,춘천시,방송길 98,033-251-0101,ORTHOPHOS XG 3,6005586,111558,2015-07-15,101413,EAST
+베리굿치과의원_경기도 안산,,경기도,안산시,단원구 와동 719-8 2층,031-439-6975,ORTHOPHOS XG 3,6005586,111518,2015-05-26,108717,WEST
+금호타이어(주)부속치과,,광주광역시,광산구,어등대로 658 1층,062-940-2057,ORTHOPHOS XG 3,6005586,111517,2015-05-04,108648,WEST
+한빛치과의원,,경기도,시흥시,하중동  856-1번지 조은프라자 203호,031-318-2875,ORTHOPHOS XG 3,6005586,111093,2015-04-23,106296,WEST
+홍치과의원,,서울특별시,서대문구,북가좌2동  304-29번지 2층,02-308-1664,ORTHOPHOS XG 3,6005586,111095,2015-04-09,102911,WEST
+토론토사랑치과의원,,서울특별시,관악구,청림동  1000번지 관악현대B상가APT 202호,02-886-2275,ORTHOPHOS XG 3,6005586,110999,2015-01-14,109874,WEST
+현대치과의원,,경기도,양주시,백석읍 복지리 290 동화아파트 1차상가 213,031-879-2777,ORTHOPHOS XG 3,6005586,111094,2015-03-26,108757,EAST
+임경대치과의원,6306786 2D extension warranty(XG only),경기도,부천시,원미구 도당동 213,032-675-3052,ORTHOPHOS XG 3,6005586,114841,2021-01-19,109906,WEST
+동부치과의원,6306786 2D extension warranty(XG only),경기도,고양시,일산서구 주엽동 17 문촌마을동부썬프라자 A동 226,031-919-3606,ORTHOPHOS XG 3,6005586,114801,2020-02-21,103708,WEST
+최용호치과의원,6306786 2D extension warranty(XG only),전북특별자치도,김제시,요촌동  293-1번지,063-544-4466,ORTHOPHOS XG 3,6005586,114843,2020-09-14,107733,WEST
+황치훈치과의원,6306786 2D extension warranty(XG only),서울특별시,서대문구,홍제3동  253-7번지,02-379-2897,ORTHOPHOS XG 3,6005586,114814,2020-07-01,105353,WEST
+대전보건대학교(주식회사 새한),6306786 2D extension warranty(XG only),대전광역시,동구,충정로 21,042-670-9000,ORTHOPHOS XG 3,6005586,114812,2020-05-19,,WEST
+자하연치과,6306786 2D extension warranty(XG only),서울특별시,성북구,정릉동 404-14,02-914-2804,ORTHOPHOS XG 3,6005586,114758,2019-12-24,100669,EAST
+밝은미소이치과,6306786 2D extension warranty(XG only),서울특별시,광진구,구의3동  220-218번지,02-458-4496,ORTHOPHOS XG 3,6005586,114651,2019-10-22,102913,EAST
+(복)양친사회복지회,6306786 2D extension warranty(XG only),경기도,성남시,산성대로476번길 12 ,031-799-5543,ORTHOPHOS XG 3,6005586,114811,2020-03-17,108612,EAST
+서울치과의원_강원 홍천군,6306786 2D extension warranty(XG only),강원특별자치도,홍천군,홍천읍  신장대리 73-10번지 2층,033-434-3556,ORTHOPHOS XG 3,6005586,114474,2019-09-04,108200,EAST
+서울치과의원_경기 동두천시,,경기도,동두천시,생연동 611-4 한웅프라자 206,031-864-4657,ORTHOPHOS XG 3,6005586,114473,2019-04-04,106904,EAST
+에덴치과_경북 구미,,경상북도,구미시,봉곡남로 85,054-442-0028,ORTHOPHOS XG 3,6005586,113975,2018-12-20,109814,EAST
+전도현치과의원,,인천광역시,미추홀구,매소홀로 474,032-866-6632,ORTHOPHOS XG 3,6005586,113944,2018-09-06,108324,WEST
+성심치과의원_경기 부천시,,경기도,부천시,오정구 오정로 210,032-681-2875,ORTHOPHOS XG 3,6005586,113861,2018-07-12,101536,WEST
+(학) 성균관대학삼성창원병원,,경상남도,창원시,마산회원구 팔용로 158,055-233-5690,ORTHOPHOS XG 3,6005586,114420,2019-02-19,110133,EAST
+미금치과_경기 남양주시,,경기도,남양주시,도농동 117 이화빌딩  3층,031-569-2875,ORTHOPHOS XG 3,6005586,113279,2018-03-28,100481,EAST
+진기열치과의원,,경상북도,포항시,북구 중흥로,054-281-2710,ORTHOPHOS XG 3,6005586,113280,2018-03-07,108623,EAST
+서기항치과의원,,전북특별자치도,전주시,완산구 고사동 2-6,063-275-7533,ORTHOPHOS XG 3,6005586,113278,2018-02-20,110367,WEST
+국립공주병원,,충청남도,공주시,고분티로 623-21 ,041-850-5764,ORTHOPHOS XG 3,6005586,113185,2017-10-30,,WEST
+구성 수치과의원,,경기도,용인시,기흥구 언남동 416-5 2필지 푸른종합상가 206호,031-283-2874,ORTHOPHOS XG 3,6005586,113184,2017-08-11,108773,EAST
+한국보훈복지의료공단중앙병원,,서울특별시,강동구,진황도로 61길53,02-2225-1114,ORTHOPHOS XG 3,6005586,113183,2017-04-28,103881,EAST
+배현철치과의원,,대구광역시,중구,대신동 1010-2,053-254-4190,ORTHOPHOS XG 3,6005586,113186,2017-09-18,109718,EAST
+고려치과의원,,대전광역시,중구,옥계동  149-8번지,042-271-6025,ORTHOPHOS XG 3,6005586,112984,2017-03-30,108817,WEST
+제나두치과,,서울특별시,서초구,방배로 13길 18 211,02-501-2875,ORTHOPHOS XG 3,6005586,112985,2017-03-27,105243,EAST
+하늘치과의원,,서울특별시,종로구,자하문로 58,02-737-2804,ORTHOPHOS XG 3,6005586,112973,2017-02-21,108185,WEST
+도진영치과의원,,경기도,성남시,중원구 금광1동 656번지,031-745-4853,ORTHOPHOS XG 3,6005586,112972,2017-01-25,108604,EAST
+늘해랑치과,,경기도,부천시,중동로 398,032-672-8172,ORTHOPHOS XG 3,6005586,112954,2016-12-27,113326,WEST
+수원선치과의원,,경기도,수원시,팔달구 팔달로3가 26-7번지 남경빌딩 3층,031-257-7520,ORTHOPHOS XG 3,6005586,112913,2016-12-01,108338,WEST
+센트럴D&D치과의원,,인천광역시,연수구,송도동 23-3 A-211,032-858-2275,ORTHOPHOS XG 3,6005586,112768,2016-11-09,109344,WEST
+고치과의원,,전북특별자치도,군산시,수송동 808-7,063-442-2875,ORTHOPHOS XG 3,6005586,112769,2016-11-02,107268,WEST
+박윤혁치과의원,,대전광역시,대덕구,중리 369-16,042-673-4114,ORTHOPHOS XG 3,6005586,112321,2016-09-09,109818,WEST
+김진국치과의원,,서울특별시,강북구,수유동  472-8번지 3층,02-986-8961,ORTHOPHOS XG 3,6005586,112302,2016-08-18,109253,EAST
+서울새이치과의원,,경기도,용인시,수지구 신수로 767,031-229-1633,ORTHOPHOS XG 3,6005586,112301,2016-08-10,108357,EAST
+서울베스트치과의원,,경기도,양주시,백석읍 복지리 130-7 2층,031-836-2275,ORTHOPHOS XG 3,6005586,112320,2016-09-21,108316,EAST
+박동범치과의원,,경기도,부천시,소사구 경인로 74 ,032-662-9399,ORTHOPHOS XG 3,6005586,112216,2016-04-07,109008,WEST
+연세필치과의원,,경기도,파주시,문화로 100,031-957-0158,ORTHOPHOS XG 3,6005586,112167,2016-03-02,108471,WEST
+미소치과의원,,강원특별자치도,양구군,양구읍  상리 330-6번지,033-481-2875,ORTHOPHOS XG 3,6005586,112125,2016-02-24,109063,EAST
+예담치과,,부산광역시,사하구,괴정3동  1009-22번지 농협 3층,051-205-2275,ORTHOPHOS XG 3,6005586,112303,2016-05-25,108918,EAST
+경희의료원,,서울특별시,동대문구,경희대로 23,02-958-9915-6,ORTHOPHOS XG 3,6005586,112235,2016-05-24,104181,EAST
+경희의료원,,서울특별시,동대문구,경희대로 23,02-958-9915-6,ORTHOPHOS XG 3,6005586,112237,2016-05-24,104181,EAST
+김대섭치과,,경기도,화성시,정남면 서봉로 1006-4,031-359-8280,ORTHOPHOS XG 3,6005586,112236,2016-05-03,108662,WEST
+탑치과의원_대전 서구,,대전광역시,서구,갈마동 377-5 용우빌딩 층,042-534-2207,ORTHOPHOS XG 3,6005586,112215,2016-04-20,109369,WEST
+세브란스치과의원,,경기도,부천시,원미구 상1동 반달마을삼익세라믹상가 210호,032-323-2828,ORTHOPHOS XG 3,6005586,112063,2016-01-28,108528,WEST
+최윤호치과의원,,경기도,양주시,광적면  가남리 722-9번지,031-837-8221,ORTHOPHOS XG 3,6005586,112047,2015-12-15,100938,EAST
+염치과의원,,전북특별자치도,고창군,고창읍 중앙로 232,063-564-4438,ORTHOPHOS XG 3,6005586,6005586,2016-02-18,108488,WEST
+이천치과_경기 이천시,,경기도,이천시,창전동  457-21번지 역전빌딩 2층,031-638-2021,ORTHOPHOS XG 3,6005586,112091,2016-01-27,108511,EAST
+한남치과의원_대전  동구,,대전광역시,동구,계족로443번길 70,042-627-2875,ORTHOPHOS XG 5,5993394,61074,2015-09-01,110939,WEST
+이편한치과,,경기도,양주시,회정동 98-5 이마트 2층,031-859-2879,ORTHOPHOS XG 3D,6300011,650229,2015-09-24,109024,EAST
+국군서울지구병원(주식회사 나유),,서울특별시,종로구,삼청동 10길 13,02-397-3943,ORTHOPHOS XG 3D,6300011,631569,2015-09-30,109668,WEST
+국군의무사령부 (국군강릉병원),,강원특별자치도,강릉시,주문진읍 동해대로 4371-34,033-662-7802,ORTHOPHOS XG 3D,6300011,631500,2015-10-22,,EAST
+하루에치과의원,,서울특별시,강남구,강남대로 162길 41-11,1544-0208,ORTHOPHOS XG 3D,6300011,631494,2015-09-09,104205,EAST
+성서부부치과의원,,대구광역시,달서구,성서서로 316,053-581-5199,ORTHOPHOS XG 3D,6300011,631474,2015-09-02,109009,EAST
+발안치과의원,,경기도,화성시,향남읍  평리 73-1번지,031-354-9975,ORTHOPHOS XG 3D,6300011,650227,2015-06-30,107971,WEST
+이안치과_경기 여주군,,경기도,여주시,여주읍  홍문리 110,031-882-2850,ORTHOPHOS XG 3D,6300011,630406,2015-06-29,109060,EAST
+보람부부치과,,부산광역시,부산진구,복지로 61,051-895-7275,ORTHOPHOS XG 3D,6300011,631330,2015-05-27,100650,EAST
+하예치과의원,6306810 3D extension warranty(XG only),경기도,의정부시,용민로 483,031-874-2804,ORTHOPHOS XG 3D,6300011,652352,2021-09-14,111560,EAST
+6사단의무대(주식회사 나유),6306810 3D extension warranty(XG only),경기도,포천시,관인면 북원로 404번길 78-5호 의무대대 ,,ORTHOPHOS XG 3D,6300011,633039,2020-06-26,,EAST
+3사교병원(주식회사 나유),6306810 3D extension warranty(XG only),경상북도,영천시,고경면 호국로 사서함 135-1호,,ORTHOPHOS XG 3D,6300011,633038,2020-06-24,,EAST
+2작사의무대(주식회사 나유),6306810 3D extension warranty(XG only),대구광역시,수성구,무열로 56,,ORTHOPHOS XG 3D,6300011,633037,2020-06-23,,EAST
+특수전교육단(주식회사 나유),6306810 3D extension warranty(XG only),경기도,광주시,오포읍 양벌로 353번길 30,,ORTHOPHOS XG 3D,6300011,633036,2020-06-22,,EAST
+육군사관학교병원(주식회사 나유),6306810 3D extension warranty(XG only),서울특별시,노원구,화랑로 574,,ORTHOPHOS XG 3D,6300011,633035,2020-06-19,,EAST
+5사단(주식회사 나유)_경기 연천,6306810 3D extension warranty(XG only),경기도,연천군,전곡읍 평화로 874,,ORTHOPHOS XG 3D,6300011,633033,2020-06-18,,EAST
+28사단의무대(주식회사 나유),6306810 3D extension warranty(XG only),경기도,양주시,은현면 364로 431-54,,ORTHOPHOS XG 3D,6300011,633032,2020-06-17,,EAST
+수기사의무대(주식회사 나유),6306810 3D extension warranty(XG only),경기도,가평군,조종면 현창로 31,,ORTHOPHOS XG 3D,6300011,633034,2020-06-15,,EAST
+11사단의무대(주식회사 나유),6306810 3D extension warranty(XG only),강원특별자치도,홍천군,홍천로 132,,ORTHOPHOS XG 3D,6300011,633031,2020-06-12,,EAST
+20여단의무대(주식회사 나유),6306810 3D extension warranty(XG only),강원특별자치도,홍천군,화촌면 송정3길 16,,ORTHOPHOS XG 3D,6300011,633030,2020-06-11,,EAST
+계룡대지구병원(주식회사 나유),6306810 3D extension warranty(XG only),충청남도,계룡시,신도안면 정장리,,ORTHOPHOS XG 3D,6300011,633029,2020-06-09,,WEST
+학생군사학교(주식회사 나유),6306810 3D extension warranty(XG only),충청북도,괴산군,괴산읍 문무로 177,,ORTHOPHOS XG 3D,6300011,633028,2020-06-08,,WEST
+9사단의무대(주식회사 나유),6306810 3D extension warranty(XG only),경기도,고양시,일산동구 풍동 208-11,,ORTHOPHOS XG 3D,6300011,633027,2020-06-05,,WEST
+1사단의무대(주식회사 나유),6306810 3D extension warranty(XG only),경기도,파주시,사임당로 273 의무대대 보급과 ,,ORTHOPHOS XG 3D,6300011,633026,2020-06-04,,WEST
+17사단의무대(주식회사 나유),6306810 3D extension warranty(XG only),인천광역시,부평구,무네미로 447번길,,ORTHOPHOS XG 3D,6300011,633025,2020-06-03,,WEST
+3사단의무대(주식회나 나유),6306810 3D extension warranty(XG only),강원특별자치도,철원군,서면 자등리 1,,ORTHOPHOS XG 3D,6300011,632916,2020-05-29,,EAST
+7사단의무대(주식회사 나유),6306810 3D extension warranty(XG only),강원특별자치도,화천군,하남면 논미로 347-11 의무근무대,,ORTHOPHOS XG 3D,6300011,632915,2020-05-27,,EAST
+21사단의무대(주식회사 나유),6306810 3D extension warranty(XG only),강원특별자치도,양구군,양구읍 금강산로 510,,ORTHOPHOS XG 3D,6300011,632914,2020-05-26,,EAST
+22사단의무대(주식회사 나유),6306810 3D extension warranty(XG only),강원특별자치도,고성군,광포호길15,,ORTHOPHOS XG 3D,6300011,632913,2020-05-22,,EAST
+특전사의무대(주식회사 나유),6306810 3D extension warranty(XG only),경기도,이천시,마장면 억만리로130,,ORTHOPHOS XG 3D,6300011,632911,2020-05-20,,EAST
+나눔치과의원,6306810 3D extension warranty(XG only),광주광역시,북구,용주로30번길 63,062-415-2875,ORTHOPHOS XG 3D,6300011,632594,2020-02-05,108492,WEST
+해군포항병원,6306810 3D extension warranty(XG only),경상북도,포항시,남구 오천읍 구정리 사서함 209-141호 1층,054-290-2485,ORTHOPHOS XG 3D,6300011,632910,2019-06-26,106242,EAST
+고의영치과,,부산광역시,해운대구,반여2동  1291-1025번지,051-783-2636,ORTHOPHOS XG 3D,6300011,632104,2018-04-30,104913,EAST
+그린서울치과,,서울특별시,구로구,고척동 203,02-2688-2875,ORTHOPHOS XG 3D,6300011,632089,2018-04-26,110558,WEST
+드림치과의원_대전  중구,,대전광역시,중구,계룡로 858,042-525-6617,ORTHOPHOS XG 3D,6300011,632116,2018-11-30,108808,WEST
+완도치과의원,,전라남도,완도군,완도읍 장보고대로 170,061-555-0028,ORTHOPHOS XG 3D,6300011,630459,2017-12-19,109577,WEST
+이노스치과의원,,경기도,평택시,경기대로 1188,031-667-2802,ORTHOPHOS XG 3D,6300011,631588,2017-03-30,108196,WEST
+한별치과의원,,전북특별자치도,전주시,완산구 홍산중앙로 26,063-211-2804,ORTHOPHOS XG 3D,6300011,632090,2016-12-23,114148,WEST
+애플치과의원,,경상남도,김해시,삼계로 30,055-338-2875,ORTHOPHOS XG 3D,6300011,631857,2016-11-24,103472,EAST
+정치과의원,,충청남도,홍성군,광천읍 홍남로 670,041-641-3699,ORTHOPHOS XG 3D,6300011,631796,2016-11-21,108418,WEST
+22세기서울치과병원,,인천광역시,연수구,컨벤시아대로 69,032-858-2080,ORTHOPHOS XG 3D,6300011,631856,2016-11-18,107908,WEST
+연세우일치과병원,,충청남도,천안시,서북구 서부대로 350,041-579-8787,ORTHOPHOS XG 3D,6300011,631752,2016-08-30,103684,WEST
+비오케이(BOK)김봉옥치과,,서울특별시,강남구,압구정로 208,02-515-2828,ORTHOPHOS XG 3D,6300011,631592,2016-02-23,107731,EAST
+UC미주치과의원,,광주광역시,북구,서암대로 33,062-525-2875,ORTHOPHOS XG 3D,6300011,650085,2016-01-19,108517,WEST
+연세이로운치과보존과치과의원,6368034 year generator/sensor warranty(3D),서울특별시,마포구,월드컵로 98,010-4768-2143,ORTHOPHOS XG 3D,6300011,633045,2022-04-20,112529,WEST
+좋은솜씨죽전치과,,경기도,용인시,기흥구 죽전로 57,031-889-2877,ORTHOPHOS XG 3D CEPH,6300029,650228,2015-08-03,112493,EAST
+서울그루치과의원,,경기도,용인시,수지구 수지로 74,031-264-2275,ORTHOPHOS XG 3D CEPH,6300029,650083,2015-06-10,108724,EAST
+e해박난치과의원,6306810 3D extension warranty(XG only),서울특별시,동작구,노량진동  73-3 3층,02-823-2080,ORTHOPHOS XG 3D CEPH,6300029,652361,2021-09-26,112274,WEST
+청담치과의원,6306810 3D extension warranty(XG only),경기도,고양시,일산서구 대화동 2222-2번지 영림브레야 302,031-924-2882,ORTHOPHOS XG 3D CEPH,6300029,652360,2021-07-01,112162,WEST
+대풍치과의원(경남 창원),6306810 3D extension warranty(XG only),경상남도,창원시,성산구 대암로 101,055-715-2875,ORTHOPHOS XG 3D CEPH,6300029,652351,2019-12-30,111341,EAST
+바른부부치과의원,6306810 3D extension warranty(XG only),경기도,평택시,비전동  829-4,031-655-7528,ORTHOPHOS XG 3D CEPH,6300029,652245,2019-06-26,110032,WEST
+사람사랑치과의원_전북 전주시,6306810 3D extension warranty(XG only),전북특별자치도,전주시,완산구 온고을로 18 ,063-275-7578,ORTHOPHOS XG 3D CEPH,6300029,652022,2019-08-17,101820,WEST
+이승희디지털치과의원,,부산광역시,동래구,금강공원로11,051-554-2221,ORTHOPHOS XG 3D CEPH,6300029,651962,2018-06-12,110471,EAST
+아름미소치과의원,,서울특별시,중랑구,망우로 192,02-6212-7575,ORTHOPHOS XG 3D CEPH,6300029,651961,2018-05-30,110440,EAST
+탑클래스치과의원,,전북특별자치도,전주시,덕진구 세병남로 39 4층 1,063-254-3000,ORTHOPHOS XG 3D CEPH,6300029,651839,2018-05-15,110580,WEST
+함안우리치과의원,,경상남도,함안군,가야읍 함마대로 1494,051-784-2882,ORTHOPHOS XG 3D CEPH,6300029,651829,2018-05-15,112676,EAST
+서울훈플란트치과의원,,경기도,수원시,권선구 금곡로 112,031-891-2882,ORTHOPHOS XG 3D CEPH,6300029,651828,2018-05-09,110526,WEST
+나노치과,,경기도,화성시,동탄순환대로 18길 16,031-373-2870,ORTHOPHOS XG 3D CEPH,6300029,651985,2019-01-29,110866,WEST
+효사랑치과,,경기도,안양시,만안구 병목안로 20,031-360-4311,ORTHOPHOS XG 3D CEPH,6300029,651231,2019-01-28,110958,WEST
+대구예스타치과의원,,대구광역시,중구,중앙대로 366,053-719-3346,ORTHOPHOS XG 3D CEPH,6300029,651464,2018-04-12,110584,EAST
+연세자연애치과,,서울특별시,서초구,헌릉로 176,02-576-2275,ORTHOPHOS XG 3D CEPH,6300029,651463,2018-01-19,110408,EAST
+라이크치과의원,Local year generator/sensor warranty,서울특별시,마포구,신촌로 104,02-6951-0011,ORTHOPHOS XG 3D CEPH,6300029,651417,2017-09-28,110474,WEST
+오늘하루치과의원,Local year generator/sensor warranty,서울특별시,동작구,동작대로 89,02-522-2828,ORTHOPHOS XG 3D CEPH,6300029,651360,2017-06-29,108896,WEST
+꿈을이루는수치과,,충청남도,아산시,배방읍 고속철대로 147 우성메디피아 4층,041-556-2282,ORTHOPHOS XG 3D CEPH,6300029,650990,2017-06-22,109073,WEST
+연세화이트치과의원,Local year generator/sensor warranty,서울특별시,강서구,양천로 401,02-6958-7577,ORTHOPHOS XG 3D CEPH,6300029,651264,2017-06-22,108530,WEST
+행복한치과,,경기도,연천군,전곡읍  305-27번지 전곡한의원 2층,031-835-7528,ORTHOPHOS XG 3D CEPH,6300029,651263,2017-05-27,103090,EAST
+고덕서울치과의원,Local year generator/sensor warranty,서울특별시,강동구,고덕로 256,02-481-3336,ORTHOPHOS XG 3D CEPH,6300029,651418,2017-09-11,110213,EAST
+포레스트치과의원,,서울특별시,강서구,마곡중앙6로 10 마곡역센트럴푸르지오시티 2층 210호,02-6952-5501,ORTHOPHOS XG 3D CEPH,6300029,631587,2017-02-02,108238,WEST
+제니스원치과의원,,경상북도,포항시,북구 중흥로 308,054-256-2882,ORTHOPHOS XG 3D CEPH,6300029,651170,2016-11-29,109220,EAST
+서울바른생각치과의원,,경기도,성남시,수정구 위례광장로310,031-752-7525,ORTHOPHOS XG 3D CEPH,6300029,651046,2016-08-05,107618,EAST
+서울S치과(서울에스치과),,경기도,하남시,미사강변대로 216,031-792-2409,ORTHOPHOS XG 3D CEPH,6300029,651169,2016-09-29,108312,EAST
+더블유화이트치과의원,,서울특별시,강남구,테헤란로87길 17 ,02-564-0075,ORTHOPHOS XG 3D CEPH,6300029,651083_Singap.,2016-09-28,105522,EAST
+본수치과의원,,강원특별자치도,춘천시,후석로 328,033-252-7525,ORTHOPHOS XG 3D CEPH,6300029,650904,2016-06-29,110477,EAST
+연세우리치과,,경기도,성남시,분당구 황새울로 325,031-707-2852,ORTHOPHOS XG 3D CEPH,6300029,650773,2016-03-28,108480,EAST
+사과나무치과의원,,경기도,부천시,역곡로 8,032-343-2871,ORTHOPHOS XG 3D CEPH,6300029,650839,2016-05-23,109093,WEST
+대구가톨릭대학교칠곡가톨릭병원,,대구광역시,북구,읍내동 1341-5,053-320-2500 053-320-2195,ORTHOPHOS XG 3D CEPH,6300029,650840,2016-05-18,108730,EAST
+사람사랑치과의원_경기 성남,,경기도,성남시,중원구 산성대로 366,031-741-2356?,ORTHOPHOS XG 3D CEPH,6300029,650084,2016-01-26,108536,EAST
+이현원치과의원,,서울특별시,강남구,선릉로 305,02-561-0222,ORTHOPHOS XG 3D CEPH,6300029,649801,2015-06-29,102787,EAST
+마이스터치과의원,6306810 3D extension warranty(XG only),서울특별시,영등포구,여의도동  44-1 대영빌딩 지하1층 104호,02-783-6625,ORTHOPHOS XG 3D CEPH,6300029,652362,2021-10-23,105312,WEST
+스마트e치과의원,,부산광역시,부산진구,중앙대로 700 순생빌딩 6층,051-714-1123,SIDEXIS XIOS Plus EP + USB,6283746,7876/04012550,2020-06-25,109166,EAST
+백석문화대학교,,충청남도,천안시,동남구 문암로 58,,SIDEXIS XIOS Plus EP + USB,6283746,7880/04012551,2020-02-19,111464,WEST
+백석문화대학교,,충청남도,천안시,동남구 문암로 58,,SIDEXIS XIOS Plus EP + USB,6283746,8012/04012722,2020-02-19,111464,WEST
+백석문화대학교,,충청남도,천안시,동남구 문암로 58,,SIDEXIS XIOS Plus EP + USB,6283746,7882/04012723,2020-02-19,111464,WEST
+휘치과의원,,부산광역시,연제구,월드컵대로 54,,SIDEXIS XIOS Plus EP + USB,6283746,00007878 04012721,2019-04-01,111031,EAST
+주헌장치과,,경기도,광명시,철산1동  56-162번지,02-2619-2875,SIDEXIS XIOS Plus EP + USB,6283746,0004012719 8021,2017-11-23,108521,WEST
+오늘하루치과의원,,서울특별시,동작구,동작대로 89,02-522-2828,SIDEXIS XIOS Plus EP + USB,6283746,80204012716,2017-06-29,108896,WEST
+연세미&진치과의원,,서울특별시,중랑구,망우동 479 한일써너스빌리젠시 빌딩 101-1101,02-433-7522,SIDEXIS XIOS Plus EP + USB,6283746,7737/4012720,2017-03-31,107800,EAST
+연세우일치과병원,,충청남도,천안시,서북구 서부대로 350,041-579-8787,SIDEXIS XIOS Plus EP + USB,6283746,7962/04010036,2017-03-15,103684,WEST
+연세우일치과병원,,충청남도,천안시,서북구 서부대로 350,041-579-8787,SIDEXIS XIOS Plus EP + USB,6283746,4010031 7953,2016-11-25,103684,WEST
+연세우일치과병원,,충청남도,천안시,서북구 서부대로 350,041-579-8787,SIDEXIS XIOS Plus EP + USB,6283746,7433/4007392,2016-08-30,103684,WEST
+국군서울지구병원(주식회사 나유),,서울특별시,종로구,삼청동 10길 13,02-397-3943,XIOS+S2 with USB,6283753,7436,2015-09-30,109668,WEST
+국군의무사령부 (국군강릉병원),,강원특별자치도,강릉시,주문진읍 동해대로 4371-34,033-662-7802,XIOS+S2 with USB,6283753,.,2015-10-22,,EAST
+하루에치과의원,,서울특별시,강남구,강남대로 162길 41-11,1544-0208,XIOS+S2 with USB,6283753,7439,2015-09-09,104205,EAST
+하늘치과,,광주광역시,북구,풍향동  603-24번지 2층,062-529-2275,XIOS+S2 with USB,6283753,7435/5011916,2015-09-09,108631,WEST
+신성치과의원,,서울특별시,성동구,성수2가  314-6번지,02-464-1574,XIOS+S2 with USB,6283753,3713,2015-08-26,108641,EAST
+성서부부치과의원,,대구광역시,달서구,성서서로 316,053-581-5199,XIOS+S2 with USB,6283753,5179 5011914,2015-09-02,109009,EAST
+국군서울지구병원(주식회사 나유),,서울특별시,종로구,삼청동 10길 13,02-397-3943,XIOS+S2 with USB,6283753,7429,2015-09-30,109668,WEST
+하임치과의원,,서울특별시,강남구,논현로98길 34,02-596-2080,XIOS+S2 with USB,6283753,00007428/05011911,2015-09-17,109155,EAST
+문치과,,경기도,수원시,영통구 하동 광교택지 A26BL휴먼시아아파트단지상가 201,031-262-2875,XIOS+S2 with USB,6283753,7438,2015-09-30,109191,WEST
+최규원치과의원_인천광역시,,인천광역시,미추홀구,주안8동  1031-2번지,032-435-2875,XIOS+S2 with USB,6283753,05011963 7421,2015-08-13,108651,WEST
+서울남치과의원,,서울특별시,광진구,중곡동 230-11,02-547-2828,XIOS+S2 with USB,6283753,4098,2015-08-05,108660,EAST
+봄봄치과의원,,경기도,수원시,영통구 영통로 511,031-8004-2804,XIOS+S2 with USB,6283753,M 4084/S 5011959→5012839,2015-07-22,108669,WEST
+이튼치과_강원도 춘천시,,강원특별자치도,춘천시,방송길 98,033-251-0101,XIOS+S2 with USB,6283753,7434,2015-07-15,101413,EAST
+미소원치과의원,,울산광역시,남구,화합로 150,1899-7518,XIOS+S2 with USB,6283753,7424 05011685,2017-06-14,111559,EAST
+미소원치과의원,,울산광역시,남구,화합로 150,1899-7518,XIOS+S2 with USB,6283753,74275011698,2015-02-13,111559,EAST
+미르치과병원_전남 목포시,,전라남도,목포시,백년대로 319,061-280-8800,XIOS+S2 with USB,6283753,7875/5013424,2017-05-04,103595,WEST
+꿈을이루는수치과,,충청남도,아산시,배방읍 고속철대로 147 우성메디피아 4층,041-556-2282,XIOS+S2 with USB,6283753,74305012420,2017-06-22,109073,WEST
+인천국제공항치과,,인천광역시,중구,운서동 2851 여객터미널 지하1층 인하대병원 공항의료센터,032-743-3116,XIOS+S2 with USB,6283753,8022/05013432,2017-04-12,,WEST
+삼익치과의원,,경기도,의정부시,호원2동  322-5번지 뉴삼익호원가든2차APT상가 3층,031-879-6875,XIOS+S2 with USB,6283753,8019.501343,2017-03-31,102817,EAST
+강원도원주의료원,,강원특별자치도,원주시,서원대로 387,033-760-4539,XIOS+S2 with USB,6283753,7954/5013042,2017-03-28,109243,EAST
+인천세종병원,,인천광역시,계양구,계양문화로 20,032-240-8000,XIOS+S2 with USB,6283753,5013040.796,2017-02-15,113018,WEST
+제니스원치과의원,,경상북도,포항시,북구 중흥로 308,054-256-2882,XIOS+S2 with USB,6283753,50129977955,2016-11-29,109220,EAST
+애플치과의원,,경상남도,김해시,삼계로 30,055-338-2875,XIOS+S2 with USB,6283753,50129957952,2016-11-24,103472,EAST
+수치과보철과치과의원,,충청남도,서산시,고운로 191-1,041-668-7528,XIOS+S2 with USB,6283753,7951/05012461,2016-09-08,110376,WEST
+서울새이치과의원,,경기도,용인시,수지구 신수로 767,031-229-1633,XIOS+S2 with USB,6283753,7950/5012989,2016-08-10,108357,EAST
+하루에치과의원,,서울특별시,강남구,강남대로 162길 41-11,1544-0208,XIOS+S2 with USB,6283753,05012149/7961,2016-07-27,104205,EAST
+늘푸른치과의원,,경상남도,창원시,성산구 상남동  2-8번지 2층,055-266-2000,XIOS+S2 with USB,6283753,5012420 7430,2016-06-30,103857,EAST
+본수치과의원,,강원특별자치도,춘천시,후석로 328,033-252-7525,XIOS+S2 with USB,6283753,7431/5005748,2016-06-29,110477,EAST
+디아이연세치과의원,,울산광역시,북구,연암동 401-2,052-288-2929,XIOS+S2 with USB,6283753,7426/5011909,2016-05-12,108420,EAST
+경찰병원,,서울특별시,송파구,송이로 123,02-3400-1287,XIOS+S2 with USB,6283753,05011910/7420,2015-12-18,108546,EAST
+호계치과,,울산광역시,북구,호계동  833-6번지,052-295-1682,XIOS+S2 with USB,6283753,74385008411,2016-02-04,108586,EAST
+서울바른생각치과의원,,경기도,성남시,수정구 위례광장로310,031-752-7525,XIOS+S1 with WM,6283761,3516,2016-08-05,107618,EAST
+미라인치과의원,,서울특별시,중구,퇴계로 457,02-2254-2877,SIDEXIS XIOS Plus EP + WB,6283779,3941/5011957,2015-10-28,113633,WEST
+성서부부치과의원,,대구광역시,달서구,성서서로 316,053-581-5199,SIDEXIS XIOS Plus EP + WB,6283779,3930 5011956,2015-09-02,109009,EAST
+팜스치과의원,,서울특별시,은평구,대조동  240 팜스퀘어 15층 A007,02-350-7974,SIDEXIS XIOS Plus EP + WB,6283779,1006/04010035,2015-09-24,108633,WEST
+맨하탄치과_서울  성동구,,서울특별시,성동구,행당1동  267번지 나래타워 702호,02-2281-0028,SIDEXIS XIOS Plus EP + WB,6283779,3927,2015-09-30,103876,EAST
+한마음치과의원,,강원특별자치도,속초시,조양동  1498-6번지 A동2층,033-638-8228,SIDEXIS XIOS Plus EP + WB,6283779,3929,2015-08-13,101861,EAST
+좋은솜씨죽전치과,,경기도,용인시,기흥구 죽전로 57,031-889-2877,SIDEXIS XIOS Plus EP + WB,6283779,5011918,2015-08-03,112493,EAST
+서울그루치과의원,,경기도,용인시,수지구 수지로 74,031-264-2275,SIDEXIS XIOS Plus EP + WB,6283779,3519,2015-06-10,108724,EAST
+금호타이어(주)부속치과,,광주광역시,광산구,어등대로 658 1층,062-940-2057,SIDEXIS XIOS Plus EP + WB,6283779,5011912/3511,2015-05-04,108648,WEST
+서울명문치과,,강원특별자치도,홍천군,홍천읍 홍천로3길 16 ,033-436-2804,SIDEXIS XIOS Plus EP + WB,6283779,3912,2015-04-29,105972,EAST
+한빛치과의원,,경기도,시흥시,하중동  856-1번지 조은프라자 203호,031-318-2875,SIDEXIS XIOS Plus EP + WB,6283779,03911 05011958,2015-04-23,106296,WEST
+홍치과의원,,서울특별시,서대문구,북가좌2동  304-29번지 2층,02-308-1664,SIDEXIS XIOS Plus EP + WB,6283779,3889/5011691,2015-04-09,102911,WEST
+김성진치과의원,,서울특별시,용산구,이촌로 101,02-790-2831,SIDEXIS XIOS Plus EP + WB,6283779,3843/5011689,2015-01-08,113915,WEST
+솔빛치과_인천광역시,,인천광역시,동구,송현동  158번지 송현플라자 201호,032-777-7528,SIDEXIS XIOS Plus EP + WB,6283779,3888->3829/05011690,2015-01-21,108800,WEST
+에덴치과_경북 구미,,경상북도,구미시,봉곡남로 85,054-442-0028,SIDEXIS XIOS Plus EP + WB,6283779,3836,2018-12-20,109814,EAST
+연세필치과의원,,경기도,파주시,문화로 100,031-957-0158,SIDEXIS XIOS Plus EP + WB,6283779,1018/05012151,2016-03-02,108471,WEST
+오늘안치과의원,,서울특별시,중구,장충단로13길 20,02-2283-2136,SIDEXIS XIOS Plus EP + WB,6283779,01011/05011966,2016-03-07,108490,WEST
+연세우리치과,,경기도,성남시,분당구 황새울로 325,031-707-2852,SIDEXIS XIOS Plus EP + WB,6283779,1020/05012415,2016-03-28,108480,EAST
+경희의료원,,서울특별시,동대문구,경희대로 23,02-958-9915-6,SIDEXIS XIOS Plus EP + WB,6283779,1009/05009806→5012734,2016-03-28,104181,EAST
+경희의료원,,서울특별시,동대문구,경희대로 23,02-958-9915-6,SIDEXIS XIOS Plus EP + WB,6283779,1007/05011951,2016-04-14,104181,EAST
+최윤호치과의원,,경기도,양주시,광적면  가남리 722-9번지,031-837-8221,SIDEXIS XIOS Plus EP + WB,6283779,1005/05011917,2015-12-15,100938,EAST
+예인치과의원,,경기도,여주시,여주읍  홍문리 269-1번지 명승메디칼빌딩 3층,031-886-9075,SIDEXIS XIOS Plus EP + WB,6283779,1008,2016-02-03,109294,EAST
+이현원치과의원,,서울특별시,강남구,선릉로 305,02-561-0222,SIDEXIS XIOS Plus EP + WB,6283779,03931 05011919,2015-08-06,102787,EAST
+프랜드성창수치과의원,,부산광역시,서구,구덕로 281,051-247-7123,C8+ Starter Pack,5943795_1,29387,2016-07-28,100674,EAST
+(학)가톨릭학원가톨릭대학교대전성모병원,,대전광역시,중구,대흥로 64,042-220-9030,XIOS+S1+S2 with WM,6283795,1015,2015-12-10,110134,WEST
+쉐르빌서울치과,,서울특별시,광진구,구의3동  199-18번지 삼성쉐르상가빌 209호,02-2201-0568,XIOS+S1+S2 with WM,6283795,3526,2015-11-12,107843,EAST
+미금치과_경기 남양주시,,경기도,남양주시,도농동 117 이화빌딩  3층,031-569-2875,SIDEXIS XIOS Plus EP 1/2 USB,6283803,4277.500842,2018-03-28,100481,EAST
+신세계정치과의원,,인천광역시,연수구,센트럴로 160,032-851-2082,INTEGO ECO Electric Version,INTEGO ECO ELEC,205198,2015-11-19,106502,WEST
+양지바른치과,,서울특별시,서초구,방배로 118,02-581-2273,INTEGO ECO Electric Version,INTEGO ECO ELEC,202381,2015-09-25,109182,EAST
+양지바른치과,,서울특별시,서초구,방배로 118,02-581-2273,INTEGO ECO Electric Version,INTEGO ECO ELEC,202382,2015-09-25,109182,EAST
+양지바른치과,,서울특별시,서초구,방배로 118,02-581-2273,INTEGO ECO Electric Version,INTEGO ECO ELEC,202380,2015-09-25,109182,EAST
+좋은솜씨죽전치과,,경기도,용인시,기흥구 죽전로 57,031-889-2877,INTEGO ECO Electric Version,INTEGO ECO ELEC,202114,2015-08-07,112493,EAST
+서울라인치과의원,,서울특별시,강남구,도곡로 519,02-566-5129,INTEGO ECO Electric Version,INTEGO ECO ELEC,201927,2015-07-17,107287,EAST
+서울라인치과의원,,서울특별시,강남구,도곡로 519,02-566-5129,INTEGO ECO Electric Version,INTEGO ECO ELEC,201928,2015-07-17,107287,EAST
+완도치과의원,,전라남도,완도군,완도읍 장보고대로 170,061-555-0028,INTEGO ECO Electric Version,INTEGO ECO ELEC,201684,2015-06-25,109577,WEST
+예인치과의원_경남 창원,,경상남도,창원시,의창구 원이대로 581,055-273-7528,INTEGO ECO Electric Version,INTEGO ECO ELEC,201796,2015-06-30,111915,EAST
+예인치과의원_경남 창원,,경상남도,창원시,의창구 원이대로 581,055-273-7528,INTEGO ECO Electric Version,INTEGO ECO ELEC,201797,2015-06-30,111915,EAST
+BK치과의원_충북 청주시,,충청북도,청주시,흥덕구 직지대로 530,043-264-0006,INTEGO ECO Electric Version,INTEGO ECO ELEC,231854,2017-12-29,110330,WEST
+BK치과의원_충북 청주시,,충청북도,청주시,흥덕구 직지대로 530,043-264-0006,INTEGO ECO Electric Version,INTEGO ECO ELEC,231855,2017-12-29,110330,WEST
+이가온치과,,서울특별시,구로구,경인로59길 305,02-2675-6525,INTEGO ECO Electric Version,INTEGO ECO ELEC,242686,2018-02-27,108291,WEST
+이가온치과,,서울특별시,구로구,경인로59길 305,02-2675-6525,INTEGO ECO Electric Version,INTEGO ECO ELEC,242683,2018-02-27,108291,WEST
+3사단(백골신병교육대),,강원특별자치도,철원군,서면 자등리 402,,INTEGO ECO Electric Version,INTEGO ECO ELEC,244129,2018-05-17,,EAST
+미소원치과의원,,울산광역시,남구,화합로 150,1899-7518,INTEGO ECO Electric Version,INTEGO ECO ELEC,201769,2015-06-30,111559,EAST
+미소원치과의원,,울산광역시,남구,화합로 150,1899-7518,INTEGO ECO Electric Version,INTEGO ECO ELEC,201767,2015-06-30,111559,EAST
+미소원치과의원,,울산광역시,남구,화합로 150,1899-7518,INTEGO ECO Electric Version,INTEGO ECO ELEC,201768,2015-06-30,111559,EAST
+미소원치과의원,,울산광역시,남구,화합로 150,1899-7518,INTEGO ECO Electric Version,INTEGO ECO ELEC,201765,2015-06-30,111559,EAST
+미소원치과의원,,울산광역시,남구,화합로 150,1899-7518,INTEGO ECO Electric Version,INTEGO ECO ELEC,201792,2015-06-30,111559,EAST
+미소원치과의원,,울산광역시,남구,화합로 150,1899-7518,INTEGO ECO Electric Version,INTEGO ECO ELEC,201791,2015-06-30,111559,EAST
+미소원치과의원,,울산광역시,남구,화합로 150,1899-7518,INTEGO ECO Electric Version,INTEGO ECO ELEC,201766,2015-06-30,111559,EAST
+미소원치과의원,,울산광역시,남구,화합로 150,1899-7518,INTEGO ECO Electric Version,INTEGO ECO ELEC,201788,2015-06-30,111559,EAST
+미소원치과의원,,울산광역시,남구,화합로 150,1899-7518,INTEGO ECO Electric Version,INTEGO ECO ELEC,201787,2015-06-30,111559,EAST
+미소원치과의원,,울산광역시,남구,화합로 150,1899-7518,INTEGO ECO Electric Version,INTEGO ECO ELEC,201790,2015-06-30,111559,EAST
+미소원치과의원,,울산광역시,남구,화합로 150,1899-7518,INTEGO ECO Electric Version,INTEGO ECO ELEC,201763,2015-06-30,111559,EAST
+미소원치과의원,,울산광역시,남구,화합로 150,1899-7518,INTEGO ECO Electric Version,INTEGO ECO ELEC,201762,2015-06-30,111559,EAST
+미소원치과의원,,울산광역시,남구,화합로 150,1899-7518,INTEGO ECO Electric Version,INTEGO ECO ELEC,201764,2015-06-30,111559,EAST
+미소원치과의원,,울산광역시,남구,화합로 150,1899-7518,INTEGO ECO Electric Version,INTEGO ECO ELEC,201828,2015-06-30,111559,EAST
+미소원치과의원,,울산광역시,남구,화합로 150,1899-7518,INTEGO ECO Electric Version,INTEGO ECO ELEC,201789,2015-06-30,111559,EAST
+5사단(주식회사 나유)_경기 연천,,경기도,연천군,전곡읍 평화로 874,,INTEGO ECO Electric Version,INTEGO ECO ELEC,240520,2017-08-25,,EAST
+12사단 의무대대(주식회사 나유)_강원 인제,,강원특별자치도,인제군,북면 원통로 299 의무대대,,INTEGO ECO Electric Version,INTEGO ECO ELEC,240517,2017-08-23,,EAST
+12사단 의무대대(주식회사 나유)_강원 인제,,강원특별자치도,인제군,북면 원통로 299 의무대대,,INTEGO ECO Electric Version,INTEGO ECO ELEC,240518,2017-08-23,,EAST
+12사단 의무대대(주식회사 나유)_강원 인제,,강원특별자치도,인제군,북면 원통로 299 의무대대,,INTEGO ECO Electric Version,INTEGO ECO ELEC,244130,2018-05-16,,EAST
+25사단(주식회사 나유)_경기 양주,,경기도,양주시,남면 구암리 35-2번지 구암마트,,INTEGO ECO Electric Version,INTEGO ECO ELEC,240519,2017-08-24,,EAST
+25사단(주식회사 나유)_경기 양주,,경기도,양주시,남면 구암리 35-2번지 구암마트,,INTEGO ECO Electric Version,INTEGO ECO ELEC,240521,2017-08-24,,EAST
+35사단 신병교육대(주식회나 나유),,전북특별자치도,임실군,임실읍 감천로 55-77,,INTEGO ECO Electric Version,INTEGO ECO ELEC,244125,2018-05-24,,WEST
+50사단(주식회사 나유),,대구광역시,북구,호국로 780 남문위병소,,INTEGO ECO Electric Version,INTEGO ECO ELEC,244127,2018-05-23,,EAST
+육군종합행정학교(주식회사 나유),,충청북도,영동군,양강면 양정죽촌로 70,,INTEGO ECO Electric Version,INTEGO ECO ELEC,244126,2018-05-21,,WEST
+6사단의무대(주식회사 나유),,경기도,포천시,관인면 북원로 404번길 78-5호 의무대대 ,,INTEGO ECO Electric Version,INTEGO ECO ELEC,244128,2018-05-18,,EAST
+삼성서울병원,,서울특별시,강남구,일원로 81,02-3410-2828,INTEGO ECO Electric Version,INTEGO ECO ELEC,243876,2018-05-02,104334,EAST
+삼성서울병원,,서울특별시,강남구,일원로 81,02-3410-2828,INTEGO ECO Electric Version,INTEGO ECO ELEC,243875,2018-05-02,104334,EAST
+삼성서울병원,,서울특별시,강남구,일원로 81,02-3410-2828,INTEGO ECO Electric Version,INTEGO ECO ELEC,243874,2018-05-02,104334,EAST
+삼성서울병원,,서울특별시,강남구,일원로 81,02-3410-2828,INTEGO ECO Electric Version,INTEGO ECO ELEC,243873,2018-05-02,104334,EAST
+삼성서울병원,,서울특별시,강남구,일원로 81,02-3410-2828,INTEGO ECO Electric Version,INTEGO ECO ELEC,243872,2018-05-02,104334,EAST
+정치과의원,,충청남도,홍성군,광천읍 홍남로 670,041-641-3699,INTEGO ECO Electric Version,INTEGO ECO ELEC,243861,2018-04-25,108418,WEST
+정치과의원,,충청남도,홍성군,광천읍 홍남로 670,041-641-3699,INTEGO ECO Electric Version,INTEGO ECO ELEC,243781,2018-04-25,108418,WEST
+소중치과의원,,서울특별시,송파구,법원로 128,02-527-8877,INTEGO ECO Electric Version,INTEGO ECO ELEC,242682,2018-02-27,114869,EAST
+소중치과의원,,서울특별시,송파구,법원로 128,02-527-8877,INTEGO ECO Electric Version,INTEGO ECO ELEC,242684,2018-02-27,114869,EAST
+소중치과의원,,서울특별시,송파구,법원로 128,02-527-8877,INTEGO ECO Electric Version,INTEGO ECO ELEC,242685,2018-02-27,114869,EAST
+김동윤부부치과의원,,경기도,수원시,팔달구 화서동 71-98,031-253-2743,INTEGO ECO Electric Version,INTEGO ECO ELEC,201690,2018-01-31,109478,WEST
+김앤박 치과의원,,부산광역시,중구,구덕로 4,051-418-8275,INTEGO ECO Electric Version,INTEGO ECO ELEC,243241,2018-12-06,108095,EAST
+근로복지공단 태백병원,,강원특별자치도,태백시,보드미길 ,033-580-3250,INTEGO ECO Electric Version,INTEGO ECO ELEC,242385,2017-12-14,110107,EAST
+근로복지공단 태백병원,,강원특별자치도,태백시,보드미길 ,033-580-3250,INTEGO ECO Electric Version,INTEGO ECO ELEC,242354,2017-12-14,110107,EAST
+인터서울치과의원_서울 용산구,,서울특별시,용산구,한강대로 95,02-714-0328,INTEGO ECO Electric Version,INTEGO ECO ELEC,242234,2017-12-13,106324,WEST
+인터서울치과의원_서울 용산구,,서울특별시,용산구,한강대로 95,02-714-0328,INTEGO ECO Electric Version,INTEGO ECO ELEC,242233,2017-12-13,106324,WEST
+본수치과의원,,강원특별자치도,춘천시,후석로 328,033-252-7525,INTEGO ECO Electric Version,INTEGO ECO ELEC,241386,2017-11-21,110477,EAST
+본수치과의원,,강원특별자치도,춘천시,후석로 328,033-252-7525,INTEGO ECO Electric Version,INTEGO ECO ELEC,241385,2017-11-21,110477,EAST
+본수치과의원,,강원특별자치도,춘천시,후석로 328,033-252-7525,INTEGO ECO Electric Version,INTEGO ECO ELEC,241384,2017-11-21,110477,EAST
+본수치과의원,,강원특별자치도,춘천시,후석로 328,033-252-7525,INTEGO ECO Electric Version,INTEGO ECO ELEC,241383,2017-11-21,110477,EAST
+미래로치과의원,,서울특별시,강북구,한천로 1035,02-999-2228,INTEGO ECO Electric Version,INTEGO ECO ELEC,241436,2017-10-18,104004,EAST
+더블유화이트치과의원,,서울특별시,강남구,테헤란로87길 17 ,02-564-0075,INTEGO ECO Electric Version,INTEGO ECO ELEC,241253,2017-09-29,105522,EAST
+더블유화이트치과의원,,서울특별시,강남구,테헤란로87길 17 ,02-564-0075,INTEGO ECO Electric Version,INTEGO ECO ELEC,241252,2017-09-29,105522,EAST
+더블유화이트치과의원,,서울특별시,강남구,테헤란로87길 17 ,02-564-0075,INTEGO ECO Electric Version,INTEGO ECO ELEC,241251,2017-09-29,105522,EAST
+육군훈련소지구병원(주식회사 나유),,충청남도,논산시,연무읍 주평리 366-4,041-740-8534,INTEGO ECO Electric Version,INTEGO ECO ELEC,240516,2017-08-22,,WEST
+육군훈련소지구병원(주식회사 나유),,충청남도,논산시,연무읍 주평리 366-4,041-740-8534,INTEGO ECO Electric Version,INTEGO ECO ELEC,240515,2017-08-22,,WEST
+서울명문치과,,강원특별자치도,홍천군,홍천읍 홍천로3길 16 ,033-436-2804,INTEGO ECO Electric Version,INTEGO ECO ELEC,240423,2017-08-23,105972,EAST
+서울원픽치과의원,,서울특별시,서초구,동작대로 50,02-2160-8484,INTEGO ECO Electric Version,INTEGO ECO ELEC,231599,2017-05-30,114088,EAST
+포레스트치과의원,,서울특별시,강서구,마곡중앙6로 10 마곡역센트럴푸르지오시티 2층 210호,02-6952-5501,INTEGO ECO Electric Version,INTEGO ECO ELEC,230980,2017-02-02,108238,WEST
+포레스트치과의원,,서울특별시,강서구,마곡중앙6로 10 마곡역센트럴푸르지오시티 2층 210호,02-6952-5501,INTEGO ECO Electric Version,INTEGO ECO ELEC,230981,2017-02-02,108238,WEST
+포레스트치과의원,,서울특별시,강서구,마곡중앙6로 10 마곡역센트럴푸르지오시티 2층 210호,02-6952-5501,INTEGO ECO Electric Version,INTEGO ECO ELEC,230982,2017-02-02,108238,WEST
+포레스트치과의원,,서울특별시,강서구,마곡중앙6로 10 마곡역센트럴푸르지오시티 2층 210호,02-6952-5501,INTEGO ECO Electric Version,INTEGO ECO ELEC,230979,2017-02-02,108238,WEST
+골드치과의원,,서울특별시,중랑구,동일로 812,02-3422-2875,INTEGO ECO Electric Version,INTEGO ECO ELEC,230811,2017-01-19,108460,EAST
+한별치과의원,,전북특별자치도,전주시,완산구 홍산중앙로 26,063-211-2804,INTEGO ECO Electric Version,INTEGO ECO ELEC,230571,2016-12-23,114148,WEST
+한별치과의원,,전북특별자치도,전주시,완산구 홍산중앙로 26,063-211-2804,INTEGO ECO Electric Version,INTEGO ECO ELEC,230570,2016-12-23,114148,WEST
+서울바른생각치과의원,,경기도,성남시,수정구 위례광장로310,031-752-7525,INTEGO ECO Electric Version,INTEGO ECO ELEC,226444,2016-08-05,107618,EAST
+서울바른생각치과의원,,경기도,성남시,수정구 위례광장로310,031-752-7525,INTEGO ECO Electric Version,INTEGO ECO ELEC,226442,2016-08-05,107618,EAST
+서울바른생각치과의원,,경기도,성남시,수정구 위례광장로310,031-752-7525,INTEGO ECO Electric Version,INTEGO ECO ELEC,226443,2016-08-05,107618,EAST
+서울바른생각치과의원,,경기도,성남시,수정구 위례광장로310,031-752-7525,INTEGO ECO Electric Version,INTEGO ECO ELEC,226445,2016-08-05,107618,EAST
+서울S치과(서울에스치과),,경기도,하남시,미사강변대로 216,031-792-2409,INTEGO ECO Electric Version,INTEGO ECO ELEC,227238,2016-09-29,108312,EAST
+인터서울치과의원_서울 용산구,,서울특별시,용산구,한강대로 95,02-714-0328,INTEGO ECO Electric Version,INTEGO ECO ELEC,202555,2016-06-28,106324,WEST
+인터서울치과의원_서울 용산구,,서울특별시,용산구,한강대로 95,02-714-0328,INTEGO ECO Electric Version,INTEGO ECO ELEC,202554,2016-06-28,106324,WEST
+꿈을이루는수치과,,충청남도,아산시,배방읍 고속철대로 147 우성메디피아 4층,041-556-2282,INTEGO ECO Electric Version,INTEGO ECO ELEC,226147,2016-04-18,109073,WEST
+꿈을이루는수치과,,충청남도,아산시,배방읍 고속철대로 147 우성메디피아 4층,041-556-2282,INTEGO ECO Electric Version,INTEGO ECO ELEC,226146,2016-04-18,109073,WEST
+꿈을이루는수치과,,충청남도,아산시,배방읍 고속철대로 147 우성메디피아 4층,041-556-2282,INTEGO ECO Electric Version,INTEGO ECO ELEC,226145,2016-04-18,109073,WEST
+꿈을이루는수치과,,충청남도,아산시,배방읍 고속철대로 147 우성메디피아 4층,041-556-2282,INTEGO ECO Electric Version,INTEGO ECO ELEC,226144,2016-04-18,109073,WEST
+비오케이(BOK)김봉옥치과,,서울특별시,강남구,압구정로 208,02-515-2828,INTEGO ECO Electric Version,INTEGO ECO ELEC,225658,2016-02-29,107731,EAST
+비오케이(BOK)김봉옥치과,,서울특별시,강남구,압구정로 208,02-515-2828,INTEGO ECO Electric Version,INTEGO ECO ELEC,225659,2016-02-29,107731,EAST
+비오케이(BOK)김봉옥치과,,서울특별시,강남구,압구정로 208,02-515-2828,INTEGO ECO Electric Version,INTEGO ECO ELEC,225732,2016-02-23,107731,EAST
+비오케이(BOK)김봉옥치과,,서울특별시,강남구,압구정로 208,02-515-2828,INTEGO ECO Electric Version,INTEGO ECO ELEC,225733,2016-02-23,107731,EAST
+하루에치과의원,,서울특별시,강남구,강남대로 162길 41-11,1544-0208,INTEGO ECO Electric Version,INTEGO ECO ELEC,226306,2016-05-20,104205,EAST
+하루에치과의원,,서울특별시,강남구,강남대로 162길 41-11,1544-0208,INTEGO ECO Electric Version,INTEGO ECO ELEC,226305,2016-05-20,104205,EAST
+하루에치과의원,,서울특별시,강남구,강남대로 162길 41-11,1544-0208,INTEGO ECO Electric Version,INTEGO ECO ELEC,226304,2016-05-20,104205,EAST
+하루에치과의원,,서울특별시,강남구,강남대로 162길 41-11,1544-0208,INTEGO ECO Electric Version,INTEGO ECO ELEC,226318,2016-05-20,104205,EAST
+하루에치과의원,,서울특별시,강남구,강남대로 162길 41-11,1544-0208,INTEGO ECO Electric Version,INTEGO ECO ELEC,226300,2016-05-20,104205,EAST
+하루에치과의원,,서울특별시,강남구,강남대로 162길 41-11,1544-0208,INTEGO ECO Electric Version,INTEGO ECO ELEC,226299,2016-05-20,104205,EAST
+하루에치과의원,,서울특별시,강남구,강남대로 162길 41-11,1544-0208,INTEGO ECO Electric Version,INTEGO ECO ELEC,226302,2016-05-20,104205,EAST
+하루에치과의원,,서울특별시,강남구,강남대로 162길 41-11,1544-0208,INTEGO ECO Electric Version,INTEGO ECO ELEC,226303,2016-05-20,104205,EAST
+하루에치과의원,,서울특별시,강남구,강남대로 162길 41-11,1544-0208,INTEGO ECO Electric Version,INTEGO ECO ELEC,226297,2016-05-20,104205,EAST
+하루에치과의원,,서울특별시,강남구,강남대로 162길 41-11,1544-0208,INTEGO ECO Electric Version,INTEGO ECO ELEC,226298,2016-05-20,104205,EAST
+하루에치과의원,,서울특별시,강남구,강남대로 162길 41-11,1544-0208,INTEGO ECO Electric Version,INTEGO ECO ELEC,226301,2016-05-20,104205,EAST
+하루에치과의원,,서울특별시,강남구,강남대로 162길 41-11,1544-0208,INTEGO ECO Electric Version,INTEGO ECO ELEC,226296,2016-05-20,104205,EAST
+미소사랑치과의원,,경상남도,창원시,팔용동 103-2사화빌딩401호,055-299-2820,INTEGO ECO Electric Version,INTEGO ECO ELEC,225768,2016-04-21,105537,EAST
+미소사랑치과의원,,경상남도,창원시,팔용동 103-2사화빌딩401호,055-299-2820,INTEGO ECO Electric Version,INTEGO ECO ELEC,225767,2016-04-21,105537,EAST
+연세우리치과,,경기도,성남시,분당구 황새울로 325,031-707-2852,INTEGO ECO Electric Version,INTEGO ECO ELEC,226004,2016-03-28,108480,EAST
+연세우리치과,,경기도,성남시,분당구 황새울로 325,031-707-2852,INTEGO ECO Electric Version,INTEGO ECO ELEC,226003,2016-03-28,108480,EAST
+서울그루치과의원,,경기도,용인시,수지구 수지로 74,031-264-2275,INTEGO_Comfort,6427285-1,201843,2015-06-30,108724,EAST
+연세주니어치과,,서울특별시,양천구,신정동  323-9번지 이스타빌3차 B동 205호,02-2646-2875,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,91534,2015-08-25,109951,WEST
+강서굿모닝치과,,서울특별시,강서구,화곡8동  342-56번지 삼경빌딩 2층,02-2602-1123,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,91533,2015-08-17,109525,WEST
+미래치과,,경기도,광명시,철산3동  482번지 신철산빌딩 3층 301호,02-2682-2975,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,90934,2015-07-30,108777,WEST
+국군기무사령부,,경기도,과천시,주암동 300번지,,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,91625,2015-09-30,,WEST
+포인트치과,,서울특별시,중구,명동7가길 20,02-3789-7579,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,91482,2015-05-19,109151,WEST
+서울명문치과,,강원특별자치도,홍천군,홍천읍 홍천로3길 16 ,033-436-2804,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,91463,2015-04-29,105972,EAST
+광안미치과의원_부산 수영구,,부산광역시,수영구,광안2동  143-6번지 광안클리닉센터 7층,051-752-7171,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,91101,2015-04-13,104142,EAST
+빛소치과의원,,서울특별시,동대문구,답십리로 105-1,1544-5025,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,91100,2015-03-31,108872,EAST
+이장규치과의원,6306786 2D extension warranty(XG only),전북특별자치도,익산시,부송동  1039번지 서울은행2층,063-831-2888,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,92754,2021-02-24,111947,WEST
+가인치과의원_전북 익산시,6306786 2D extension warranty(XG only),전북특별자치도,익산시,부송동  677-16번지,063-831-2835,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,92770,2021-03-30,111977,WEST
+서울토토치과의원,6306786 2D extension warranty(XG only),서울특별시,강남구,도곡로 521 203호,02-539-1106,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,92666,2020-06-29,107117,EAST
+22세기서울치과병원,6306786 2D extension warranty(XG only),인천광역시,연수구,컨벤시아대로 69,032-858-2080,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,92455,2019-05-03,107908,WEST
+연세우일치과병원,,충청남도,천안시,서북구 서부대로 350,041-579-8787,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,92397,2018-09-19,103684,WEST
+변치과의원_충남 논산시,,충청남도,논산시,연무읍  안심리 1-25번지,041-741-6668,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,91462,2019-02-13,102623,WEST
+분당어린이치과의원,,경기도,성남시,분당구 장안로 27,031-716-5275,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,92069,2018-04-19,109070,EAST
+미인치과,,경기도,부천시,원미 상동 464,032-327-2812,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,92465,2018-08-17,109405,WEST
+인하대학교의과대학부속병원 (인하대병원),,인천광역시,중구,인항로 27,032-890-2472032-890-2114,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,92352-인하대,2017-12-06,104954,WEST
+파머스치과의원,Local year generator/sensor warranty,전라남도,순천시,백연길 111 ,061-722-2875,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,92070,2017-08-09,108355,WEST
+오세홍치과의원,,서울특별시,강남구,강남대로 616,02-576-7528,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,91970,2017-07-24,108737,EAST
+삼익치과의원,,경기도,의정부시,호원2동  322-5번지 뉴삼익호원가든2차APT상가 3층,031-879-6875,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,91483,2017-03-31,102817,EAST
+인천세종병원,,인천광역시,계양구,계양문화로 20,032-240-8000,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,92003,2017-02-15,113018,WEST
+심미치과,,경기도,의정부시,신곡동 334-2 지상3층,031-844-7522,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,91971,2016-07-29,109972,EAST
+남양좋은치과,,경기도,화성시,남양읍 시청로7,031-355-8275,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,91835,2016-04-12,104528,WEST
+골드치과의원,,서울특별시,중랑구,동일로 812,02-3422-2875,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,91834,2016-03-21,108460,EAST
+오늘안치과의원,,서울특별시,중구,장충단로13길 20,02-2283-2136,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,91810,2016-03-07,108490,WEST
+이엘치과의원,,경기도,안산시,단원구 광덕동로 39,031-439-2275,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,91900,2016-04-25,104036,WEST
+강동본치과의원,,서울특별시,강동구,상암로 191,02-479-3048,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,91901,2016-04-22,109798,EAST
+분당그린치과의원,,경기도,성남시,분당구 성남대로 926번길 6,031-704-2804,ORTHOPHOS XG Ceph/XG 5DS Ceph,5993386,91775,2016-01-21,107444,EAST
+프랜드성창수치과의원,,부산광역시,서구,구덕로 281,051-247-7123,C8+ Comfort pack,5943795_2,128333,2015-05-29,100674,EAST
+뉴욕수 치과의원,,서울특별시,성동구,한림말길 39,02-794-7528,RETROFIT Ceph -ORTHOPHOS XG,5993402,.,2015-10-30,110793,EAST
+신세계정치과의원,,인천광역시,연수구,센트럴로 160,032-851-2082,RETROFIT Ceph -ORTHOPHOS XG,5993402,630407,2016-01-14,106502,WEST
+소중치과의원,,서울특별시,송파구,법원로 128,02-527-8877,SIDEXIS XIOS Plus EP 1/2 WB KR,6370345,4008327.5012705.1016.7698.6527,2018-02-27,114869,EAST
+고덕서울치과의원,,서울특별시,강동구,고덕로 256,02-481-3336,SIDEXIS XIOS Plus EP 1/2 WB KR,6370345,1044.501299,2017-09-11,110213,EAST
+연세우일치과병원,,충청남도,천안시,서북구 서부대로 350,041-579-8787,SIDEXIS XIOS Plus EP 1/2 WB KR,6370345,40008326.5012706.1019.7689,2016-10-13,103684,WEST
+인하대학교의과대학부속병원 (인하대병원),,인천광역시,중구,인항로 27,032-890-2472032-890-2114,SIDEXIS XIOS Plus EP 1/2 WB KR,6370345,1013/5012458(S2)4005474(S1),2015-12-28,104954,WEST
+스마트하루치과의원,,경기도,안양시,동안구 시민대로 175,031-342-2275,Xios XG Supreme AE USB S2 Sensor 270cm,6618685_S2,71017961(M:2031247 S:72019905),2025-06-20,111557,WEST
+화이트치과_강원 강릉시,,강원특별자치도,강릉시,교동광장로 129 2층,033-641-8275,Xios XG Supreme AE USB S2 Sensor 270cm,6618685_S2,S-72019897/M-2030132,2025-05-21,100495,EAST
+화이트치과_강원 강릉시,,강원특별자치도,강릉시,교동광장로 129 2층,033-641-8275,Xios XG Supreme AE USB S2 Sensor 270cm,6618685_S2,S-72019845/M-2029877,2025-05-21,100495,EAST
+명학하나치과,,경기도,안양시,덕천로 52,031-444-7528,RETROFIT Ceph SL Left,6544527,2495,2025-05-14,107450,WEST
