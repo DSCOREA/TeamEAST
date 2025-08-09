@@ -377,7 +377,7 @@
                 applyFilters();
             } catch (error) {
                 console.error("초기화 오류:", error);
-                noEventsMessageEl.textContent = `오류: 데이터를 불러올 수 없습니다. 파일 경로('csv/customer-management.csv')와 인코딩(UTF-8)을 확인하세요.`;
+                noEventsMessageEl.textContent = `오류: 데이터를 불러올 수 없습니다. 파일 경로와 인코딩(UTF-8)을 확인하세요.`;
                 noEventsMessageEl.classList.add('text-red-600', 'font-semibold');
             }
         });
@@ -386,3 +386,4 @@
     </script>
 </body>
 </html>
+
