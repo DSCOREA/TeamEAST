@@ -122,7 +122,7 @@
         async function loadAndParseData() {
             try {
                 // 'Installed Medical Device_Lab.csv' 파일을 fetch로 불러옵니다.
-                const response = await fetch('Installed Medical Device_Lab.csv');
+                const response = await fetch('csv/Installed Medical Device_Lab.csv');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
