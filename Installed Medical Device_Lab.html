@@ -5,57 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>거래처 장비 위치 지도</title>
 
-    <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Leaflet.js for Map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
     <style>
-        .map-placeholder {
-             height: 40vh;
-             width: 100%;
-            background-color: #e5e7eb;
-            border-radius: 0.5rem;
-            margin-top: 1rem;
-        }
-        .loader {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #3498db;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1.5s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .details-table {
-            width: 100%;
-            margin-top: 12px;
-            font-size: 14px;
-        }
-        .details-table th, .details-table td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        .details-table th {
-            background-color: #f9fafb;
-            font-weight: 600;
-            color: #4b5563;
-            width: 100px;
-        }
+        .map-placeholder { height: 40vh; width: 100%; background-color: #e5e7eb; border-radius: 0.5rem; margin-top: 1rem; }
+        .loader { border: 8px solid #f3f3f3; border-top: 8px solid #3498db; border-radius: 50%; width: 40px; height: 40px; animation: spin 1.5s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .details-table { width: 100%; margin-top: 12px; font-size: 14px; }
+        .details-table th, .details-table td { padding: 8px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+        .details-table th { background-color: #f9fafb; font-weight: 600; color: #4b5563; width: 100px; }
         .copyable-address { cursor: pointer; color: #2563eb; font-weight: 500; }
         .copyable-address:hover { text-decoration: underline; }
         select:disabled { background-color: #f3f4f6; cursor: not-allowed; }
-        .details-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out;
-        }
+        .details-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; }
     </style>
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
@@ -65,9 +30,8 @@
             <p class="text-gray-600 mt-2">필터를 선택하여 거래처 목록을 확인하세요.</p>
         </header>
 
-        <!-- 필터 그룹 -->
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-4">
-             <select id="team-filter" class="block w-full sm:w-auto bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 rounded-lg shadow-md focus:outline-none focus:shadow-outline">
+             <select id="team-filter" class="block w-full sm:w-auto bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 rounded-lg shadow-md focus:outline-none focus:shadow-outline" disabled>
                 <option value="">-- 담당팀 --</option>
             </select>
             <select id="sido-filter" class="block w-full sm:w-auto bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 rounded-lg shadow-md focus:outline-none focus:shadow-outline" disabled>
@@ -82,16 +46,13 @@
         </div>
         <div id="status" class="text-center p-4 mb-4 bg-blue-100 border border-blue-400 text-blue-700 rounded-lg transition-all duration-500">
             <div id="status-content" class="flex items-center justify-center">
-                <span id="status-text">담당팀을 선택하여 검색을 시작하세요.</span>
-                <div id="loader" class="loader ml-3 hidden"></div>
-            </div>
+                <span id="status-text">데이터 로딩 중...</span>
+                <div id="loader" class="loader ml-3"></div> </div>
         </div>
-        <!-- 거래처 목록 컨테이너 -->
         <div id="customer-list-container" class="hidden mt-6">
             <h2 class="text-2xl font-bold text-gray-800 mb-3">검색 결과</h2>
             <div id="customer-list" class="space-y-3">
-                <!-- 동적으로 채워질 거래처 목록 -->
-            </div>
+                </div>
         </div>
         <footer class="text-center mt-6 text-sm text-gray-500">
             <p>지도 데이터 © <a href="https://www.openstreetmap.org/copyright" class="text-blue-500 hover:underline">OpenStreetMap</a> 기여자</p>
@@ -112,224 +73,7 @@
         let allCustomerData = [];
         let activeMap = null;
 
-        // --- 2. CSV 데이터 ---
-        const csvData = `고객 이름,Membership Type,시도,시군구,상세주소(도로명주소),전화,제품,ref,제조번호,설치일자,AX 코드,S.Territory
-무안제일치과기공소,,전라남도,무안군,무안읍 성남리 236,061-454-2825,MULTIMAT  NTX 230V,5460270001,44861661/GOE1821018,2021-07-02,106958,WEST
-제니스덴탈 주식회사,,서울특별시,광진구,능동로 351,070-7773-2804,MULTIMAT  NTX 230V,5460270001,44910118,2021-04-20,111910,EAST
-하늘치과기공소-경기,,경기도,고양시,일산동구 고봉로 278번길 11,031-975-1415,MULTIMAT  NTX 230V,5460270001,44761301,2021-04-12,106187,WEST
-황인철치과기공소,,경기도,안산시,단원구 광덕3로 145-7 203호,031-480-8035,MULTIMAT  NTX 230V,5460270001,44861736,2020-03-11,,WEST
-명인치과,,경기도,고양시,덕양구 푸른마을로 30 서정프라자 3층,031-962-7529,MULTIMAT  NTX 230V,5460270001,44660965,2019-11-28,106733,WEST
-홀인원치과기공소_인천 부평구,,인천광역시,부평구,마장로460번길 8,032-528-2801,MULTIMAT  NTX 230V,5460270001,44861678,2019-11-27,101117,WEST
-에이플러스치과기공소_서울 금천구,,서울특별시,금천구,가산디지털2로 98 롯데IT캐슬 1동 918호,,MULTIMAT  NTX 230V,5460270001,44861603,2019-07-03,,WEST
-신진 치과기공소,,부산광역시,동래구,사직북로33번길 25,,MULTIMAT  NTX 230V,5460270001,44861733,2019-06-19,,EAST
-우리치과기공소,,경상남도,거제시,수양1길 51,055-634-2804,MULTIMAT  NTX 230V,5460270001,44861710,2019-06-18,,EAST
-KL치과기공소,,충청남도,천안시,서북구 봉정로 120-5,041-579-2804,MULTIMAT  NTX 230V,5460270001,44861636,2019-06-17,104479,WEST
-현대치과기공소,,서울특별시,양천구,신목로 24,02-2604-2805,MULTIMAT  NTX 230V,5460270001,44861557,2019-05-23,111043,WEST
-(주)정성치과덴탈랩,,경기도,안양시,만안구 덕천로 33,031-468-2804,MULTIMAT  NTX 230V,5460270001,33460723,2019-04-25,112947,WEST
-미치과기공소,,경기도,수원시,장안구 율전동 304-17 용호빌딩3층,031-296-2804,MULTIMAT  NTX 230V,5460270001,,2019-04-25,104295,WEST
-안동제일치과병원,,경상북도,안동시,노하길 431,054-855-6363,MULTIMAT  NTX 230V,5460270001,44861575,2019-04-17,112094,EAST
-전북대학교병원,,전북특별자치도,전주시,덕진구 건지로 20,063-250-2127,MULTIMAT  NTX 230V,5460270001,44861728,2019-11-15,103405,WEST
-서울늘솜치과,,경기도,오산시,내삼미로 85,031-374-5999,MULTIMAT  NTX 230V,5460270001,.,2019-04-10,111055,WEST
-(주)화이트치과기공소,,충청북도,청주시,흥덕구 가경로 9-9,043-237-2804,MULTIMAT  NTX 230V,5460270001,44861732,2019-04-08,113674,WEST
-백제치과기공소,,전북특별자치도,전주시,인후동 1 가 919-8,063-245-2804,MULTIMAT  NTX 230V,5460270001,44861730,2019-04-04,114880,WEST
-믿음치과기공소,,경기도,의정부시,시민로 184 3층,031-843-2876,MULTIMAT  NTX 230V,5460270001,44861684,2019-03-29,107658,EAST
-모양치과기공소,,전북특별자치도,고창군,고창읍 읍내리 311 제일꽃화원 2층,063-564-1753,MULTIMAT  NTX 230V,5460270001,44861731,2019-04-03,106893,WEST
-일곱색깔치과,,경기도,성남시,수성구 위례동로 153. 304 ,031-736-2875,MULTIMAT  NTX 230V,5460270001,GOE1813072,2019-03-29,111037,EAST
-워싱턴치과의원,,부산광역시,연제구,연산4동  588-12번지 화성빌딩2층,051-862-2875,MULTIMAT  NTX 230V,5460270001,44861706,2019-03-27,106291,EAST
-뿌리깊은치과기공소,,경상북도,경산시,중방동 863-8 경도메디빌 4층,053-811-2804,MULTIMAT  NTX 230V,5460270001,44861713,2018-12-13,,EAST
-로얄치과기공소,,경상북도,상주시,남성동 11-31,054-535-7524,MULTIMAT  NTX 230V,5460270001,44861569,2019-03-18,100884,EAST
-예담치과기공소,,강원특별자치도,철원군,철원읍 금학로 265,033-455-2875,MULTIMAT  NTX 230V,5460270001,44861559,2019-03-18,107641,EAST
-동양치과기공소,,경상북도,포항시,북구 죽도2동 46-34번지 4층,054-272-0805,MULTIMAT  NTX 230V,5460270001,44861637,2019-03-13,107131,EAST
-엠에스덴탈치과기공소,,경상북도,포항시,북구 장량로31번길 41,054-272-0428,MULTIMAT  NTX 230V,5460270001,44861639,2019-03-13,107367,EAST
-오딧세이치과의원,,부산광역시,해운대구,해운대로 369,051-743-2080,MULTIMAT  NTX 230V,5460270001,44861662,2019-03-11,103943,EAST
-(주)유경덴탈워크,,전북특별자치도,김제시,서암4길 29,063-543-2808,MULTIMAT  NTX 230V,5460270001,44861679,2019-03-06,104686,WEST
-베스트치과기공소-포항,,경상북도,포항시,남구 해도동 33-73 4층,054-273-7741,MULTIMAT  NTX 230V,5460270001,44861705,2019-01-11,104507,EAST
-연세퍼스트치과의원,,충청남도,논산시,시민로 424,041-735-2800,MULTIMAT  NTX 230V,5460270001,44861660,2019-01-08,111015,WEST
-덴타피아치과의원_경북 구미시,,경상북도,구미시,구평동  446-1번지,054-472-2407,MULTIMAT  NTX 230V,5460270001,44861658,2019-01-04,107798,EAST
-하나치과기공소-서초,,서울특별시,서초구,도구로 112,02-532-2845,MULTIMAT  NTX 230V,5460270001,44861599,2018-12-19,104324,EAST
-뿌리깊은치과기공소,,경상북도,경산시,중방동 863-8 경도메디빌 4층,053-811-2804,MULTIMAT  NTX 230V,5460270001,44861640,2018-12-13,,EAST
-제이제이치과기공소,,광주광역시,남구,대남대로 337,,MULTIMAT  NTX 230V,5460270001,44861675,2018-11-02,,WEST
-즐거운치과_대전  서구,,대전광역시,서구,갈마로 245,042-531-2879,MULTIMAT  NTX 230V,5460270001,44861577,2018-10-27,109180,WEST
-선화치과기공소,,서울특별시,용산구,한강대로 77길 20,02-717-1667,MULTIMAT  NTX 230V,5460270001,44861627,2018-10-25,100783,WEST
-삼신기공소-여주,,경기도,여주시,여주읍 창리 149-1번지 2층,031-885-1069,MULTIMAT  NTX 230V,5460270001,44861694,2018-10-22,101272,EAST
-대구예스타치과의원,,대구광역시,중구,중앙대로 366,053-719-3346,MULTIMAT  NTX 230V,5460270001,44861673,2018-10-16,110584,EAST
-제천연화치과기공소,,충청북도,제천시,풍양로11길 11,043-645-2783,MULTIMAT  NTX 230V,5460270001,44861624,2018-10-16,110801,WEST
-박인호치과,,대전광역시,중구,태평2동  486-15번지 버드내APT2단지내상가 207호,042-536-2833,MULTIMAT  NTX 230V,5460270001,44861597,2018-10-15,103098,WEST
-시흥사과나무치과의원,,경기도,시흥시,은행동 532-1 에메랄드빌딩 4F,031-315-2845,MULTIMAT  NTX 230V,5460270001,44861626,2018-10-16,106550,WEST
-혜윰치과기공소,,부산광역시,사하구,낙동대로 419,,MULTIMAT  NTX 230V,5460270001,44861601,2018-10-04,110771,EAST
-닥터스치과(경주점),,경상북도,경주시,화랑로 79-1,054-772-0003,MULTIMAT  NTX 230V,5460270001,44761276,2018-08-22,,EAST
-홀인원치과기공소_인천 부평구,,인천광역시,부평구,마장로460번길 8,032-528-2801,MULTIMAT  NTX 230V,5460270001,44861594,2018-12-17,101117,WEST
-APEX치과기공소,,서울특별시,강서구,등촌524-4,02-2649-0028,MULTIMAT  NTX 230V,5460270001,44861609,2018-08-30,104662,WEST
-정읍치과의원,,전북특별자치도,정읍시,수성동 559-1,063-535-2340,MULTIMAT  NTX 230V,5460270001,44660982,2018-07-26,100613,WEST
-타이거치과,,경기도,수원시,권선구 금곡로196번길 76,031-292-2080,MULTIMAT  NTX 230V,5460270001,.,2018-07-26,110674,WEST
-신규 기공소,,강원특별자치도,홍천군,홍천읍 꽃뫼로 99,,MULTIMAT  NTX 230V,5460270001,44861553,2018-07-26,,EAST
-정읍치과의원,,전북특별자치도,정읍시,수성동 559-1,063-535-2340,MULTIMAT  NTX 230V,5460270001,,2018-07-25,100613,WEST
-베스트 텍 치과기공소,,서울특별시,강동구,암사동 488-25 2층,02-481-0957,MULTIMAT  NTX 230V,5460270001,44861556,2018-07-24,107099,EAST
-예미담치과의원,,경상북도,예천군,호명면 새움3로 20,054-653-2875,MULTIMAT  NTX 230V,5460270001,44761319,2018-07-04,111758,EAST
-수지예인치과의원,,경기도,용인시,수지구 문정로 13,031-265-3123,MULTIMAT  NTX 230V,5460270001,44861570,2018-06-27,113369,EAST
-스마트기공소_경북 구미시,,경상북도,구미시,봉곡남로 179,010-4106-2804,MULTIMAT  NTX 230V,5460270001,44761450,2018-06-18,112412,EAST
-주식회사 윤원바이오,,광주광역시,동구,동계천로 150,,MULTIMAT  NTX 230V,5460270001,33360474,2018-06-19,110593,WEST
-으뜸치과기공소,,서울특별시,송파구,방이동 62-1 진영빌딩 3층,02-423-5530,MULTIMAT  NTX 230V,5460270001,44761298,2018-05-31,104341,EAST
-탑클래스치과의원,,전북특별자치도,전주시,덕진구 세병남로 39 4층 1,063-254-3000,MULTIMAT  NTX 230V,5460270001,44861504,2018-05-15,110580,WEST
-으뜸치과기공소,,경상남도,진주시,향교로18번길 8,055-746-2804,MULTIMAT  NTX 230V,5460270001,44861519,2018-05-15,108027,EAST
-동양치과기공소,,경상북도,포항시,북구 죽도2동 46-34번지 4층,054-272-0805,MULTIMAT  NTX 230V,5460270001,44661057,2018-05-14,107131,EAST
-에스제이디치과기공소,,대구광역시,서구,국채보상로48길,053-637-2204,MULTIMAT  NTX 230V,5460270001,44761451,2018-05-14,110212,EAST
-유펜아이비치과의원,,서울특별시,서초구,반포대로 333,02-797-7784,MULTIMAT  NTX 230V,5460270001,44761454,2018-04-23,103741,EAST
-제민치과기공소-동대문,,서울특별시,동대문구,제기동 930-6,02-967-2822,MULTIMAT  NTX 230V,5460270001,44861502,2019-02-22,101889,EAST
-한길치과기공소-목포,,전라남도,목포시,산정동 1050-77 4층,061-245-2804,MULTIMAT  NTX 230V,5460270001,44861703,2019-02-12,100797,WEST
-경진치과기공소,,전북특별자치도,부안군,계화면 간재로 424-1 동일약방 2층,,MULTIMAT  NTX 230V,5460270001,44861704,2019-02-11,,WEST
-혜성치과기공소,,광주광역시,북구,오치동 955-2 2층,062-269-2804,MULTIMAT  NTX 230V,5460270001,44861668,2019-01-23,107575,WEST
-연합치과_대전  대덕구,,대전광역시,대덕구,신탄진동  145번지 5층,042-931-2879,MULTIMAT  NTX 230V,5460270001,44861680,2019-01-17,,WEST
-다인치과의원_충남 논산,,충청남도,논산시,내동 436-8,041-732-7528,MULTIMAT  NTX 230V,5460270001,44861473,2018-04-09,108704,WEST
-신성치과기공소-대전,,대전광역시,서구,괴정동 91-22 3층,042-523-8591,MULTIMAT  NTX 230V,5460270001,44861479,2018-03-30,104603,WEST
-고은치과기공소,,경기도,군포시,당산로135번길 47,031-457-5655,MULTIMAT  NTX 230V,5460270001,44761288,2018-04-05,100781,WEST
-연세위드치과의원,,인천광역시,남동구,논고개로 87 203,032-422-7728,MULTIMAT  NTX 230V,5460270001,44861497,2018-03-30,107656,WEST
-예사랑치과기공소,,경기도,광명시,광명2동 90-24 반지하,,MULTIMAT  NTX 230V,5460270001,44761407,2018-03-14,,WEST
-라이크치과기공소,,대구광역시,남구,봉덕동 957-1,,MULTIMAT  NTX 230V,5460270001,44761393,2018-03-13,,EAST
-예인치과기공소,,대전광역시,중구,선화동 184-5 2층,042-242-2104,MULTIMAT  NTX 230V,5460270001,44861476,2018-03-18,104421,WEST
-행복치과기공소,,대구광역시,북구,칠성로17길 4,,MULTIMAT  NTX 230V,5460270001,44761456,2018-03-13,,EAST
-미앤미치과의원,,경기도,화성시,팔탄면 푸른돌판로 666,031-354-7537,MULTIMAT  NTX 230V,5460270001,44761457,2018-03-08,111377,WEST
-미앤미치과의원,,경기도,화성시,팔탄면 푸른돌판로 666,031-354-7537,MULTIMAT  NTX 230V,5460270001,,2018-03-08,111377,WEST
-WT치과기공소,,인천광역시,계양구,계양대로 121 ,,MULTIMAT  NTX 230V,5460270001,44761299,2018-02-21,110311,WEST
-라온D.CAD치과기공소,,대구광역시,북구,대학로 153,053-958-2882,MULTIMAT  NTX 230V,5460270001,44761377,2018-02-12,101162,EAST
-게일투치과기공소,,서울특별시,광진구,능동로 349,02-977-2804,MULTIMAT  NTX 230V,5460270001,44761360,2018-02-02,104750,EAST
-신흥치과기공소,,대구광역시,남구,대봉로19길 46-1,053-474-2514,MULTIMAT  NTX 230V,5460270001,44761134,2018-02-01,110846,EAST
-좋은날치과기공소,,강원특별자치도,원주시,우산로 63,070-4383-2804,MULTIMAT  NTX 230V,5460270001,44761386,2018-01-09,110268,EAST
-주식회사 위드치과기공소,,인천광역시,남동구,주안로 258,032-439-6148,MULTIMAT  NTX 230V,5460270001,44761362,2018-04-18,110343,WEST
-2080치과의원,,인천광역시,계양구,효성동 123-73 태산상가 401,032-545-7242,MULTIMAT  NTX 230V,5460270001,44761347,2018-01-04,110246,WEST
-원평우리치과기공소,,전북특별자치도,김제시,금산면 원평리 182-3,,MULTIMAT  NTX 230V,5460270001,44861621,2018-12-10,,WEST
-순천치과기공소-순천,,전라남도,순천시,매곡동 124-12,061-744-3848,MULTIMAT  NTX 230V,5460270001,44861690,2018-12-07,104628,WEST
-(주)화이트치과기공소,,충청북도,청주시,흥덕구 가경로 9-9,043-237-2804,MULTIMAT  NTX 230V,5460270001,44861649,2018-12-07,113674,WEST
-훼밀리치과기공소,,경기도,광주시,중앙로 181,031-798-2805,MULTIMAT  NTX 230V,5460270001,44861647,2018-12-03,104435,EAST
-손치과기공소,,경상북도,경산시,사동 574-1,053-817-2803,MULTIMAT  NTX 230V,5460270001,44861568,2018-11-28,101238,EAST
-중앙치과기공소,,제주특별자치도,제주시,중앙로 368,064-752-2804,MULTIMAT  NTX 230V,5460270001,44861695,2018-11-23,,WEST
-이사랑치과기공소_서울 광진구,,서울특별시,광진구,자양로13길 26,02-446-8471,MULTIMAT  NTX 230V,5460270001,44861643,2018-11-21,112557,EAST
-플러스치과기공소_대전 대덕구,,대전광역시,대덕구,우암로 485,,MULTIMAT  NTX 230V,5460270001,44861494,2018-06-28,111048,WEST
-스카이치과기공소-인천,,경기도,부천시,부일로 127,032-505-3987,MULTIMAT  NTX 230V,5460270001,44861672,2018-11-19,100876,WEST
-바른치과기공소,,전북특별자치도,전주시,덕진구 쪽구름2길 46,063-212-2804,MULTIMAT  NTX 230V,5460270001,44761452,2018-11-16,110713,WEST
-웰치과기공소,,서울특별시,광진구,동일로18길 121,010-2842-7384,MULTIMAT  NTX 230V,5460270001,44861674,2018-11-14,107834,EAST
-에스플란트치과병원,,서울특별시,강남구,도산대로 410,02-512-0700,MULTIMAT  NTX 230V,5460270001,44861478,2018-11-13,105666,EAST
-진흥치과기공소,,서울특별시,강북구,한천로 1063-1,02-904-5230,MULTIMAT  NTX 230V,5460270001,44861554,2018-08-23,104395,EAST
-인제치과기공소,,부산광역시,부산진구,전포동 660-18 ,070-7792-2590,MULTIMAT  NTX 230V,5460270001,44861480,2018-08-10,,EAST
-더 나은 치과기공소(The 나은 치과기공소),,부산광역시,사하구,승학로 144,051-292-2835,MULTIMAT  NTX 230V,5460270001,44861608,2018-08-10,110687,EAST
-굿윌치과병원(덕천점),,부산광역시,북구,덕천동 325-5,051-330-6000,MULTIMAT  NTX 230V,5460270001,,2018-07-30,102635,EAST
-굿윌치과병원(덕천점),,부산광역시,북구,덕천동 325-5,051-330-6000,MULTIMAT  NTX 230V,5460270001,44861604,2018-07-30,102635,EAST
-블루치과기공소,,서울특별시,영등포구,당산로46길 15,02-2635-5674,MULTIMAT  NTX 230V,5460270001,44761277,2017-12-07,112467,WEST
-성소치과의원,,부산광역시,남구,수영로 175 ,051-627-0275,MULTIMAT  NTX 230V,5460270001,44761346,2017-12-06,110245,EAST
-수치과기공소_경기 고양시,,경기도,고양시,일산서구 일산3동 1088번지 두레빌딩 5층,031-922-2802,MULTIMAT  NTX 230V,5460270001,44761318,2017-12-05,104226,WEST
-아산치과기공소-광주,,광주광역시,광산구,오산동 1610-3번지 2층,062-946-2804,MULTIMAT  NTX 230V,5460270001,,2016-08-17,101885,WEST
-성원치과기공소-전주,,전북특별자치도,전주시,덕진구 시천로 49 ,063-274-2804,MULTIMAT  NTX 230V,5460270001,44761324,2017-11-29,100956,WEST
-학교법인가톨릭학원 가톨릭대학교 인천성모병원,,인천광역시,부평구,동수로 56,032-280-5128(1544-9004),MULTIMAT  NTX 230V,5460270001,44761260,2017-11-17,104949,WEST
-진주치과기공소,,경상남도,진주시,수정동17-12번지 봉수새마을금고3층,,MULTIMAT  NTX 230V,5460270001,44761236,2017-11-13,,EAST
-차오름 기공소,,대전광역시,유성구,반석로 24,042-822-2874,MULTIMAT  NTX 230V,5460270001,44761363,2017-10-27,107799,WEST
-예담치과기공소,,서울특별시,강북구,노해로 121,02-990-2275,MULTIMAT  NTX 230V,5460270001,33460698,2016-11-09,106682,EAST
-창신치과기공소-청주,,충청북도,청주시,상당구 남문로 2가 20-2,043-256-8318,MULTIMAT  NTX 230V,5460270001,44761324,2017-10-12,101422,WEST
-김해연세치과,,경상남도,김해시,내외중앙로 88,055-723-2275,MULTIMAT  NTX 230V,5460270001,44761358,2017-10-10,110176,EAST
-비젼치과기공소-부산,,부산광역시,동래구,여고로 55,051-632-2805,MULTIMAT  NTX 230V,5460270001,44761274,2017-08-29,102325,EAST
-이레치과기공소-김해,,경상남도,김해시,외동 1252-1 옥정프라자 3층,055-326-2829,MULTIMAT  NTX 230V,5460270001,44761284,2017-08-28,106136,EAST
-성모치과_경남 거창군,,경상남도,거창군,거창읍  중앙리 97-2번지 일성빌딩 2층,055-943-2816,MULTIMAT  NTX 230V,5460270001,44761297,2017-08-28,100834,EAST
-세움치과기공소,,경상남도,창원시,진해구 진해대로 776번길 27 온메디컬센터 4F,055-542-2802,MULTIMAT  NTX 230V,5460270001,44761167,2017-08-16,,EAST
-멀티플란트 덴탈 랩,,서울특별시,강서구,금낭화로 29,02-6082-2828,MULTIMAT  NTX 230V,5460270001,44761273,2017-08-07,112859,WEST
-서울소담치과,,경기도,부천시,옥길로 123,032-245-2875,MULTIMAT  NTX 230V,5460270001,44761261,2017-07-18,108032,WEST
-(주)중앙치과기공소-일산,,경기도,고양시,주엽동 72 제일프라자3층 30,031-919-8023,MULTIMAT  NTX 230V,5460270001,44761149,2017-06-28,100472,WEST
-이튼치과기공소,,경상북도,포항시,북구 중흥로161번길 44-5,054-610-2060,MULTIMAT  NTX 230V,5460270001,44761227,2017-06-02,112735,EAST
-주식회사 기쁨치과기공소,,경기도,부천시,소사구 경인로 84,032-651-2804,MULTIMAT  NTX 230V,5460270001,33260422,2015-12-11,107121,WEST
-365미르치과기공소,,경기도,파주시,와석순환로66 한솔프라자 301호,031-948-2873,MULTIMAT  NTX 230V,5460270001,44761162,2017-05-10,107953,WEST
-소망치과기공소,,전북특별자치도,전주시,덕진구 인후동 594-6,070-4068-9359,MULTIMAT  NTX 230V,5460270001,44761136,2017-04-27,,WEST
-진치과기공소,,경기도,의정부시,,031-8083-2804,MULTIMAT  NTX 230V,5460270001,44661046,2017-04-18,,EAST
-우성치과기공소-창원,,경상남도,창원시,성산구 성산동 77-1 sk테크노파크 메카동 805호,055-284-1791,MULTIMAT  NTX 230V,5460270001,44761139,2017-03-09,100587,EAST
-탑치과기공소,,대구광역시,수성구,들안로 274 ,053-761-9266,MULTIMAT  NTX 230V,5460270001,44661123,2017-03-08,,EAST
-예원치과기공소_부산시 연제구,,부산광역시,연제구,거제 1동 223-1번지 2층,051-504-2877,MULTIMAT  NTX 230V,5460270001,44661124,2017-02-28,107631,EAST
-연세휴치과,,서울특별시,성북구,종암로 122,02-927-2119,MULTIMAT  NTX 230V,5460270001,TIMAT NTX_24022017,2017-02-24,108191,EAST
-연세휴치과,,서울특별시,성북구,종암로 122,02-927-2119,MULTIMAT  NTX 230V,5460270001,44661117,2017-02-24,108191,EAST
-(주)중앙치과기공소-일산,,경기도,고양시,주엽동 72 제일프라자3층 30,031-919-8023,MULTIMAT  NTX 230V,5460270001,33160242,2018-01-21,100472,WEST
-보성치과기공소,,부산광역시,사상구,사상로393번길 42,051-304-2875,MULTIMAT  NTX 230V,5460270001,44672088,2017-01-24,112248,EAST
-미소사랑치과의원,,경상남도,창원시,팔용동 103-2사화빌딩401호,055-299-2820,MULTIMAT  NTX 230V,5460270001,44661047,2016-12-08,105537,EAST
-서울삼성치과의원,,경기도,부천시,상동로 78 동양파라곤 208호,032-328-2825,MULTIMAT  NTX 230V,5460270001,.,2016-11-29,101799,WEST
-선치과의원,,경기도,안산시,월피 445-19,031-401-5404,MULTIMAT  NTX 230V,5460270001,.,2016-06-22,105085,WEST
-정치과의원,,충청남도,홍성군,광천읍 홍남로 670,041-641-3699,MULTIMAT  NTX 230V,5460270001,0,2016-06-15,108418,WEST
-Carius Dental Clinic Camp Humphreys(평택미군부대),,경기도,평택시,USAG Humphreys,,AirStar Compressor,airstar,???,2017-06-29,,WEST
-Carius Dental Clinic Camp Humphreys(평택미군부대),,경기도,평택시,USAG Humphreys,,AirStar Compressor,airstar,AS484-17020217,2017-04-07,,WEST
-지르코코리아치과기공소,,부산광역시,북구,효열로 7,010-8664-0629,Multimat NT Touch+Press 230 V,5460260011,33030985,2019-10-29,112202,EAST
-뉴티스치과기공소,,경상남도,김해시,진영읍 진영로 199,010-3569-0084,Multimat NT Touch+Press 230 V,5460260011,33930665,2017-07-26,110151,EAST
-서울모아치과,,서울특별시,노원구,동일로 1554,02-935-2804,CERAMCO 7.0 FURNACE (230V),9495301,JFE0938113,2018-04-23,108473,EAST
-실로암치과기공소,,서울특별시,영등포구,당산2가161-6 4층,02-2633-9732,CERAMCO 7.0 FURNACE (230V),9495301,GOE2113362,2024-06-27,104649,WEST
-푸른치과기공소,,울산광역시,남구,삼산동 1526-11 탑텐클리닉 11층,052-265-7228,CERAMCO 7.0 FURNACE (230V),9495301,JFE0713102,2019-02-27,113149,EAST
-㈜M&Cdental-금천,,서울특별시,금천구,가산디지털1로 119,02-6292-2830,CERAMCO 7.0 FURNACE (230V),9495301,JFE0822130,2017-03-03,102010,WEST
-베이지치과기공소,,서울특별시,금천구,디지털로10길 37,010-3422-5799,Multimat Cube press 230 V,5460280011,44130761,2025-08-01,,WEST
-어썸치과기공소,,인천광역시,부평구,주부토로 236,,Multimat Cube press 230 V,5460280011,44130751,2025-07-11,,WEST
-노원 강북예치과병원,,서울특별시,노원구,노해로81길5-6,02-938-2833,Multimat Cube press 230 V,5460280011,44130701,2025-02-04,100712,EAST
-웰메이드 치과기공소,,경기도,용인시,수지구 현암로 95,031-261-2808,Multimat Cube press 230 V,5460280011,44130757,2025-01-08,114470,EAST
-리더스치과기공소,,서울특별시,송파구,가락동 49-4,02-574-2804,Multimat Cube press 230 V,5460280011,44130731,2024-07-02,,EAST
-이치과기공소,,전북특별자치도,군산시,해망로 55,064-443-2804,Multimat Cube press 230 V,5460280011,44930386,2021-02-23,,WEST
-늘푸른치과기공소-여수,,전라남도,여수시,서교668-3 3층,061-644-2833,Multimat Cube press 230 V,5460280011,44930379/2019년,2021-06-16,104636,WEST
-오름치과기공소,,부산광역시,사상구,사상로 194,051-203-2804,Multimat Cube press 230 V,5460280011,44930397/2019년,2020-10-31,112093,EAST
-대구보건대학교병원,,대구광역시,북구,팔거천동로 209,053-220-1300,Multimat Cube press 230 V,5460280011,449303892019년,2021-05-04,112592,EAST
-대구보건대학교병원,,대구광역시,북구,팔거천동로 209,053-220-1300,Multimat Cube press 230 V,5460280011,449303902019년,2021-05-04,112592,EAST
-창원Ace치과기공소,,경상남도,창원시,의창구 원이대로81번길 6,010-4657-4058,Multimat Cube press 230 V,5460280011,44930360,2021-04-15,110655,EAST
-수치과병원_서울 강남,,서울특별시,강남구,선릉로 823,02-512-7528,Multimat Cube press 230 V,5460280011,44930395/2019년,2021-04-12,111920,EAST
-이든치과기공소,,울산광역시,중구,옥교12길 94,,Multimat Cube press 230 V,5460280011,44930384,2021-01-12,,EAST
-수석치과기공소,,대구광역시,동구,동구 동촌로 231,053-981-1324,Multimat Cube press 230 V,5460280011,44930356,2021-01-11,107171,EAST
-나노덴탈치과기공소-광주,,광주광역시,북구,각하동 179-5 3층,062-571-2842,Multimat Cube press 230 V,5460280011,44930506,2020-12-10,101015,WEST
-고려치과병원-천안,,충청남도,천안시,구성동 293-49 고려치과병원 내 기공실,041-564-2875,Multimat Cube press 230 V,5460280011,44930362,2020-11-10,102132,WEST
-햇빛치과기공소,,서울특별시,동작구,신대방동 587-10,02-846-7893,Multimat Cube press 230 V,5460280011,44930505,2020-05-07,,WEST
-로덴아트치과기공소,,부산광역시,동래구,충렬대로 237번길3 ,051-553-2858,Multimat Cube press 230 V,5460280011,44930373,2020-09-14,,EAST
-가이드치과기공소,,대구광역시,중구,명륜로 67-1,070-8271-2889,Multimat Cube press 230 V,5460280011,44930374,2020-09-09,107567,EAST
-연세고운미소치과의원_서울  강북구,,서울특별시,강북구,도봉로 333 ,02-990-2804,Multimat Cube press 230 V,5460280011,44030570,2020-08-19,112571,EAST
-대성치과기공소,,대구광역시,동구,율하동 159-6 3층,053-984-2804,Multimat Cube press 230 V,5460280011,44030568,2020-08-13,108482,EAST
-하나치과기공소,,경상남도,진주시,도동천로 107 ,055-747-2212,Multimat Cube press 230 V,5460280011,44930375,2020-07-22,111604,EAST
-토러스치과기공소,,인천광역시,계양구,계양대로 171-3,032-502-2804,Multimat Cube press 230 V,5460280011,44930507,2020-07-09,111719,WEST
-The28Lab,,세종특별자치시,,나성로 133-9 511호,010-9019-1070,Multimat Cube press 230 V,5460280011,44030571,2020-07-06,,WEST
-캐드원치과기공소,,경상남도,창원시,의창구 용동로57번길 20,055-287-2804,Multimat Cube press 230 V,5460280011,44930326,2020-06-17,111613,EAST
-네스트기공소,,강원특별자치도,양양군,양양읍 남문리 145-1 5층,,Multimat Cube press 230 V,5460280011,44930275,2020-02-12,,EAST
-임석주와아름다운치과,,경상남도,김해시,삼방동  182-1번지,055-339-3005,Multimat Cube press 230 V,5460280011,44910324,2020-01-31,109905,EAST
-으뜸치과기공소,,서울특별시,송파구,방이동 62-1 진영빌딩 3층,02-423-5530,Multimat Cube press 230 V,5460280011,44930209,2019-12-16,104341,EAST
-통영 Zahn-Art 치과기공소 (쟌아트기공소),,경상남도,통영시,장대길 47-5,055-646-2804,Multimat Cube press 230 V,5460280011,44930208,2019-09-08,105857,EAST
-에이원치과기공소,,경기도,고양시,일산서구 대화동 2220-1 킨텍스프라자 8층,,Multimat Cube press 230 V,5460280011,44130714,2024-05-13,,WEST
-주식회사 토마스덴탈랩,,부산광역시,중구,충장대로5번길 46,051-469-2864,Multimat Cube press 230 V,5460280011,44130708,2024-01-29,113758,EAST
-아리따운기공소,,경기도,수원시,팔달구 매산로2가 40-4번지,031-294-7900,Multimat Cube press 230 V,5460280011,44130687,2024-01-08,,WEST
-덴트리온,,인천광역시,부평구,갈산동 94 ,032-541-5703,Multimat Cube press 230 V,5460280011,44130732,2024-01-02,113110,WEST
-라라치과기공소,,서울특별시,강남구,논현로 163길 13-5,010-2585-0703,Multimat Cube press 230 V,5460280011,44030657,2023-12-14,,EAST
-오엠치과기공소,,서울특별시,용산구,새창로45길 63,010-2697-2341,Multimat Cube press 230 V,5460280011,44130759,2023-11-15,113840,WEST
-베이지치과기공소,,서울특별시,금천구,디지털로10길 37,010-3422-5799,Multimat Cube press 230 V,5460280011,44130700,2023-11-09,,WEST
-라라치과기공소,,서울특별시,강남구,논현로 163길 13-5,010-2585-0703,Multimat Cube press 230 V,5460280011,44030656,2023-09-15,,EAST
-엠에스치과기공소,,대구광역시,수성구,달구벌대로652길 3,,Multimat Cube press 230 V,5460280011,44130760,2023-06-19,112411,EAST
-이엔테크 덴탈랩,,부산광역시,북구,만덕1로 6-1,,Multimat Cube press 230 V,5460280011,44130707,2023-04-18,,EAST
-플래닝덴탈랩,,서울특별시,구로구,개봉로 24-2,,Multimat Cube press 230 V,5460280011,44930372,2020-09-22,113195,WEST
-부산대학교 치의학전문대학원,,경상남도,양산시,물금읍 부산대학로 49,,Multimat Cube press 230 V,5460280011,44130712,2023-03-27,106185,EAST
-케이원치과기공소,,울산광역시,동구,방어진순환도로 625,052-252-8208,Multimat Cube press 230 V,5460280011,44130721,2023-03-21,110998,EAST
-오랄아트,,서울특별시,양천구,신목로 74 ,02-2645-2804,Multimat Cube press 230 V,5460280011,44130698,2023-01-26,104768,WEST
-자이치과기공소,,인천광역시,계양구,안남로573번길 26,,Multimat Cube press 230 V,5460280011,44130599,2022-08-18,,WEST
-미래치과기공소_경기 용인,,경기도,용인시,기흥구 신갈로 68번길 4,031-284-2804,Multimat Cube press 230 V,5460280011,44130722,2022-09-27,106914,EAST
-뉴프라임기공소,,경기도,성남시,분당구 야탑로81번길 10,010-5130-5684,Multimat Cube press 230 V,5460280011,44130699,2022-08-17,,EAST
-참조은치과기공소,,부산광역시,동래구,충렬대로 237번길 34,051·556·2808,Multimat Cube press 230 V,5460280011,44930373,2020-11-05,112983,EAST
-우리치과기공소,,경상남도,거제시,수양1길 51,055-634-2804,Multimat Cube press 230 V,5460280011,44130704,2022-10-31,,EAST
-건양치과기공소,,전북특별자치도,전주시,완산구 온고을로26,010-9245-4454,Multimat Cube press 230 V,5460280011,44130697,2022-06-21,112697,WEST
-제이준치과기공소,,대구광역시,수성구,동대구로 358-26. 4층,,Multimat Cube press 230 V,5460280011,44030663,2022-03-18,,EAST
-엘앤와이치과기공소,,서울특별시,구로구,고척로6길 29,02-849-8745,Multimat Cube press 230 V,5460280011,44030655,2022-07-26,102214,WEST
-아트플러스덴탈랩 (주),,서울특별시,노원구,공릉동 621-7 소망빌딩 2층,02-975-4035,Multimat Cube press 230 V,5460280011,44130690,2022-04-15,112395,EAST
-바이탈치과기공소,,서울특별시,동작구,상도로 94,010-2002-4780,Multimat Cube press 230 V,5460280011,44130688,2022-04-14,112544,WEST
-K치과기공소,,서울특별시,송파구,풍납동 87-16 2층,02-6052-2084,Multimat Cube press 230 V,5460280011,44030664,2022-02-22,,EAST
-아미치과기공소-광진,,서울특별시,광진구,용마산로1길 103,02-546-2879,Multimat Cube press 230 V,5460280011,44030669,2022-01-28,101806,EAST
-(주) 덴탈하이브 (Dental Hive),,서울특별시,성동구,아차산로 126,02-2231-9440,Multimat Cube press 230 V,5460280011,44930441,2022-01-11,106854,EAST
-심포니치과기공소,,서울특별시,성동구,성수동1가 14-36 3층,02-467-8679,Multimat Cube press 230 V,5460280011,44930521,2021-12-21,107280,EAST
-그랜드덴탈랩치과기공소,,서울특별시,은평구,은평구 통일로 876,02-852-2804,Multimat Cube press 230 V,5460280011,44930388,2021-12-21,111380,WEST
-명인기공소,,경상북도,포항시,남구 오천읍 문덕리 345-1 ,,Multimat Cube press 230 V,5460280011,400506,2021-12-24,,EAST
-참치과기공소,,경상남도,김해시,김해대로 1784-7,055-313-3573,Multimat Cube press 230 V,5460280011,44930478,2021-12-03,112449,EAST
-에르메스기공소,,경기도,광명시,하안동 305-6 5층 1호,010-4445-5924,Multimat Cube press 230 V,5460280011,44930411,2021-10-26,,WEST
-세기치과기공소,,대구광역시,달서구,학산로7길 82,010-7525-0386,inEos X5 (incl. interface module),6324649,3317,2015-10-28,104410,EAST
-당진수치과의원,,충청남도,당진시,당진중앙2로 88,041-353-1718,inEos X5 (incl. interface module),6324649,2853,2015-05-29,109566,WEST
-선경치과기공소,,대구광역시,북구,산격동 1498-56,053-354-3836,inEos X5 (incl. interface module),6324649,2419,2015-02-03,108779,EAST
-한미르덴탈랩,,서울특별시,도봉구,방학로 130,02-954-4242,inEos X5 (incl. interface module),6324649,5295,2017-06-27,108124,EAST
-(주)한국심미치과기공소,,대전광역시,서구,갈마동 1374,,inEos X5 (incl. interface module),6324649,,2015-07-31,,WEST
-삼송서울치과_경기 고양시,,경기도,고양시,덕양구 권율대로 672,031-969-2835,Tornado 4 with Membrane Drying,Duerr_4282-01,F316193008,2015-09-22,109301,WEST
-해바라기치과,,부산광역시,남구,문현3동  374-1번지 이안상가 B 1층 04-06호,051-642-2804,Tornado 4 with Membrane Drying,Duerr_4282-01,F316193004,2015-09-22,105511,EAST
-통영 Zahn-Art 치과기공소 (쟌아트기공소),,경상남도,통영시,장대길 47-5,055-646-2804,Tornado 4 with Membrane Drying,Duerr_4282-01,E310281013,2015-06-23,105857,EAST
-의료법인 영훈의료재단 선치과병원_중촌동,,대전광역시,중구,대종로 645,422515000,Tornado 4 with Membrane Drying,Duerr_4282-01,E100768C5_o2,2015-03-06,100282,WEST
-탑클래스치과의원,,전북특별자치도,전주시,덕진구 세병남로 39 4층 1,063-254-3000,Tornado 4 with Membrane Drying,Duerr_4282-01,H335883007,2016-12-19,110580,WEST
-한국치과병원,,경기도,안산시,단원구 광덕서로 86,031-506-3651,Tornado 4 with Membrane Drying,Duerr_4282-01,F312768030,2015-10-14,108609,WEST
-센텀국제치과의원,,부산광역시,해운대구,우동 1505,051-720-8020,Tornado 4 with Membrane Drying,Duerr_4282-01,H333396004,2016-05-31,102875,EAST
-고려대학교의료원,,서울특별시,성북구,고려대로 73,1577-0083,Tornado 4 with Membrane Drying,Duerr_4282-01,F315350007,2016-02-16,103525,EAST`;
+        // --- 2. CSV 데이터 영역은 삭제 ---
 
         // --- 3. 함수 정의 ---
         const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
@@ -374,50 +118,72 @@ K치과기공소,,서울특별시,송파구,풍납동 87-16 2층,02-6052-2084,Mu
             `;
         }
 
-        function loadAndParseData() {
-            const rows = csvData.trim().split('\n').slice(1);
-            allCustomerData = rows.map(rowStr => {
-                const lastCommaIndex = rowStr.lastIndexOf(',');
-                if (lastCommaIndex === -1) return null;
+        // 변경점: async/await를 사용하여 비동기 파일 로딩 함수로 변경
+        async function loadAndParseData() {
+            try {
+                // 'Installed Medical Device_Lab.csv' 파일을 fetch로 불러옵니다.
+                const response = await fetch('Installed Medical Device_Lab.csv');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const csvData = await response.text();
 
-                const sTerritory = rowStr.substring(lastCommaIndex + 1).trim();
-                if (!['EAST', 'WEST', 'SUPPORT'].includes(sTerritory)) return null;
+                const rows = csvData.trim().split('\n').slice(1);
+                allCustomerData = rows.map(rowStr => {
+                    const lastCommaIndex = rowStr.lastIndexOf(',');
+                    if (lastCommaIndex === -1) return null;
 
-                const mainDataStr = rowStr.substring(0, lastCommaIndex);
-                const cols = mainDataStr.split(',');
+                    const sTerritory = rowStr.substring(lastCommaIndex + 1).trim();
+                    if (!['EAST', 'WEST', 'SUPPORT'].includes(sTerritory)) return null;
 
-                if (cols.length < 11) return null;
+                    const mainDataStr = rowStr.substring(0, lastCommaIndex);
+                    const cols = mainDataStr.split(',');
 
-                const addressEndIndex = 4 + (cols.length - 11);
-                const detailAddress = cols.slice(4, addressEndIndex + 1).join(',').trim();
+                    if (cols.length < 11) return null;
+
+                    const addressEndIndex = 4 + (cols.length - 11);
+                    const detailAddress = cols.slice(4, addressEndIndex + 1).join(',').trim();
+                    
+                    const customer = {
+                        name: cols[0].trim(),
+                        membershipType: cols[1].trim(),
+                        sido: cols[2].trim(),
+                        sigungu: cols[3].trim(),
+                        detailAddress: detailAddress,
+                        phone: cols[addressEndIndex + 1].trim(),
+                        product: cols[addressEndIndex + 2].trim(),
+                        ref: cols[addressEndIndex + 3].trim(),
+                        serialNumber: cols[addressEndIndex + 4].trim(),
+                        installDate: cols[addressEndIndex + 5].trim(),
+                        axCode: cols[addressEndIndex + 6].trim(),
+                        sTerritory: sTerritory,
+                    };
+                    
+                    customer.fullAddress = `${customer.sido} ${customer.sigungu} ${customer.detailAddress}`.trim().replace(/\s+/g, ' ');
+                    
+                    return customer;
+                }).filter(Boolean);
                 
-                const customer = {
-                    name: cols[0].trim(),
-                    membershipType: cols[1].trim(),
-                    sido: cols[2].trim(),
-                    sigungu: cols[3].trim(),
-                    detailAddress: detailAddress,
-                    phone: cols[addressEndIndex + 1].trim(),
-                    product: cols[addressEndIndex + 2].trim(),
-                    ref: cols[addressEndIndex + 3].trim(),
-                    serialNumber: cols[addressEndIndex + 4].trim(),
-                    installDate: cols[addressEndIndex + 5].trim(),
-                    axCode: cols[addressEndIndex + 6].trim(),
-                    sTerritory: sTerritory,
-                };
-                
-                customer.fullAddress = `${customer.sido} ${customer.sigungu} ${customer.detailAddress}`.trim().replace(/\s+/g, ' ');
-                
-                return customer;
-            }).filter(Boolean);
-            
-            // Populate only the first filter initially
-            const territories = [...new Set(allCustomerData.map(c => c.sTerritory))].sort();
-            teamFilter.innerHTML = '<option value="">-- 담당팀 --</option>';
-            teamFilter.innerHTML += territories.map(t => {
-                const count = allCustomerData.filter(c => c.sTerritory === t).length;
-                return `<option value="${t}">${t} (${count})</option>`;
-            }).join('');
+                // 데이터 로딩 성공 후 필터 채우기
+                const territories = [...new Set(allCustomerData.map(c => c.sTerritory))].sort();
+                teamFilter.innerHTML = '<option value="">-- 담당팀 --</option>';
+                teamFilter.innerHTML += territories.map(t => {
+                    const count = allCustomerData.filter(c => c.sTerritory === t).length;
+                    return `<option value="${t}">${t} (${count})</option>`;
+                }).join('');
+
+                // 필터 활성화 및 상태 메시지 변경
+                teamFilter.disabled = false;
+                statusText.textContent = '담당팀을 선택하여 검색을 시작하세요.';
+                loader.classList.add('hidden');
+
+            } catch (error) {
+                console.error("데이터 로딩 실패:", error);
+                statusText.textContent = '데이터를 불러오는 중 오류가 발생했습니다. 파일을 확인해주세요.';
+                loader.classList.add('hidden');
+                // 오류 발생 시 모든 필터 비활성화 유지
+                [teamFilter, sidoFilter, sigunguFilter, productFilter].forEach(f => f.disabled = true);
+            }
         }
 
         function displayCustomerList(customers) {
@@ -507,7 +273,6 @@ K치과기공소,,서울특별시,송파구,풍납동 87-16 2층,02-6052-2084,Mu
         teamFilter.addEventListener('change', () => {
             const selectedTeam = teamFilter.value;
             
-            // Reset and disable subsequent filters
             sidoFilter.innerHTML = '<option value="">-- 시/도 --</option>';
             sidoFilter.disabled = true;
             sigunguFilter.innerHTML = '<option value="">-- 시/군/구 --</option>';
@@ -588,7 +353,7 @@ K치과기공소,,서울특별시,송파구,풍납동 87-16 2층,02-6052-2084,Mu
             let filteredData = allCustomerData.filter(c => 
                 c.sTerritory === selectedTeam && 
                 c.sido === selectedSido &&
-                c.sigungu === selectedSigungu
+                c.sigungu === sigunguFilter.value
             );
 
             if (selectedProduct) {
@@ -624,7 +389,8 @@ K치과기공소,,서울특별시,송파구,풍납동 87-16 2층,02-6052-2084,Mu
         });
 
         // --- 6. 최초 실행 ---
-        loadAndParseData();
+        // 변경점: 페이지가 로드되면 데이터 로딩 함수를 호출합니다.
+        document.addEventListener('DOMContentLoaded', loadAndParseData);
     </script>
 </body>
 </html>
