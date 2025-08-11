@@ -99,9 +99,6 @@
             document.body.removeChild(textArea);
         }
 
-        // ============================================================== //
-        // ▼▼▼▼▼▼▼▼▼▼▼▼▼ 네이버 지도 링크가 포함된 함수 ▼▼▼▼▼▼▼▼▼▼▼▼▼ //
-        // ============================================================== //
         function createDetailsContent(customer, index) {
             const phoneHtml = customer.phone
                 ? `<td class="copyable-address" onclick="copyToClipboard('${customer.phone}', this)">${customer.phone} 📋</td>`
