@@ -99,15 +99,30 @@
             document.body.removeChild(textArea);
         }
 
+        // ============================================================== //
+        // ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ 수정된 함수 1 ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ //
+        // (네이버 지도 링크 반영)
+        // ============================================================== //
         function createDetailsContent(customer, index) {
             const phoneHtml = customer.phone
                 ? `<td class="copyable-address" onclick="copyToClipboard('${customer.phone}', this)">${customer.phone} 📋</td>`
                 : `<td>N/A</td>`;
 
+            // 네이버 지도 검색 URL 생성
+            const naverMapUrl = `https://map.naver.com/p/search/${encodeURIComponent(customer.fullAddress)}`;
+
             return `
                 <table class="details-table">
                     <tr><th>담당팀</th><td>${customer.sTerritory}</td></tr>
-                    <tr><th>주소</th><td class="copyable-address" onclick="copyToClipboard('${customer.fullAddress.replace(/'/g, "\\'")}', this)">${customer.fullAddress} 📋</td></tr>
+                    <tr>
+                        <th>주소</th>
+                        <td>
+                            <span class="copyable-address" onclick="copyToClipboard('${customer.fullAddress.replace(/'/g, "\\'")}', this)">${customer.fullAddress} 📋</span>
+                            <a href="${naverMapUrl}" target="_blank" rel="noopener noreferrer" class="ml-2 text-white bg-green-600 hover:bg-green-700 text-xs font-bold py-1 px-2 rounded-md transition-colors duration-200" style="text-decoration: none;">
+                                Naver 지도
+                            </a>
+                        </td>
+                    </tr>
                     <tr><th>연락처</th>${phoneHtml}</tr>
                     <tr><th>제품</th><td>${customer.product}</td></tr>
                     <tr><th>제조번호</th><td>${customer.serialNumber}</td></tr>
@@ -118,10 +133,9 @@
             `;
         }
 
-        // 변경점: async/await를 사용하여 비동기 파일 로딩 함수로 변경
         async function loadAndParseData() {
             try {
-                // 'Installed Medical Device_Lab.csv' 파일을 fetch로 불러옵니다.
+                // 'Installed Medical Device_CADCAM.csv' 파일을 fetch로 불러옵니다.
                 const response = await fetch('csv/Installed Medical Device_CADCAM.csv');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -164,7 +178,6 @@
                     return customer;
                 }).filter(Boolean);
                 
-                // 데이터 로딩 성공 후 필터 채우기
                 const territories = [...new Set(allCustomerData.map(c => c.sTerritory))].sort();
                 teamFilter.innerHTML = '<option value="">-- 담당팀 --</option>';
                 teamFilter.innerHTML += territories.map(t => {
@@ -172,7 +185,6 @@
                     return `<option value="${t}">${t} (${count})</option>`;
                 }).join('');
 
-                // 필터 활성화 및 상태 메시지 변경
                 teamFilter.disabled = false;
                 statusText.textContent = '담당팀을 선택하여 검색을 시작하세요.';
                 loader.classList.add('hidden');
@@ -181,7 +193,6 @@
                 console.error("데이터 로딩 실패:", error);
                 statusText.textContent = '데이터를 불러오는 중 오류가 발생했습니다. 파일을 확인해주세요.';
                 loader.classList.add('hidden');
-                // 오류 발생 시 모든 필터 비활성화 유지
                 [teamFilter, sidoFilter, sigunguFilter, productFilter].forEach(f => f.disabled = true);
             }
         }
@@ -226,6 +237,10 @@
             });
         }
 
+        // ============================================================== //
+        // ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ 수정된 함수 2 ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ //
+        // (alert 안내창 제거 및 지도에 메시지 표시)
+        // ============================================================== //
         async function showMapInDetails(customer, mapId, buttonElement) {
             if (activeMap) {
                 activeMap.remove();
@@ -237,7 +252,7 @@
             buttonElement.disabled = true;
 
             const mapElement = document.getElementById(mapId);
-            mapElement.innerHTML = '';
+            mapElement.innerHTML = ''; 
 
             const coreDetailAddress = customer.detailAddress.split(',')[0].trim().replace(/\(.*\)/g, '').trim();
             const addressForSearch = `${customer.sido} ${customer.sigungu} ${coreDetailAddress}`;
@@ -249,20 +264,22 @@
                 if (!response.ok) throw new Error('Network response was not ok');
                 const data = await response.json();
 
-                activeMap = L.map(mapId);
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(activeMap);
-
                 if (data && data.length > 0) {
+                    activeMap = L.map(mapId);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(activeMap);
                     const { lat, lon } = data[0];
                     L.marker([lat, lon]).addTo(activeMap).bindPopup(customer.name).openPopup();
                     activeMap.setView([lat, lon], 16);
                 } else {
-                    alert(`'${customer.name}'의 위치를 찾을 수 없습니다.\n(검색주소: ${addressForSearch})`);
-                    activeMap.setView([36.5, 127.5], 7);
+                    mapElement.innerHTML = `<div class="flex items-center justify-center h-full text-gray-500 bg-gray-200 rounded-lg">
+                                                '${customer.name}'의 위치를 찾을 수 없습니다.
+                                            </div>`;
                 }
             } catch (error) {
                 console.error('Geocoding error:', error);
-                alert('위치 검색 중 오류가 발생했습니다.');
+                mapElement.innerHTML = `<div class="flex items-center justify-center h-full text-red-500 bg-gray-200 rounded-lg">
+                                            위치 검색 중 오류가 발생했습니다.
+                                        </div>`;
             } finally {
                 buttonElement.textContent = originalButtonText;
                 buttonElement.disabled = false;
@@ -389,7 +406,6 @@
         });
 
         // --- 6. 최초 실행 ---
-        // 변경점: 페이지가 로드되면 데이터 로딩 함수를 호출합니다.
         document.addEventListener('DOMContentLoaded', loadAndParseData);
     </script>
 </body>
